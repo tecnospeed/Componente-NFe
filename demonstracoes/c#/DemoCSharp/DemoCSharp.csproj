@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBC35886-F185-4EC4-B9F9-D7519AFB8A05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>DemoCSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\tributacoes\COFINSAliq.cs">
+      <SubType>Form</SubType>
+      <Link>COFINSAliq.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\COFINSAliq.Designer.cs">
+      <DependentUpon>COFINSAliq.cs</DependentUpon>
+      <Link>COFINSAliq.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\COFINSNTrib.cs">
+      <SubType>Form</SubType>
+      <Link>COFINSNTrib.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\COFINSNTrib.Designer.cs">
+      <DependentUpon>COFINSNTrib.cs</DependentUpon>
+      <Link>COFINSNTrib.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\COFINSOutros.cs">
+      <SubType>Form</SubType>
+      <Link>COFINSOutros.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\COFINSOutros.Designer.cs">
+      <DependentUpon>COFINSOutros.cs</DependentUpon>
+      <Link>COFINSOutros.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\COFINSQuant.cs">
+      <SubType>Form</SubType>
+      <Link>COFINSQuant.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\COFINSQuant.Designer.cs">
+      <DependentUpon>COFINSQuant.cs</DependentUpon>
+      <Link>COFINSQuant.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\COFINSST.cs">
+      <SubType>Form</SubType>
+      <Link>COFINSST.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\COFINSST.Designer.cs">
+      <DependentUpon>COFINSST.cs</DependentUpon>
+      <Link>COFINSST.Designer.cs</Link>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS00.cs">
+      <SubType>Form</SubType>
+      <Link>ICMS00.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS00.Designer.cs">
+      <DependentUpon>ICMS00.cs</DependentUpon>
+      <Link>ICMS00.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS20.cs">
+      <SubType>Form</SubType>
+      <Link>ICMS20.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS20.Designer.cs">
+      <DependentUpon>ICMS20.cs</DependentUpon>
+      <Link>ICMS20.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS30.cs">
+      <SubType>Form</SubType>
+      <Link>ICMS30.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS30.Designer.cs">
+      <DependentUpon>ICMS30.cs</DependentUpon>
+      <Link>ICMS30.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS40.cs">
+      <SubType>Form</SubType>
+      <Link>ICMS40.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS40.Designer.cs">
+      <DependentUpon>ICMS40.cs</DependentUpon>
+      <Link>ICMS40.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS51.cs">
+      <SubType>Form</SubType>
+      <Link>ICMS51.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS51.Designer.cs">
+      <DependentUpon>ICMS51.cs</DependentUpon>
+      <Link>ICMS51.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS60.cs">
+      <SubType>Form</SubType>
+      <Link>ICMS60.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS60.Designer.cs">
+      <DependentUpon>ICMS60.cs</DependentUpon>
+      <Link>ICMS60.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS70.cs">
+      <SubType>Form</SubType>
+      <Link>ICMS70.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS70.Designer.cs">
+      <DependentUpon>ICMS70.cs</DependentUpon>
+      <Link>ICMS70.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS90.cs">
+      <SubType>Form</SubType>
+      <Link>ICMS90.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMS90.Designer.cs">
+      <DependentUpon>ICMS90.cs</DependentUpon>
+      <Link>ICMS90.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSPartilha.cs">
+      <SubType>Form</SubType>
+      <Link>ICMSPartilha.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSPartilha.Designer.cs">
+      <DependentUpon>ICMSPartilha.cs</DependentUpon>
+      <Link>ICMSPartilha.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN101.cs">
+      <SubType>Form</SubType>
+      <Link>ICMSSN101.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN101.Designer.cs">
+      <DependentUpon>ICMSSN101.cs</DependentUpon>
+      <Link>ICMSSN101.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN102.cs">
+      <SubType>Form</SubType>
+      <Link>ICMSSN102.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN102.Designer.cs">
+      <DependentUpon>ICMSSN102.cs</DependentUpon>
+      <Link>ICMSSN102.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN201.cs">
+      <SubType>Form</SubType>
+      <Link>ICMSSN201.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN201.Designer.cs">
+      <DependentUpon>ICMSSN201.cs</DependentUpon>
+      <Link>ICMSSN201.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN202.cs">
+      <SubType>Form</SubType>
+      <Link>ICMSSN202.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN202.Designer.cs">
+      <DependentUpon>ICMSSN202.cs</DependentUpon>
+      <Link>ICMSSN202.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN500.cs">
+      <SubType>Form</SubType>
+      <Link>ICMSSN500.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN500.Designer.cs">
+      <DependentUpon>ICMSSN500.cs</DependentUpon>
+      <Link>ICMSSN500.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN900.cs">
+      <SubType>Form</SubType>
+      <Link>ICMSSN900.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSSN900.Designer.cs">
+      <DependentUpon>ICMSSN900.cs</DependentUpon>
+      <Link>ICMSSN900.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSST.cs">
+      <SubType>Form</SubType>
+      <Link>ICMSST.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ICMSST.Designer.cs">
+      <DependentUpon>ICMSST.cs</DependentUpon>
+      <Link>ICMSST.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\II.cs">
+      <SubType>Form</SubType>
+      <Link>II.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\II.Designer.cs">
+      <DependentUpon>II.cs</DependentUpon>
+      <Link>II.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\icms10.cs">
+      <SubType>Form</SubType>
+      <Link>icms10.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\icms10.designer.cs">
+      <DependentUpon>icms10.cs</DependentUpon>
+      <Link>icms10.designer.cs</Link>
+    </Compile>
+    <Compile Include="FormDistribuicaoDFe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDistribuicaoDFe.Designer.cs">
+      <DependentUpon>FormDistribuicaoDFe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImportacaoXmlNFe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImportacaoXmlNFe.Designer.cs">
+      <DependentUpon>FormImportacaoXmlNFe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ini.cs" />
+    <Compile Include="..\tributacoes\IPINTributado.cs">
+      <SubType>Form</SubType>
+      <Link>IPINTributado.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\IPINTributado.Designer.cs">
+      <DependentUpon>IPINTributado.cs</DependentUpon>
+      <Link>IPINTributado.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\IPITributado.cs">
+      <SubType>Form</SubType>
+      <Link>IPITributado.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\IPITributado.Designer.cs">
+      <DependentUpon>IPITributado.cs</DependentUpon>
+      <Link>IPITributado.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ISSQN.cs">
+      <SubType>Form</SubType>
+      <Link>ISSQN.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\ISSQN.Designer.cs">
+      <DependentUpon>ISSQN.cs</DependentUpon>
+      <Link>ISSQN.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISAliquota.cs">
+      <SubType>Form</SubType>
+      <Link>PISAliquota.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISAliquota.Designer.cs">
+      <DependentUpon>PISAliquota.cs</DependentUpon>
+      <Link>PISAliquota.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISNTrib.cs">
+      <SubType>Form</SubType>
+      <Link>PISNTrib.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISNTrib.Designer.cs">
+      <DependentUpon>PISNTrib.cs</DependentUpon>
+      <Link>PISNTrib.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISOtros.cs">
+      <SubType>Form</SubType>
+      <Link>PISOtros.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISOtros.Designer.cs">
+      <DependentUpon>PISOtros.cs</DependentUpon>
+      <Link>PISOtros.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISQuantidade.cs">
+      <SubType>Form</SubType>
+      <Link>PISQuantidade.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISQuantidade.Designer.cs">
+      <DependentUpon>PISQuantidade.cs</DependentUpon>
+      <Link>PISQuantidade.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISST.cs">
+      <SubType>Form</SubType>
+      <Link>PISST.cs</Link>
+    </Compile>
+    <Compile Include="..\tributacoes\PISST.Designer.cs">
+      <DependentUpon>PISST.cs</DependentUpon>
+      <Link>PISST.Designer.cs</Link>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="..\tributacoes\COFINSAliq.resx">
+      <DependentUpon>COFINSAliq.cs</DependentUpon>
+      <Link>COFINSAliq.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\COFINSNTrib.resx">
+      <DependentUpon>COFINSNTrib.cs</DependentUpon>
+      <Link>COFINSNTrib.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\COFINSOutros.resx">
+      <DependentUpon>COFINSOutros.cs</DependentUpon>
+      <Link>COFINSOutros.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\COFINSQuant.resx">
+      <DependentUpon>COFINSQuant.cs</DependentUpon>
+      <Link>COFINSQuant.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\COFINSST.resx">
+      <DependentUpon>COFINSST.cs</DependentUpon>
+      <Link>COFINSST.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMS00.resx">
+      <DependentUpon>ICMS00.cs</DependentUpon>
+      <Link>ICMS00.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMS20.resx">
+      <DependentUpon>ICMS20.cs</DependentUpon>
+      <Link>ICMS20.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMS30.resx">
+      <DependentUpon>ICMS30.cs</DependentUpon>
+      <Link>ICMS30.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMS40.resx">
+      <DependentUpon>ICMS40.cs</DependentUpon>
+      <Link>ICMS40.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMS51.resx">
+      <DependentUpon>ICMS51.cs</DependentUpon>
+      <Link>ICMS51.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMS60.resx">
+      <DependentUpon>ICMS60.cs</DependentUpon>
+      <Link>ICMS60.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMS70.resx">
+      <DependentUpon>ICMS70.cs</DependentUpon>
+      <Link>ICMS70.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMS90.resx">
+      <DependentUpon>ICMS90.cs</DependentUpon>
+      <Link>ICMS90.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMSPartilha.resx">
+      <DependentUpon>ICMSPartilha.cs</DependentUpon>
+      <Link>ICMSPartilha.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMSSN101.resx">
+      <DependentUpon>ICMSSN101.cs</DependentUpon>
+      <Link>ICMSSN101.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMSSN102.resx">
+      <DependentUpon>ICMSSN102.cs</DependentUpon>
+      <Link>ICMSSN102.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMSSN201.resx">
+      <DependentUpon>ICMSSN201.cs</DependentUpon>
+      <Link>ICMSSN201.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMSSN202.resx">
+      <DependentUpon>ICMSSN202.cs</DependentUpon>
+      <Link>ICMSSN202.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMSSN500.resx">
+      <DependentUpon>ICMSSN500.cs</DependentUpon>
+      <Link>ICMSSN500.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMSSN900.resx">
+      <DependentUpon>ICMSSN900.cs</DependentUpon>
+      <Link>ICMSSN900.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ICMSST.resx">
+      <DependentUpon>ICMSST.cs</DependentUpon>
+      <Link>ICMSST.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\II.resx">
+      <DependentUpon>II.cs</DependentUpon>
+      <Link>II.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\IPINTributado.resx">
+      <DependentUpon>IPINTributado.cs</DependentUpon>
+      <Link>IPINTributado.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\IPITributado.resx">
+      <DependentUpon>IPITributado.cs</DependentUpon>
+      <Link>IPITributado.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\ISSQN.resx">
+      <DependentUpon>ISSQN.cs</DependentUpon>
+      <Link>ISSQN.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\PISAliquota.resx">
+      <DependentUpon>PISAliquota.cs</DependentUpon>
+      <Link>PISAliquota.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\PISNTrib.resx">
+      <DependentUpon>PISNTrib.cs</DependentUpon>
+      <Link>PISNTrib.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\PISOtros.resx">
+      <DependentUpon>PISOtros.cs</DependentUpon>
+      <Link>PISOtros.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\PISQuantidade.resx">
+      <DependentUpon>PISQuantidade.cs</DependentUpon>
+      <Link>PISQuantidade.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\PISST.resx">
+      <DependentUpon>PISST.cs</DependentUpon>
+      <Link>PISST.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\tributacoes\icms10.resx">
+      <DependentUpon>icms10.cs</DependentUpon>
+      <Link>icms10.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDistribuicaoDFe.resx">
+      <DependentUpon>FormDistribuicaoDFe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImportacaoXmlNFe.resx">
+      <DependentUpon>FormImportacaoXmlNFe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AccessibilityCplAdminLib">
+      <Guid>{714DD4F6-7676-4BDE-925A-C2FEC2073F36}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="NFeDataSetX">
+      <Guid>{E2B7C512-EC6F-4B8D-A8F7-3D9DB3A9DE62}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="NFeX">
+      <Guid>{D7C99CD2-F300-4EF5-A416-0302B9DD1F0C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\img.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
