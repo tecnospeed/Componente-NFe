@@ -1,3 +1,7 @@
+﻿## [11.1.60.6168]
+
+* Corre&ccedil;&otilde;es e melhorias diversos.
+
 ## [10.1.59.6074]
 ### Novidades:
   - IND-87 - Atualizado rtm RetratoMedicamento/PaisagemMedicamento para que seja impresso os dados de entrega e retirada.
@@ -2343,6 +2347,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
