@@ -1,4 +1,17 @@
-﻿## [11.1.60.6168]
+﻿## [11.1.60.6169]
+
+### Novidades:
+  - IND-101 - Disponibilizado no dataset os (campos vBCSTRet_N26 e vICMSSubstituto_N26b) para ser impresso no DANFE.
+  - INDK-24 - Alteração no DANFE para imprimir a unidade comercial e tributada com o tamanho máximo de caracteres.
+  - INDK-74 - Disponibilizado as dezenas da nota premiada MS.
+
+### Correções:
+  - INDK-92 - Correção para concatentar as dezenas da nota premiada MS no xml destinatario, quando gerado pela consulta por chave ou envio síncrono.
+
+### Correções:
+  - INDK-78 - Correção no envio de notas com compactação de XML. Essa opção existe ao informar o parâmetro aCompactada=True nos métodos EnviarNF e EnviarNFSincrono.
+
+## [11.1.60.6168]
 
 * Corre&ccedil;&otilde;es e melhorias diversos.
 
@@ -2347,6 +2360,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
