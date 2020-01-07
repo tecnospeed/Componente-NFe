@@ -1,4 +1,8 @@
-﻿## [11.1.60.6169]
+﻿## [11.1.60.6179]
+
+* Corre&ccedil;&otilde;es e melhorias diversos.
+
+## [11.1.60.6169]
 
 ### Novidades:
   - IND-101 - Disponibilizado no dataset os (campos vBCSTRet_N26 e vICMSSubstituto_N26b) para ser impresso no DANFE.
@@ -2360,6 +2364,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
