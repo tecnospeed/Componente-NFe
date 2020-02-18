@@ -12,6 +12,6 @@ Veja como é fácil integrar a NFe TecnoSpeed ao seu software
 
 ***
 
-**Para baixar a versão Trial, [clique aqui](https://s3-sa-east-1.amazonaws.com/tecnospeed-trial/setup_NFe_trial_11.1.60.6185.exe "Baixar o Componente NFe Trial")**.
+**Para baixar a versão Trial, [clique aqui](https://s3-sa-east-1.amazonaws.com/tecnospeed-trial/setup_NFe_trial_11.0.60.6187.exe "Baixar o Componente NFe Trial")**.
 
 **Para ver uma lista com o histórico de mudanças, [clique aqui](https://github.com/tecnospeed/Componente-NFe/blob/master/CHANGELOG.md "Changelog").**
