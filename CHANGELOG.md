@@ -1,4 +1,8 @@
-﻿## [11.1.60.6208]
+﻿## [11.1.60.6209]
+
+* Corre&ccedil;&otilde;es e melhorias diversos.
+
+## [11.1.60.6208]
 
 * Corre&ccedil;&otilde;es e melhorias diversos.
 
@@ -2412,6 +2416,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
