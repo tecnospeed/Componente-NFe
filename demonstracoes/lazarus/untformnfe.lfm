@@ -1,0 +1,90 @@
+object frmDemoNFe: TfrmDemoNFe
+  Left = 256
+  Height = 390
+  Top = 145
+  Width = 728
+  Caption = 'Demo NFe Lazarus'
+  ClientHeight = 390
+  ClientWidth = 728
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '2.0.6.0'
+  object btnStatusServico: TButton
+    Left = 24
+    Height = 25
+    Top = 49
+    Width = 107
+    Caption = 'Status do Serviço'
+    OnClick = btnStatusServicoClick
+    TabOrder = 1
+  end
+  object mmXml: TMemo
+    Left = 168
+    Height = 344
+    Top = 8
+    Width = 537
+    TabOrder = 6
+  end
+  object btnLoadConfig: TButton
+    Left = 24
+    Height = 25
+    Top = 9
+    Width = 107
+    Caption = 'Load Config'
+    OnClick = btnLoadConfigClick
+    TabOrder = 0
+  end
+  object btnGerarViaDataset: TButton
+    Left = 24
+    Height = 25
+    Top = 88
+    Width = 107
+    Caption = 'Gerar via Dataset'
+    OnClick = btnGerarViaDatasetClick
+    TabOrder = 2
+  end
+  object btnPreverDanfe: TButton
+    Left = 24
+    Height = 25
+    Top = 168
+    Width = 107
+    Caption = 'Prever Danfe'
+    OnClick = btnPreverDanfeClick
+    TabOrder = 4
+  end
+  object btnEnviarSincrono: TButton
+    Left = 24
+    Height = 25
+    Top = 208
+    Width = 107
+    Caption = 'Enviar Síncrono'
+    OnClick = btnEnviarSincronoClick
+    TabOrder = 5
+  end
+  object btnAssinar: TButton
+    Left = 24
+    Height = 25
+    Top = 128
+    Width = 107
+    Caption = 'Assinar Nota'
+    OnClick = btnAssinarClick
+    TabOrder = 3
+  end
+  object btnExportarDanfe: TButton
+    Left = 24
+    Height = 25
+    Hint = 'Para exportar o campo XML precisa estar preenchido com o conteudo de um xml destinatário válido'
+    Top = 248
+    Width = 107
+    Caption = 'Exportar Danfe'
+    OnClick = btnExportarDanfeClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 7
+  end
+  object SaveDialog1: TSaveDialog
+    left = 56
+    top = 301
+  end
+end

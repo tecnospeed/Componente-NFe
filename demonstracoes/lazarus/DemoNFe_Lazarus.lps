@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="5">
+      <Unit0>
+        <Filename Value="DemoNFe_Lazarus.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="untformnfe.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmDemoNFe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="untFormNFe"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="128"/>
+        <CursorPos X="48" Y="144"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="nfex_1_0_tlb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="NFeX_1_0_TLB"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="622"/>
+        <CursorPos X="13" Y="638"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="nfedatasetx_1_0_tlb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="NFeDataSetX_1_0_TLB"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="75"/>
+        <CursorPos X="14" Y="82"/>
+        <UsageCount Value="36"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="C:\Lazarus\lcl\lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="109"/>
+        <CursorPos Y="116"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+    </Units>
+    <JumpHistory Count="6" HistoryIndex="5">
+      <Position1>
+        <Filename Value="DemoNFe_Lazarus.lpr"/>
+      </Position1>
+      <Position2>
+        <Filename Value="untformnfe.pas"/>
+        <Caret Line="15" Column="3"/>
+      </Position2>
+      <Position3>
+        <Filename Value="untformnfe.pas"/>
+        <Caret Line="338" Column="39" TopLine="323"/>
+      </Position3>
+      <Position4>
+        <Filename Value="untformnfe.pas"/>
+        <Caret Line="353" Column="49" TopLine="323"/>
+      </Position4>
+      <Position5>
+        <Filename Value="untformnfe.pas"/>
+        <Caret Line="354" Column="49" TopLine="324"/>
+      </Position5>
+      <Position6>
+        <Filename Value="untformnfe.pas"/>
+        <Caret Line="355" Column="71" TopLine="324"/>
+      </Position6>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

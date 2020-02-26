@@ -1,0 +1,5 @@
++=====================================================================+
+|                                                                          Notas do projeto                                                                          |
++=====================================================================+
+
+* Esse projeto se trata de uma demonstração conceito para utilização do componente spdNFe junto ao Lazarus.
