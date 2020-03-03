@@ -1,4 +1,12 @@
-﻿## [11.1.60.6211]
+﻿## [11.1.61.6214]
+
+### Novidades:
+   - DC-242 - Alterado modo de utilização do Nota Segura, [**exemplos de utilização**](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360006286894).
+
+### Correções:
+   - DC-139 - Correção no envio de notas com compactação de XML e no método ConverteXmlParaDataSet que não estava convertendo o grupo infRespTec.
+
+## [11.1.60.6211]
 
 * Corre&ccedil;&otilde;es e melhorias diversos.
 
@@ -2424,6 +2432,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
