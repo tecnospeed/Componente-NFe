@@ -1,4 +1,23 @@
-﻿## [11.1.61.6220]
+﻿## [11.1.62.6222]
+
+Novidades:
+
+* DC-315 - Compatibilizado componente com NT 2020/001 que permite emitente com CPF enviar Manifestação do Destinatário: [Documentação](https://blog.tecnospeed.com.br/nota-tecnica-2020-001/).
+* DC-294 - Adicionado o método TratarXMLRetornoDFe. Este método recebe o XML de retorno do método ConsultarDistribuicaoDFe, faz o tratamento de cada XML compactado e os salva no diretório desejado: [Documentação](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360044882013). 
+* DC-257 - Alteração na impressão CCe para mostrar sempre o maior nSeqEvento.
+* DC-291 - Disponibilizado os métodos Edit e Post no componente DatasetX. Para quem utiliza o componente via Activex conseguir editar informações já preenchidas no DatasetX. **Exemplo de uso**: 
+```pascal
+  spdNFeDataSetsX.LoteNFe := '';
+  spdNFeDataSetsX.FindDataSet('E').Edit;
+  spdNFeDataSetsX.SetCampo('xNome_E04=NOME DO DESTINATARIO EDITADO');
+  spdNFeDataSetsX.FindDataSet('E').Post;
+```
+
+Correções:
+
+* DC-139 - Correção no envio de notas com compactação de XML e no método ConverteXmlParaDataSet que não estava convertendo o grupo infRespTec.
+
+## [11.1.61.6220]
 
 * Corre&ccedil;&otilde;es e melhorias diversos.
 
@@ -2440,6 +2459,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
