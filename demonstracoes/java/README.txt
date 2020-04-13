@@ -4,3 +4,5 @@
 * O jacob.jar deve ser adicionado nas libraries do projeto para ser reconhecida.
 * Atenção a classe Configuraçoes.java pois nela tem algumas configurações de diretórios que devem estar corretas para funcionar.
 * Atenção as configurações do arquivo nfeConfig.ini, alterar por exemplo os campos UF, CNPJ, NomeCertificado e também os diretórios.
+
+http://tsdn.tecnospeed.com.br/blog-da-tecnospeed/post/tecnospeed-anuncia-compatibilidade-com-java
