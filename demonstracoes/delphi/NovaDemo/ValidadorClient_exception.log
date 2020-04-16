@@ -1,0 +1,4 @@
+[16/04/2020 14:39:14:953] 7952 -  EspdValidadorClientValidarException : Ocorreu um erro durante a validação local: O arquivo não existe: "C:\Program Files\TecnoSpeed\NFe\arquivos\Esquemas\auditor\vm60\MappingValidador.txt"
+[16/04/2020 14:39:41:551] 7952 -  EspdValidadorClientValidarException : Ocorreu um erro durante a validação local: O arquivo não existe: "C:\Program Files\TecnoSpeed\NFe\arquivos\Esquemas\auditor\auditorlocal.pfx"
+[16/04/2020 14:40:19:635] 7952 -  EspdValidadorClientValidarException : Ocorreu um erro durante a validação local: Data de emissão vazia ou inválida.
+[16/04/2020 14:47:14:509] 3508 -  EspdValidadorClientValidarException : Ocorreu um erro durante a validação local: Data de emissão vazia ou inválida.
