@@ -95,6 +95,7 @@ var
   Demo_NFe_Form: TDemo_NFe_Form;
   logEnvio : String;
   logRetorno : String;
+  vIni: TIniFile;
 
 
 implementation
@@ -102,21 +103,16 @@ uses Math, uEventos, StrUtils;
 {$R *.dfm}
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.cbCertificadoChange(Sender: TObject);
-var
-  _Ini: TIniFile;
 begin
-  _Ini := TIniFile.Create(ExtractFilePath(ParamStr(0))+ 'nfeconfig.ini');
-  _Ini.WriteString('NFE', 'NomeCertificado',cbCertificado.Text);
+  vIni.WriteString('NFE', 'NomeCertificado',cbCertificado.Text);
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.FormCreate(Sender: TObject);
-var
-  _Ini: String;
 begin
-  //spdNFe := TspdNFe.Create(nil); // Caso queira criar o componente em tempo de execução
-//  spdNFe.DiagnosticMode := False;
+  vIni := TIniFile.Create(ExtractFilePath(ParamStr(0))+ 'nfeconfig.ini');
+
   spdNFe.AtualizarArquivoServidores := False;
-  spdNFe.ConfigurarSoftwareHouse('08187168000160');
+  spdNFe.ConfigurarSoftwareHouse(vIni.ReadString('NFE', 'CNPJSoftwareHouse',''));
   spdNFe.LoadConfig();
   spdNFe.ListarCertificados(cbCertificado.Items);
 end;
@@ -428,9 +424,9 @@ begin//
   spdNFe.LoadConfig();
 
 
-  edtUF.Text          := spdNFe.UF; //_Ini.ReadString(_ModoEnvio,'UF','');
-  cbCertificado.Text  := spdNFe.NomeCertificado.Text; //_Ini.ReadString(_ModoEnvio,'NomeCertificado','');
-  edtCNPJ.Text        := spdNFe.CNPJ; //_Ini.ReadString(_ModoEnvio,'CNPJ','');
+  edtUF.Text          := spdNFe.UF;
+  cbCertificado.Text  := spdNFe.NomeCertificado.Text;
+  edtCNPJ.Text        := spdNFe.CNPJ; 
 
   spdNFe.MaxSizeLoteEnvio := 500;
 
