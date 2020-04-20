@@ -49,6 +49,7 @@ type
     spdNFeDataSets: TspdNFeDataSets;
     GroupBox2: TGroupBox;
     mmAudicao: TMemo;
+    btEmailArquivo: TButton;
     procedure cbCertificadoChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnConfigClick(Sender: TObject);
@@ -75,6 +76,7 @@ type
     procedure spdNFeXmlDestinatario(const aFileName: String);
     procedure btnGerarRECClick(Sender: TObject);
     procedure btnGeraXMLTX2Click(Sender: TObject);
+    procedure btEmailArquivoClick(Sender: TObject);
 
     private
     { Private declarations }
@@ -575,6 +577,16 @@ begin
     end
   end;
   edtID.Text := obterNroResultado(mmXml.Text,'"NF','" versao');
+end;
+
+procedure TDemo_NFe_Form.btEmailArquivoClick(Sender: TObject);
+var
+  PDFaux, XMLaux: string;
+begin
+  PDFaux := InputBox('Pergunta', 'Arquivo PDF', 'D:\Temp\Danfe.pdf');
+  XMLaux := InputBox('Pergunta', 'Arquivo XML', 'D:\Temp\NF.XML');
+
+  spdNFe.EnviarNotaDestinatarioAnexos(PDFaux, XMLaux, '');
 end;
 
 end.

@@ -154,7 +154,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
         Left = 280
         Top = 184
         Width = 145
-        Height = 217
+        Height = 249
         Caption = 'Impress'#227'o'
         TabOrder = 4
         object btnPrever: TButton
@@ -246,6 +246,21 @@ object Demo_NFe_Form: TDemo_NFe_Form
           ParentFont = False
           TabOrder = 5
           OnClick = btnEnviarEmailClick
+        end
+        object btEmailArquivo: TButton
+          Left = 7
+          Top = 208
+          Width = 129
+          Height = 25
+          Caption = '13. Email por Arquivo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 6
+          OnClick = btEmailArquivoClick
         end
       end
       object btnStatus: TButton
