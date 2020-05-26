@@ -1,4 +1,9 @@
-﻿## [11.1.62.6222]
+﻿## [11.1.62.6232]
+
+Correções:
+*   Corrigido problema com distribuição de ocx do validador client x64. 
+
+## [11.1.62.6222]
 
 Novidades:
 
@@ -2459,6 +2464,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
