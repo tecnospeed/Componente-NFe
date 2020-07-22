@@ -1,4 +1,27 @@
-﻿## [11.1.62.6240]
+﻿## [11.1.62.6264]
+
+**Novidades**
+* DC-599 - Corrigido problema com a regra 552 no Auditor Fiscal.
+
+* DC-612 - Corrigido problema com a regra 607 no Auditor Fiscal.
+
+* DC-583 - Correção de encode no método DescompactarXMLZip.
+
+* DC-582 - Alteração na impressão das informações complementares para não ocorrer quebra de linha no meio de palavra.
+
+* DC-550 - Compatibilizado com Delphi Sydney 10.4.
+
+* DC-615 - Alteração para salvar o xml da NF-e na pasta de log após executar o método MontarXmlEPEC.
+
+* DC-698 - Adicionada a propriedade infCplQuebrarLinhaAut para configuração da quebra de linha automática na Danfe em informações complementares. [Documentação das propriedades de impressão](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360006172613)
+
+* DC-676 - Alteração para mostrar os dados do reboque na Danfe quando não encontrar veiculo trator.
+
+* DC-646 - Alterado o nome do documento enviado a impressora ao imprimir.
+
+* DC-644 - Disponibilizadas as propriedades ConfigTextoRodapeEsq e ConfigTextoRodapeDir para a configuração de texto no rodapé da Danfe. [Documentação das propriedades de impressão](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360006172613)
+
+## [11.1.62.6240]
 
 * Corre&ccedil;&otilde;es e melhorias diversos.
 
@@ -2472,6 +2495,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
