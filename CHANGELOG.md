@@ -1,9 +1,5 @@
 ﻿## [11.1.63.6265]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
-
-## [11.1.62.6264]
-
 **Novidades**
 * DC-599 - Corrigido problema com a regra 552 no Auditor Fiscal.
 
