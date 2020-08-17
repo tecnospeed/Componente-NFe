@@ -1,4 +1,11 @@
-﻿## [11.1.63.6265]
+﻿## [11.1.64.6271]
+
+**Novidades**
+
+* DC-647 - Disponibilizado instalação manual do componente no pacote full sources.
+* DC-675 - Disponibilizada a impressão nota denegada.
+
+## [11.1.63.6265]
 
 **Novidades**
 * DC-599 - Corrigido problema com a regra 552 no Auditor Fiscal.
@@ -2495,6 +2502,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
