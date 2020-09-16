@@ -1,4 +1,21 @@
-﻿## [11.1.64.6271]
+﻿## [11.1.65.6282]
+
+**Correções**
+
+*DC-1001 - Adicionado o Ceará na regra da CST 60 para não gerar a tag ICMSST e sim a ICMS60.
+
+*DC-922 - Adicionada propriedade MensagemIcmsDesonerado, que permite habilitar ou não a mensagem com valor do icms desonerado nas informações complementares da Danfe.
+
+*DC-1178 - Removida a integração do Nota Segura do componente NFe.
+
+*DC-1154 - Alterar funções que estavam sem retorno padrão.
+
+**Novidades**
+
+*DC-1250 - Disponibilizado o modelo de rtm "DANFE Simplificado – Etiqueta" para compatibilizar com a NT 2020.004 v.1.00. [Documentação ](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360006172613)
+
+
+## [11.1.64.6271]
 
 **Novidades**
 
@@ -2502,6 +2519,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
