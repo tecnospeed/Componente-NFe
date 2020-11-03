@@ -1,4 +1,12 @@
-﻿## [11.1.65.6282]
+﻿## [11.1.66.6290]
+
+**Novidades**
+
+* DC-1280 - Atualização da NT 2019.001 v.1.20a no Validador NF-e.
+
+* DC-1319 - Correção da regra N23-10 no Validador NF-e. 
+
+## [11.1.65.6282]
 
 **Correções**
 
@@ -2519,6 +2527,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
