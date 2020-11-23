@@ -1,4 +1,11 @@
-﻿## [11.1.66.6290]
+﻿## [11.1.67.6295]
+
+**Correções**
+
+* DC-1569 - Criar mensagem de exceção mais informativa no método ConsultarCadastro. Necessário para casos onde a UF não possuir Web Services desta operação definido.
+* DC-1637 - Correção da regra NA01-20 (Rejeição 694) para o caso de exceção 6 conforme manual da SEFAZ.
+
+## [11.1.66.6290]
 
 **Novidades**
 
@@ -2527,6 +2534,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
