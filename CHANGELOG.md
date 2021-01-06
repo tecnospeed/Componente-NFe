@@ -1,4 +1,10 @@
-﻿## [11.1.67.6295]
+﻿## [12.1.68.6311]
+
+**Correções**
+
+* DC-1845 - Acerto da regra C18-14 para considerar exceção a critério da UF.
+
+## [11.1.67.6295]
 
 **Correções**
 
