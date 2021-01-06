@@ -2,7 +2,7 @@
 
 **Correções**
 
-* DC-1569 - Criar mensagem de exceção mais informativa no método ConsultarCadastro. Necessário para casos onde a UF não possuir Web Services desta operação definido.
+* DC-1569 - Criada mensagem de exceção mais informativa no método ConsultarCadastro. Necessário para casos onde a UF não possuir Web Services desta operação definido.
 * DC-1637 - Correção da regra NA01-20 (Rejeição 694) para o caso de exceção 6 conforme manual da SEFAZ.
 
 ## [11.1.66.6290]
