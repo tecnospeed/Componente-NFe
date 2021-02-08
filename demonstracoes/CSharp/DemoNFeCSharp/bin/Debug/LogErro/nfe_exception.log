@@ -1,0 +1,2 @@
+[18/08/2020 09:54:11:274] 11492 - EspdConfigINIException : Arquivo D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\bin\Debug\nfeConfig.ini não foi encontrado
+[18/08/2020 13:35:26:085] 16868 - EspdNFeDataSetException : Ocorreu um erro durante a conversão do XML com a seguinte mensagem: Arquivo de template do conversor não encontrado: D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\bin\Debug\Templates\vm60\Conversor\NFeDataSets.xml

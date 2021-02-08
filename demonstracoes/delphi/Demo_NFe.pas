@@ -14,42 +14,62 @@ type
     pgcNFe: TPageControl;
     tbsNfe: TTabSheet;
     GroupBox1: TGroupBox;
-    cbCertificado: TComboBox;
     edtUF: TLabeledEdit;
     edtCNPJ: TLabeledEdit;
     edtID: TLabeledEdit;
     edtNumRec: TLabeledEdit;
     edtNumProt: TLabeledEdit;
+    dlgOpen: TOpenDialog;
+    spdNFe: TspdNFe;
+    spdNFeDataSets: TspdNFeDataSets;
+    TabImpressao: TTabSheet;
+    TabDemaisMetodos: TTabSheet;
+    GroupBox3: TGroupBox;
+    cbCertificado: TComboBox;
+    Label4: TLabel;
     btnConfig: TButton;
+    btnLoadConfig: TButton;
+    btnGerarREC: TButton;
+    btnGerarDS: TButton;
+    btnGeraXMLTX2: TButton;
+    btnStatus: TButton;
+    btnAssinar: TButton;
     btnEnviarNfe: TButton;
+    btnEnviarSinc: TButton;
+    btnConsultRec: TButton;
+    btnConsultNfe: TButton;
     gbImpressao: TGroupBox;
     btnPrever: TButton;
     btnEditarDanfe: TButton;
-    btnStatus: TButton;
-    btnEnviarSinc: TButton;
-    btnGerarDS: TButton;
-    btnConsultRec: TButton;
-    btnAssinar: TButton;
-    btnConsultNfe: TButton;
-    btnInutilizarNfe: TButton;
     btnImprimir: TButton;
     btnExportPdf: TButton;
     btnVisualizar: TButton;
     btnEnviarEmail: TButton;
-    btnConsultaCadastro: TButton;
-    btnLoadConfig: TButton;
-    dlgOpen: TOpenDialog;
-    mmXml: TMemo;
-    btnEventos: TButton;
+    btEmailArquivo: TButton;
+    GroupBox4: TGroupBox;
+    btnInutilizarNfe: TButton;
     btnConvertXmlDataset: TButton;
+    btnConsultaCadastro: TButton;
+    btnEventos: TButton;
     btnAuditar: TButton;
-    btnGerarREC: TButton;
-    btnGeraXMLTX2: TButton;
-    spdNFe: TspdNFe;
-    spdNFeDataSets: TspdNFeDataSets;
     GroupBox2: TGroupBox;
     mmAudicao: TMemo;
-    btEmailArquivo: TButton;
+    Button2: TButton;
+    Button1: TButton;
+    btCancelarNota: TButton;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    mmXml: TMemo;
+    mmXmlCanceladoEnvio: TMemo;
+    TabSheet3: TTabSheet;
+    mmXmlCanceladoRetorno: TMemo;
+    GroupBox5: TGroupBox;
+    edCnpjSh: TEdit;
+    edTokenSh: TEdit;
+    Label1: TLabel;
+    Label3: TLabel;
+    Label2: TLabel;
     procedure cbCertificadoChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnConfigClick(Sender: TObject);
@@ -77,6 +97,9 @@ type
     procedure btnGerarRECClick(Sender: TObject);
     procedure btnGeraXMLTX2Click(Sender: TObject);
     procedure btEmailArquivoClick(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure btCancelarNotaClick(Sender: TObject);
 
     private
     { Private declarations }
@@ -112,8 +135,6 @@ begin
   vIni := TIniFile.Create(ExtractFilePath(ParamStr(0))+ 'nfeconfig.ini');
 
   spdNFe.AtualizarArquivoServidores := False;
-  spdNFe.ConfigurarSoftwareHouse(vIni.ReadString('NFE', 'CNPJ',''));
-  spdNFe.LoadConfig();
   spdNFe.ListarCertificados(cbCertificado.Items);
 end;
 //-----------------------------------------------------------------------------
@@ -142,11 +163,11 @@ begin
   spdNFeDataSets.Incluir;
   spdNFeDataSets.Campo('versao_A02').Value := '4.00';
   spdNFeDataSets.Campo('cUF_B02').value := '41';
-  spdNFeDataSets.Campo('cNF_B03').value := '555434';
+  spdNFeDataSets.Campo('cNF_B03').value := '555449';
   spdNFeDataSets.Campo('natOp_B04').value := 'VENDA DE MERCADORIA ADQ. DE TERCEIRO - PF E PJ NAO CONTRIBUI';
   spdNFeDataSets.Campo('mod_B06').value := '55';
   spdNFeDataSets.Campo('serie_B07').value := '500';
-  spdNFeDataSets.Campo('nNF_B08').value := '5548164';
+  spdNFeDataSets.Campo('nNF_B08').value := '5548173';
   spdNFeDataSets.Campo('dhEMI_B09').value := FormatDateTime('YYYY-MM-DD"T"HH:MM:SS',Now)+'-03:00';
   spdNFeDataSets.Campo('dhSaiEnt_B10').value := FormatDateTime('YYYY-MM-DD"T"HH:MM:SS',Now)+'-03:00';
   spdNFeDataSets.Campo('tpNF_B11').value := '1';
@@ -198,7 +219,13 @@ begin
 
   spdNFeDataSets.Campo('email_e19').value := '';
 
-  spdNFeDataSets.Campo('CNPJ_GA02').value := '';
+
+  //Informação do Responsável Técnico NT2018/005
+  spdNFeDataSets.Campo('CNPJ_ZD02').value := '08187168000160';
+  spdNFeDataSets.Campo('xContato_ZD04').value := 'Nome do Contato';
+  spdNFeDataSets.Campo('email_ZD05').value := 'email@empresaficticia.com.br';
+  spdNFeDataSets.Campo('fone_ZD06').value := '41999999999';
+
 
   spdNFeDataSets.IncluirItem;
   spdNFeDataSets.Campo('nItem_H02').value := '1';
@@ -319,6 +346,7 @@ procedure TDemo_NFe_Form.btnConsultRecClick(Sender: TObject);
 begin
   mmXml.Text      := spdNFe.ConsultarRecibo(edtNumRec.Text);
   edtNumProt.Text := obterNroResultado(mmXml.Text,'<nProt','</nProt');
+  edtId.Text := obterNroResultado(mmXml.Text,'<chNFe','</chNFe');
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnConsultNfeClick(Sender: TObject);
@@ -378,6 +406,8 @@ end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnImprimirClick(Sender: TObject);
 begin
+  spdNFe.DanfeSettings.ImprimirLocalRetiradaEntrega := True;
+
   if(edtID.Text <> '') then
   begin
     mmXml.Text := LoadXmlDestinatario(edtID.Text);
@@ -423,16 +453,21 @@ procedure TDemo_NFe_Form.btnLoadConfigClick(Sender: TObject);
 begin//
   spdNFe.LoadConfig();
 
-
   edtUF.Text          := spdNFe.UF;
   cbCertificado.Text  := spdNFe.NomeCertificado.Text;
-  edtCNPJ.Text        := spdNFe.CNPJ; 
+  edtCNPJ.Text        := spdNFe.CNPJ;
+  edCnpjSh.Text       := vIni.ReadString('NFE', 'cnpjSh','');
+  edTokenSh.Text       := vIni.ReadString('NFE', 'tokenSh','');
+  spdNFe.ConfigurarSoftwareHouse(edCnpjSh.Text,edTokenSh.Text);//xxx
+
+  if spdNFe.Ambiente = akProducao then
+   label2.Visible := True
+  else
+   label2.Visible := False;
+
 
   spdNFe.MaxSizeLoteEnvio := 500;
 
-  if spdNFe.Ambiente = akProducao then
-    if Application.MessageBox('O ambiente definido no INI esta como PRODUÇÃO, deseja alterar para HOMOLOGAÇÃO?','CUIDADO!!',mb_yesno + MB_ICONWARNING) = id_yes then
-      spdNFe.Ambiente := akHomologacao;
 end;
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
@@ -583,10 +618,92 @@ procedure TDemo_NFe_Form.btEmailArquivoClick(Sender: TObject);
 var
   PDFaux, XMLaux: string;
 begin
-  PDFaux := InputBox('Pergunta', 'Arquivo PDF', 'D:\Temp\Danfe.pdf');
-  XMLaux := InputBox('Pergunta', 'Arquivo XML', 'D:\Temp\NF.XML');
+  PDFaux := '';
+  XMLaux := '';
 
-  spdNFe.EnviarNotaDestinatarioAnexos(PDFaux, XMLaux, '');
+  dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
+  dlgOpen.Title      := 'Selecione o PDF para envio.';
+  dlgOpen.Execute;
+
+  if dlgOpen.FileName <> '' then
+    PDFaux := dlgOpen.FileName
+  else
+    Exit;
+
+  dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
+  dlgOpen.Title      := 'Selecione o XML para envio.';
+  dlgOpen.Execute;
+
+  if dlgOpen.FileName <> '' then
+    XMLaux := dlgOpen.FileName
+  else
+    Exit;
+
+  if (PDFaux <> '') and (XMLaux <> '') then
+    spdNFe.EnviarNotaDestinatarioAnexos(PDFaux, XMLaux, '');
+end;
+
+procedure TDemo_NFe_Form.Button2Click(Sender: TObject);
+var
+  XMLAux: string;
+begin
+  dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
+  dlgOpen.Execute;
+
+  if dlgOpen.FileName <> '' then
+  begin
+    XMLAux := dlgOpen.FileName;
+    spdNFe.EnviarCCeDestinatario(XMLAux);
+  end
+
+
+end;
+
+procedure TDemo_NFe_Form.Button1Click(Sender: TObject);
+var
+aXmlCanceladoEnvio, aXmlCanceladoRetorno: string;
+
+begin
+  dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
+
+  ShowMessage('Selecione o Xml de Cancelamento de Envio');
+  dlgOpen.Execute;
+  aXmlCanceladoEnvio := dlgOpen.FileName;
+  mmXmlCanceladoEnvio.Lines.LoadFromFile(aXmlCanceladoEnvio);
+
+  ShowMessage('Selecione o Xml de Cancelamento de Retorno');
+  dlgOpen.Execute;
+  aXmlCanceladoRetorno := dlgOpen.FileName;
+  mmXmlCanceladoRetorno.Lines.LoadFromFile(aXmlCanceladoRetorno);
+
+  mmXml.text := spdNFe.GerarXMLCancelamentoDestinatario(edtid.Text,aXmlCanceladoEnvio, aXmlCanceladoRetorno, '');
+end;
+
+procedure TDemo_NFe_Form.btCancelarNotaClick(Sender: TObject);
+var
+  _Retorno, _Justificativa: string;
+begin
+  InputQuery('Cancelamento de NF-e', 'Informe a justificativa', _Justificativa);
+  if Length(_Justificativa) >= 15 then
+  begin
+    try
+      _Retorno := spdnfe.CancelarNFeEvento(
+        edtId.Text,
+        edtNumProt.Text,
+        _Justificativa,
+        FormatDateTime('yyyy-mm-dd"T"hh:nn:ss', Now),
+        1,
+        '-03:00');
+      mmXML.Text := _Retorno;
+    except
+      on E: Exception do
+      begin
+        ShowMessage(E.Message);
+      end;
+    end;
+  end
+  else
+    Application.MessageBox('Necessário informar justificativa com ao menos 15 caracteres', 'Atenção', 0 + 24);
 end;
 
 end.

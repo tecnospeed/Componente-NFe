@@ -1,0 +1,13 @@
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\bin\Debug\DemoNFeCSharp.exe.config
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\bin\Debug\DemoNFeCSharp.exe
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\bin\Debug\DemoNFeCSharp.pdb
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\DemoNFeCSharp.csprojAssemblyReference.cache
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\Interop.NFeDataSetX.dll
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\Interop.NFeX.dll
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\DemoNFeCSharp.csproj.ResolveComReference.cache
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\DemoNFeCSharp.Form1.resources
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\DemoNFeCSharp.Properties.Resources.resources
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\DemoNFeCSharp.csproj.GenerateResource.cache
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\DemoNFeCSharp.csproj.CoreCompileInputs.cache
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\DemoNFeCSharp.exe
+D:\Work\Demos\CSharp\NFe\DemoNFeCSharp\obj\Debug\DemoNFeCSharp.pdb

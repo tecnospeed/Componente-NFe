@@ -1,0 +1,17 @@
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\bin\Debug\NFeVBNet.exe.config
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\bin\Debug\NFeVBNet.exe
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\bin\Debug\NFeVBNet.pdb
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\bin\Debug\NFeVBNet.xml
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\NFeVBNet.vbprojAssemblyReference.cache
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\NFeVBNet.Resources.resources
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\NFeVBNet.vbproj.GenerateResource.cache
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\NFeVBNet.vbproj.CoreCompileInputs.cache
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\NFeVBNet.exe
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\NFeVBNet.xml
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\NFeVBNet.pdb
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\Interop.NFeDataSetX.dll
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\Interop.NFeX.dll
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\NFeVBNet.vbproj.ResolveComReference.cache
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\NFeVBNet.frmPrincipal.resources
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\Interop.AccessibilityCplAdminLib.dll
+D:\Projetos\NFe\demonstracoes\vbNET\NFeVBNet\obj\Debug\Interop.Shell32.dll
