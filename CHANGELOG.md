@@ -1,4 +1,28 @@
-﻿## [12.1.68.6311]
+﻿## [12.1.69.6331]
+ 
+ **Novidades**
+
+* DC-2182 - Compatibilizado o validador NFe com a NT 2020/006 v1.00.
+
+* DC-2180 - Compatibilizado o componente com a NT 2020/006 v1.00.
+** Maiores informações sobre a NT https://blog.tecnospeed.com.br/nota-tecnica-2020-006-da-nfe-e-nfce/
+** Para quem preenche a nota via Dataset ou TX2, os campos adicionados foram indIntermed_B25c, CNPJ_YB02 e idCadIntTran_YB03.
+
+* DC-1679 - Compatibilizado o componente com a NT 2020/007 v1.00a.
+** Maiores informações sobre a NT https://blog.tecnospeed.com.br/nota-tecnica-2020-007-da-nfe/
+** Documentações:
+  https://atendimento.tecnospeed.com.br/hc/pt-br/articles/1500002702742
+  https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360062979293
+
+* DC-2313 - Compatibilizado o validador NFe com a NT 2020/006 v1.10.
+
+**Correções**
+
+* DC-1845 - Acerto da regra C18-14 para considerar exceção a critério da UF.
+* DC-2028 - Correção do erro de comparação com casas decimais da regra GY10-10.
+* DC-2153 - Desativada a regra de validação N23d-10 devido a funcionar por critério da UF.
+
+ ## [12.1.68.6311]
 
 **Correções**
 
