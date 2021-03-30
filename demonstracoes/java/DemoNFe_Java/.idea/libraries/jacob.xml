@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jacob">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../jacob-1.18/jacob.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

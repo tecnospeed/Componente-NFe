@@ -36,7 +36,7 @@ public class Principal extends JFrame{
     private JTextField txtRecibo;
     private JTextField txtChave;
     private JTextField txtProtocolo;
-    private JButton btnPreverDanfe;
+    private JButton btnImprimirDanfe;
 
     ActiveXComponent spdNFe = new ActiveXComponent("NFeX.spdNFeX");
     Configuracoes configurar = new Configuracoes();
@@ -44,7 +44,7 @@ public class Principal extends JFrame{
     XML DataSet = new XML();
 
     public Principal() {
-        super("Hello World");
+        super("Demonstração NFe");
         setContentPane(rootPanel);
 
         pack();
@@ -52,6 +52,11 @@ public class Principal extends JFrame{
 
         txtRetorno.setLineWrap(true);
         txtRetorno.setEditable(true);
+
+//====================== Configurar a SH ===================================================================================
+        //Dispatch.put(spdNFe, "DiagnosticMode", "0");
+        Dispatch.call(spdNFe, "ConfigurarSoftwareHouse", "08187168000160", "");
+
 //====================== Listar Certificados ===============================================================================
 
         certificados = Dispatch.call(spdNFe, "ListarCertificados", "|").toString().split("\\|");
@@ -233,13 +238,16 @@ public class Principal extends JFrame{
         });
 
         setVisible(true);
-        btnPreverDanfe.addActionListener(new ActionListener() {
+        btnImprimirDanfe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //O PreverDanfe não funcionou como os demais comandos, por ele abrir uma tela a chamada provavelmente será diferente
-                Dispatch.call(spdNFe, "PreverDanfe", txtRetorno.getText(), Dispatch.call(spdNFe, "ModeloRetrato"));
+                Dispatch.call(spdNFe, "ImprimirDanfe", "1", txtRetorno.getText(), "", "");
             }
         });
     }
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Principal">
-  <grid id="27dc6" binding="rootPanel" layout-manager="GridLayoutManager" row-count="10" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="50" left="50" bottom="50" right="50"/>
+  <grid id="27dc6" binding="rootPanel" layout-manager="GridLayoutManager" row-count="11" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="20" left="35" bottom="50" right="50"/>
     <constraints>
-      <xy x="20" y="20" width="1680" height="720"/>
+      <xy x="7" y="20" width="1280" height="720"/>
     </constraints>
     <properties>
       <enabled value="false"/>
@@ -15,119 +15,21 @@
     </clientProperties>
     <border type="line" title="Demo NF-e" title-justification="2"/>
     <children>
-      <component id="b08cd" class="javax.swing.JComboBox" binding="cbCertificados">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="704e8" class="javax.swing.JButton" binding="btnConsultarRecibo">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="5. Consultar Recibo"/>
-        </properties>
-      </component>
-      <component id="35905" class="javax.swing.JButton" binding="btnEmail">
-        <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="7. Enviar Email"/>
-        </properties>
-      </component>
-      <component id="66c3" class="javax.swing.JButton" binding="btnAssinar">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="3. Assinar XML"/>
-        </properties>
-      </component>
-      <component id="96bbb" class="javax.swing.JTextField" binding="txtRecibo">
-        <constraints>
-          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="dcec0" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Número do Recibo"/>
-        </properties>
-      </component>
-      <component id="7050e" class="javax.swing.JTextField" binding="txtChave">
-        <constraints>
-          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="3f311" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Chave da Nota"/>
-        </properties>
-      </component>
-      <component id="edd3a" class="javax.swing.JTextField" binding="txtProtocolo">
-        <constraints>
-          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="b050" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Protocolo"/>
-        </properties>
-      </component>
-      <component id="407d0" class="javax.swing.JButton" binding="btnGerarPDFCAn">
-        <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="9. Gerar PDF Cancelado"/>
-        </properties>
-      </component>
       <component id="9e17e" class="javax.swing.JButton" binding="btnCancelar">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="154" height="30"/>
+          </grid>
         </constraints>
         <properties>
           <text value="8. Cancelar NF-e"/>
         </properties>
       </component>
-      <component id="bb2b3" class="javax.swing.JButton" binding="btnEnviar">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="4. Enviar XML"/>
-        </properties>
-      </component>
-      <component id="725a3" class="javax.swing.JButton" binding="btnGerarPDF">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="6. Gerar PDF do Danfe"/>
-        </properties>
-      </component>
       <component id="96899" class="javax.swing.JButton" binding="btnConfigurar">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="154" height="30"/>
+          </grid>
         </constraints>
         <properties>
           <label value="1. Configurar"/>
@@ -137,9 +39,128 @@
           <html.disable class="java.lang.Boolean" value="true"/>
         </clientProperties>
       </component>
+      <component id="66c3" class="javax.swing.JButton" binding="btnAssinar">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="154" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="3. Assinar XML"/>
+        </properties>
+      </component>
+      <component id="704e8" class="javax.swing.JButton" binding="btnConsultarRecibo">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="5. Consultar Recibo"/>
+        </properties>
+      </component>
+      <component id="407d0" class="javax.swing.JButton" binding="btnGerarPDFCAn">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="9. Gerar PDF Cancelado"/>
+        </properties>
+      </component>
+      <component id="7050e" class="javax.swing.JTextField" binding="txtChave">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="300" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="96bbb" class="javax.swing.JTextField" binding="txtRecibo">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="300" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="b050" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="5" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="154" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Protocolo"/>
+        </properties>
+      </component>
+      <component id="3f311" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="5" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="154" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Chave da Nota"/>
+        </properties>
+      </component>
+      <component id="dcec0" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="5" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="154" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Número do Recibo"/>
+        </properties>
+      </component>
+      <component id="edd3a" class="javax.swing.JTextField" binding="txtProtocolo">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="300" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="2a596" class="javax.swing.JTextArea" binding="txtRetorno">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="2" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="300"/>
+          </grid>
+        </constraints>
+        <properties>
+          <lineWrap value="true"/>
+        </properties>
+      </component>
+      <component id="b08cd" class="javax.swing.JComboBox" binding="cbCertificados">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="1200" height="-1"/>
+            <maximum-size width="1300" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <editable value="false"/>
+        </properties>
+      </component>
+      <component id="a7a6f" class="javax.swing.JButton" binding="btnImprimirDanfe">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=" 6.5 Imprimir Danfe"/>
+        </properties>
+      </component>
+      <component id="b6bcf" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="154" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Certificado"/>
+        </properties>
+      </component>
       <component id="bb476" class="javax.swing.JButton" binding="btnGerarXML">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <inheritsPopupMenu value="true"/>
@@ -147,22 +168,30 @@
           <text value="2. Gerar XML"/>
         </properties>
       </component>
-      <component id="a7a6f" class="javax.swing.JButton" binding="btnPreverDanfe">
+      <component id="bb2b3" class="javax.swing.JButton" binding="btnEnviar">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="2.5. Prever Danfe"/>
+          <text value="4. Enviar XML"/>
         </properties>
       </component>
-      <component id="ec775" class="javax.swing.JTextArea" binding="txtRetorno">
+      <component id="725a3" class="javax.swing.JButton" binding="btnGerarPDF">
         <constraints>
-          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="154" height="30"/>
           </grid>
         </constraints>
         <properties>
-          <lineWrap value="true"/>
+          <text value="6. Gerar PDF do Danfe"/>
+        </properties>
+      </component>
+      <component id="35905" class="javax.swing.JButton" binding="btnEmail">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="7. Enviar Email"/>
         </properties>
       </component>
     </children>

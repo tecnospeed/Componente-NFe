@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Demo - NFe:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Demo___NFe_jar</output-path>
+    <root id="archive" name="Demo - NFe.jar">
+      <element id="module-output" name="Demo - NFe" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/jacob-1.18/jacob.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

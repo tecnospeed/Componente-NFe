@@ -44,7 +44,8 @@ public class XML {
         Dispatch.call(spdNFeDataset, "SetCampo", "tpAmb_B24=2");
         Dispatch.call(spdNFeDataset, "SetCampo", "finNFe_B25=1");
         Dispatch.call(spdNFeDataset, "SetCampo", "indFinal_B25a=1");
-        Dispatch.call(spdNFeDataset, "SetCampo", "indPres_B25b=1");
+        Dispatch.call(spdNFeDataset, "SetCampo", "indPres_B25b=2");
+        Dispatch.call(spdNFeDataset, "SetCampo", "indIntermed_B25c=1");
         Dispatch.call(spdNFeDataset, "SetCampo", "procEmi_B26=0");
         Dispatch.call(spdNFeDataset, "SetCampo", "verProc_B27=TestesTecnoJava");
     }
@@ -232,7 +233,12 @@ public class XML {
         Dispatch.call(spdNFeDataset, "SetCampo", "fone_ZD06=41999999999");
     }
 
-     public String GerarXML(ActiveXComponent spdNFe) {
+    private void DadosIntermediadorTransacao(ActiveXComponent spdNFeDataset) {
+        Dispatch.call(spdNFeDataset, "SetCampo", "CNPJ_YB02=08187168000160");
+        Dispatch.call(spdNFeDataset, "SetCampo", "idCadIntTran_YB03=informacao do campo idCadIntTran_YB03 por DatasetJava");
+    }
+
+    public String GerarXML(ActiveXComponent spdNFe) {
         ActiveXComponent spdNFeDataSet = new ActiveXComponent("NFeDataSetX.spdNFeDataSetX");
         String diretorio_xml = Dispatch.call(spdNFe, "DiretorioTemplates") + "Conversor\\NFeDataSets.xml";
         Dispatch.put(spdNFeDataSet, "VersaoEsquema", "pl_009");
@@ -248,6 +254,7 @@ public class XML {
             DadosDoTransporte(spdNFeDataSet);
             DadosPagamento(spdNFeDataSet);
             DadosResponsavelTecnico(spdNFeDataSet);
+            DadosIntermediadorTransacao(spdNFeDataSet);
             //System.out.println(Dispatch.call(spdNFeDataSet, "GetCampo", "pCOFINS_S08").getClass().getName());
             spdNFeDataSet.invoke("Salvar");
         }
