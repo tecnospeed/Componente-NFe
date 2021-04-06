@@ -1,4 +1,14 @@
-﻿## [12.1.69.6331]
+## [12.1.70.6333]
+
+ **Correções**
+
+* DC-2434: Correção na impressão dos dados das faturas das DANFEs, ao imprimir em lote.
+* DC-2506: Correção na forma de suportar escape de caracteres via TX2.
+* DC-2207: Correção das regras N17c-10 e N27d-10 em relação as casas decimais.
+* DC-2490: Correção de erros na impressão de CCe ao usar XML com encoding UTF-8 com BOM (Byte Order Mark).
+* DC-2576: Correção da regra BA02-30, para validar a chave de acesso referenciada com CNPJ/CPF inválido de acordo com a série utilizada.
+
+## [12.1.69.6331]
  
  **Novidades**
 
