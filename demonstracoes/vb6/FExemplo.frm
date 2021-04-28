@@ -1086,7 +1086,7 @@ Begin VB.Form Form1
          Style           =   2  'Dropdown List
          TabIndex        =   3
          Top             =   480
-         Width           =   10095
+         Width           =   11295
       End
       Begin VB.Label Label12 
          Alignment       =   2  'Center
@@ -1146,19 +1146,6 @@ Private Declare Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivat
 'Função para gravar arquivos INI usando API windows
 Private Declare Function WritePrivateProfileString Lib "kernel32" Alias "WritePrivateProfileStringA" (ByVal Secao As String, ByVal parametro As Any, ByVal valor As Any, ByVal arquivo As String) As Long
 
-Function get_ini(seção$, chave$) As String
-  arquiv$ = ArqIni
-  Returns$ = Space$(128)
-  X% = GetPrivateProfileString(ByVal seção$, ByVal chave$, _
-  "", Returns$, Len(Returns$), ByVal arquiv$)
-  get_ini = Left$(Returns$, X%)
-End Function
-
-Function write_ini(ByVal section$, ByVal chv$, ByVal variavel$) As String
-    arquiv$ = ArqIni
-    iRet = WritePrivateProfileString(ByVal section$, ByVal chv$, ByVal variavel$, ByVal arquiv$)
-End Function
-
 Private Sub SaveConfigNfeINI()
 
 End Sub
@@ -1172,7 +1159,7 @@ Sub SetConfigNFe()
         
     spdNFe.NomeCertificado = ListCertificado.Text 'Seta Nome do Certificado Selecionado'
     spdNFe.UF = edUF.Text 'Seta o Estado ao componente'
-    spdNFe.Ambiente = akHomologacao 'Seta Ambiente de Homologacao'
+    'spdNFe.Ambiente = akHomologacao 'Seta Ambiente de Homologacao'
     spdNFe.DiretorioLog = "Log\" 'Seta Diretório onde será gravado Logs do Componente
 
     spdNFe.VersaoManual = cbVersao.Text
@@ -1338,8 +1325,8 @@ End Sub
 
 'INformações sobre a NFe
 Private Sub DadosDoNFe()
-  spdNFeDataSet.SetCampo ("Id_A03=")                          'Calcula Automático. Essa linha é desnecessária
-  spdNFeDataSet.SetCampo ("cUF_B02=35")                       'Codigo da UF para o estado de Parana'
+  spdNFeDataSet.SetCampo ("Id_A03=0")                          'Calcula Automático. Essa linha é desnecessária
+  spdNFeDataSet.SetCampo ("cUF_B02=41")                       'Codigo da UF para o estado de Parana'
   spdNFeDataSet.SetCampo ("cNF_B03=04640327")                'Código Interno do Sistema que está integrando com a NFe
   spdNFeDataSet.SetCampo ("natOp_B04=VENDA MERC.ADQ.REC.TERC") 'Descrição da(s) CFOP(s) envolvidas nessa NFe
   If (spdNFe.VersaoManual = "5.0a") Then
@@ -1347,29 +1334,29 @@ Private Sub DadosDoNFe()
   End If
   spdNFeDataSet.SetCampo ("mod_B06=55")                       'Código do Modelo de Documento Fiscal
   spdNFeDataSet.SetCampo ("serie_B07=121")                      'S érie do Documento
-  spdNFeDataSet.SetCampo ("CRT_C21=1")
+  spdNFeDataSet.SetCampo ("CRT_C21=3")
   
   'Rnd(100) ->Randômico até 1000
   spdNFeDataSet.SetCampo ("nNF_B08=" & Int((100000 * Rnd * 3.14 * Rnd) + 1)) 'Número da Nota Fiscal
   If (spdNFe.VersaoManual = "6.0") Then
   ' versao manual 6.0
-    spdNFeDataSet.SetCampo ("dhEmi_B09=" & Format(Now(), "yyyy-mm-ddThh:mm:ss") & "-03:00")
+    spdNFeDataSet.SetCampo ("dhEmi_B09=2018-05-16T15:34:01-03:00")
     'Data de Emissão da Nota Fiscal
-    spdNFeDataSet.SetCampo ("dhSaiEnt_B10=" & Format(Now(), "yyyy-mm-ddThh:mm:ss") & "-03:00")
+    spdNFeDataSet.SetCampo ("dhSaiEnt_B10=2018-05-16T15:34:01-03:00")
   ElseIf (spdNFe.VersaoManual = "5.0a") Then
     ' versao manual 5.0a
-    spdNFeDataSet.SetCampo ("dhEmi_B09=" & Format(Now(), "yyyy-mm-ddThh:mm:ss") & "-03:00")
+    spdNFeDataSet.SetCampo ("dhEmi_B09=2018-05-16T15:34:01-03:00")
     'Data de Emissão da Nota Fiscal
-    spdNFeDataSet.SetCampo ("dhSaiEnt_B10=" & Format(Now(), "yyyy-mm-ddThh:mm:ss") & "-03:00")
+    spdNFeDataSet.SetCampo ("dhSaiEnt_B10=2018-05-16T15:34:01-03:00")
   Else
     ' versao manual 4.0
-    spdNFeDataSet.SetCampo ("dEmi_B09=" & Format(Now(), "yyyy-mm-ddThh:mm:ss") & "-03:00")             'Data de Emissão da Nota Fiscal
-    spdNFeDataSet.SetCampo ("dSaiEnt_B10=" & Format(Now(), "yyyy-mm-ddThh:mm:ss") & "-03:00")
+    spdNFeDataSet.SetCampo ("dEmi_B09=2018-05-16")             'Data de Emissão da Nota Fiscal
+    spdNFeDataSet.SetCampo ("dSaiEnt_B10=2018-05-16")
   End If
 
   spdNFeDataSet.SetCampo ("tpNF_B11=1")                      'Tipo de Documento Fiscal (0-Entrada, 1-Saída)
-  spdNFeDataSet.SetCampo ("idDest_B11a=1")
-  spdNFeDataSet.SetCampo ("cMunFG_B12=3515004")              'Código do Município, conforme Tabela do IBGE
+  spdNFeDataSet.SetCampo ("IDDEST_B11A=2")
+  spdNFeDataSet.SetCampo ("cMunFG_B12=4115200")              'Código do Município, conforme Tabela do IBGE
   spdNFeDataSet.SetCampo ("tpImp_B21=1")                     'Tipo de Impressão da Danfe (1- Retrato , 2-Paisagem)
   spdNFeDataSet.SetCampo ("tpEmis_B22=1")                    'Forma de Emissão da NFe (1-Normal, 2-Contigencia)
                'Calcula Automatico - Linha desnecessária já que o componente calcula o Dígito Verificador automaticamente e coloca no devido campo
@@ -1394,65 +1381,58 @@ End Sub
 Private Sub DadosDoEmitente()
 
   spdNFeDataSet.SetCampo ("CNPJ_C02=" & edCNPJ.Text)                ' CNPJ do Emitente
-  spdNFeDataSet.SetCampo ("xNome_C03=TJM COMERCIO DE PEÇAS ELETRICAS E SERVICOS LTDA")              ' Razao Social ou Nome do Emitente
-  spdNFeDataSet.SetCampo ("xFant_C04=EVERAUTO")                   ' Nome Fantasia do Emitente
-  spdNFeDataSet.SetCampo ("xLgr_C06=RUA ALEXANDRINA BASSITH")                 ' Logradouro do Emitente
-  spdNFeDataSet.SetCampo ("nro_C07=55")                      ' Numero do Logradouro do Emitente
-  spdNFeDataSet.SetCampo ("xBairro_C09=VILA MEI")               ' Bairro do Emitente
-  spdNFeDataSet.SetCampo ("cMun_C10=3515004")                 ' Código da Cidade do Emitente (Tabela do IBGE)
-  spdNFeDataSet.SetCampo ("xMun_C11=Embu das Artes")                ' Nome da Cidade do Emitente
+  spdNFeDataSet.SetCampo ("xNome_C03=ACME LTDA")              ' Razao Social ou Nome do Emitente
+  spdNFeDataSet.SetCampo ("xFant_C04=ACME")                   ' Nome Fantasia do Emitente
+  spdNFeDataSet.SetCampo ("xLgr_C06=RUA TAL")                 ' Logradouro do Emitente
+  spdNFeDataSet.SetCampo ("nro_C07=123")                      ' Numero do Logradouro do Emitente
+  spdNFeDataSet.SetCampo ("xBairro_C09=CENTRO")               ' Bairro do Emitente
+  spdNFeDataSet.SetCampo ("cMun_C10=4115200")                 ' Código da Cidade do Emitente (Tabela do IBGE)
+  spdNFeDataSet.SetCampo ("xMun_C11=Maringa")                ' Nome da Cidade do Emitente
   spdNFeDataSet.SetCampo ("UF_C12=" & edUF.Text)                   ' SIGLA do Estado do Emitente (Tabela do IBGE)
-  spdNFeDataSet.SetCampo ("CEP_C13=06803050")                 ' Cep do Emitente
+  spdNFeDataSet.SetCampo ("CEP_C13=87500000")                 ' Cep do Emitente
   spdNFeDataSet.SetCampo ("cPais_C14=1058")                   ' Código do País do Emitente (Tabela BACEN)
   spdNFeDataSet.SetCampo ("xPais_C15=BRASIL")                 ' Nome do País do Emitente
-  spdNFeDataSet.SetCampo ("fone_C16=1147040920")              ' Fone do Emitente
-  spdNFeDataSet.SetCampo ("IE_C17=298319536111")              ' Inscrição Estadual do Emitente
+  spdNFeDataSet.SetCampo ("fone_C16=4432222222")              ' Fone do Emitente
+  spdNFeDataSet.SetCampo ("IE_C17=9044016688")              ' Inscrição Estadual do Emitente
   spdNFeDataSet.SetCampo ("IEST_C18=")            ' Inscrição Estadual do Substituto Tributário Emitente
 End Sub
 
 ' Informações do Destinatário da NFe
 Private Sub DadosDoDestinatario()
-    If (edtCNPJ.Text = "") Then
-        spdNFeDataSet.SetCampo ("CNPJ_E02=10336918000160")          ' CNPJ do Destinatário
-    Else
-        spdNFeDataSet.SetCampo ("CNPJ_E02=" & edCNPJ.Text)          ' CNPJ do Destinatário
-    End If
-  If (spdNFe.Ambiente = akProducao) Then
-    spdNFeDataSet.SetCampo ("xNome_E04=ECO LIX AMBIENTAL - TECNOLOGIA E LOCACAO EIRELI")       ' Razao social ou Nome do Destinatário
-  Else
-    spdNFeDataSet.SetCampo ("xNome_E04=NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL")       ' Razao social ou Nome do Destinatário Em Homologação
-  End If
-  spdNFeDataSet.SetCampo ("xLgr_E06=RUA DOS MANACAS")           ' Logradouro do Destinatario
-  spdNFeDataSet.SetCampo ("nro_E07=436")                      ' Numero do Logradouro do Destinatario
-  spdNFeDataSet.SetCampo ("xBairro_E09=JARDIM DA GLORIA")               ' Bairro do Destinatario
-  spdNFeDataSet.SetCampo ("cMun_E10=3513009")                 ' Código do Município do Destinatário (Tabela IBGE)
-  spdNFeDataSet.SetCampo ("xMun_E11=COTIA")                ' Nome da Cidade do Destinatário
-  spdNFeDataSet.SetCampo ("UF_E12=SP")                        ' Sigla do Estado do Destinatário
-  spdNFeDataSet.SetCampo ("CEP_E13=06711500")                 ' Cep do Destinatário
+
+  spdNFeDataSet.SetCampo ("CNPJ_E02=" & edCNPJ.Text)          ' CNPJ do Destinatário
+  spdNFeDataSet.SetCampo ("xNome_E04=NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL")       ' Razao social ou Nome do Destinatário
+  spdNFeDataSet.SetCampo ("xLgr_E06=RUA DO CENTRO")           ' Logradouro do Destinatario
+  spdNFeDataSet.SetCampo ("nro_E07=897")                      ' Numero do Logradouro do Destinatario
+  spdNFeDataSet.SetCampo ("xBairro_E09=CENTRO")               ' Bairro do Destinatario
+  spdNFeDataSet.SetCampo ("cMun_E10=4115200")                 ' Código do Município do Destinatário (Tabela IBGE)
+  spdNFeDataSet.SetCampo ("xMun_E11=Maringa")                ' Nome da Cidade do Destinatário
+  spdNFeDataSet.SetCampo ("UF_E12=PR")                        ' Sigla do Estado do Destinatário
+  spdNFeDataSet.SetCampo ("CEP_E13=87500000")                 ' Cep do Destinatário
   spdNFeDataSet.SetCampo ("cPais_E14=1058")                   ' Código do Pais do Destinatário (Tabela do BACEN)
   spdNFeDataSet.SetCampo ("xPais_E15=BRASIL")                 ' Nome do País do Destinatário
-  spdNFeDataSet.SetCampo ("fone_E16=")               ' Fone do Destinatário
-  spdNFeDataSet.SetCampo ("INDIEDEST_E16A=2")
-  spdNFeDataSet.SetCampo ("IE_E17=")              ' Inscrição Estadual do Destinatário
+  spdNFeDataSet.SetCampo ("fone_E16=445555555")               ' Fone do Destinatário
+  spdNFeDataSet.SetCampo ("INDIEDEST_E16A=1")
+  spdNFeDataSet.SetCampo ("IE_E17=9044016688")              ' Inscrição Estadual do Destinatário
 End Sub
 ' Informações Referentes aos ITens da NFe
 Private Sub DadosDoItem(ByVal aNumItem As String)
                                                                  
   spdNFeDataSet.SetCampo ("nItem_H02=" & aNumItem)            ' Número do Item da NFe (1 até 990)'Dados do Produto Vend Subido
   spdNFeDataSet.SetCampo ("vTotTrib_M02=0")
-  spdNFeDataSet.SetCampo ("cProd_I02=MTP RECON")                   'Código do PRoduto ou Serviço
-  spdNFeDataSet.SetCampo ("cEAN_I03=SEM GTIN")           ' EAN do Produto
-  spdNFeDataSet.SetCampo ("xProd_I04=MOTOR DE PARTIDA RECON")                  ' Descrição do PRoduto
-  spdNFeDataSet.SetCampo ("NCM_I05=85114000")                 ' Código do NCM - informar de acordo com o Tabela oficial do NCM
-  spdNFeDataSet.SetCampo ("CFOP_I08=5405")                    ' CFOP incidente neste Item da NF
-  spdNFeDataSet.SetCampo ("uCom_I09=UNIDAD")                      ' Unidade de Medida do Item
+  spdNFeDataSet.SetCampo ("cProd_I02=0999")                   'Código do PRoduto ou Serviço
+  spdNFeDataSet.SetCampo ("cEAN_I03=7896806500263")           ' EAN do Produto
+  spdNFeDataSet.SetCampo ("xProd_I04=MELAO")                  ' Descrição do PRoduto
+  spdNFeDataSet.SetCampo ("NCM_I05=11081200")                 ' Código do NCM - informar de acordo com o Tabela oficial do NCM
+  spdNFeDataSet.SetCampo ("CFOP_I08=6102")                    ' CFOP incidente neste Item da NF
+  spdNFeDataSet.SetCampo ("uCom_I09=CX")                      ' Unidade de Medida do Item
   spdNFeDataSet.SetCampo ("qCom_I10=1.0000")                       ' Quantidade Comercializada do Item
-  spdNFeDataSet.SetCampo ("vUnCom_I10a=450.0000")               ' Valor Comercializado do Item
-  spdNFeDataSet.SetCampo ("vProd_I11=450.00")                   ' Valor Total Bruto do Item
-  spdNFeDataSet.SetCampo ("cEANTrib_I12=SEM GTIN")       ' EAN Tributável do Item
-  spdNFeDataSet.SetCampo ("uTrib_I13=UNIDAD")                     ' Unidade de Medida Tributável do Item
+  spdNFeDataSet.SetCampo ("vUnCom_I10a=0.0100")               ' Valor Comercializado do Item
+  spdNFeDataSet.SetCampo ("vProd_I11=0.01")                   ' Valor Total Bruto do Item
+  spdNFeDataSet.SetCampo ("cEANTrib_I12=7898106035513")       ' EAN Tributável do Item
+  spdNFeDataSet.SetCampo ("uTrib_I13=CX")                     ' Unidade de Medida Tributável do Item
   spdNFeDataSet.SetCampo ("qTrib_I14=1.0000")                      ' Quantidade Tributável do Item
-  spdNFeDataSet.SetCampo ("vUnTrib_I14a=450.0000")              ' Valor Tributável do Item
+  spdNFeDataSet.SetCampo ("vUnTrib_I14a=0.0100")              ' Valor Tributável do Item
   
   If (spdNFe.VersaoManual = "6.0") Then
     spdNFeDataSet.SetCampo ("indEscala_I05d=S")                 ' Indicador de Escala Relevante (S ou N)
@@ -1627,6 +1607,7 @@ End Sub
 Private Sub DadosCobranca()
   Dim a As String
   Dim mes As String
+  Dim i As Integer
   mes = 9
   
   ' Dados da Fatura '
@@ -1657,7 +1638,7 @@ End Sub
 
 Private Sub btnXMLDataset_Click()
     Dim i As Integer
-    Dim a, b As String
+    Dim a As String
 
     'Seta o Layout de conversão dos dados em memória no DataSet para XML de acordo com a
     'Versão setada no componente NFe
@@ -1703,8 +1684,6 @@ Private Sub btnXMLDataset_Click()
     
     'Copia a Chave da NFe para utilizar em outros métodos
     edIDNfe.Text = Mid$(memoRetorno.Text, InStrRev(memoRetorno.Text, "infNFe Id=") + 14, 44)
-    
-    b = spdNFe.PreverDanfe(memoRetorno.Text, "")
 End Sub
 
 Private Sub btnXMLEnvioDest_Click()
@@ -2035,9 +2014,9 @@ Private Sub btnDistribuicaoDFe_Click()
 End Sub
 
 Private Sub Form_Initialize()
-
   'Instancia o Objeto responsável pela interação com servidores da Receita'
   Set spdNFe = New NFeX.spdNFeX
+  
   Set spdNFeDataSet = New NFeDataSetX.spdNFeDataSetX
 
   ' Método ConfigurarSoftwareHouse
@@ -2060,7 +2039,9 @@ Private Sub Form_Initialize()
   spdNFe.ConfigINI = App.Path + "\nfeConfig.ini"
   ArqIni = App.Path + "\nfeConfig.ini"
   spdNFe.LoadConfig (ArqIni) 'Esse metodo faz com que o Componente carregue as configuracoes do INI para as devidas propriedades
-  spdNFe.Ambiente = akHomologacao
+  'spdNFe.Ambiente = akHomologacao
+  spdNFe.HttpLibs = "wininet, sbb"
+  
 
   cdlgModelo.DialogTitle = "Abrir"
   cdlgModelo.Filter = "(*.rtm)|*.rtm"
@@ -2073,7 +2054,6 @@ Private Sub Form_Initialize()
   edUsuarioEmail.Text = spdNFe.EmailUsuario
   edSenhaEmail.Text = spdNFe.EmailSenha
   edArqServHomol.Text = spdNFe.ArquivoServidoresHom
-  edtModeloRtm.Text = get_ini("DANFE", "MODELORTM")
   
   If spdNFe.NomeCertificado <> "" Then
      ListCertificado.List(0) = spdNFe.NomeCertificado
