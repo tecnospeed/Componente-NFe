@@ -1,3 +1,15 @@
+## [12.1.71.6338]
+
+ **Novidades**
+
+* DC-2565: Compatibilizado componente com NT 2020/006 v1.20. Documentação: https://blog.tecnospeed.com.br/nota-tecnica-2020-006-da-nfe-e-nfce/
+* DC-2833: Ajustes na geração do XML Destinatário para gravar com encoding UTF-8 sem BOM (Byte-Order-Mark).
+* DC-2919: Ajustes na geração do XML Destinatário de CCe para gravar com encoding UTF-8 sem BOM (Byte-Order-Mark).
+
+**Correções**
+
+* DC-2792: Desfazer alteração que impedia gerar ICMSST para o CE, voltando a ficar de acordo com a NT 2016.002 v.1.30 - Pág. 48.
+ 
 ## [12.1.70.6333]
 
  **Correções**
