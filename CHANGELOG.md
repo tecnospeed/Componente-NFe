@@ -8,7 +8,7 @@
 
 **Correções**
 
-* DC-2792: Desfazer alteração que impedia gerar ICMSST para o CE, voltando a ficar de acordo com a NT 2016.002 v.1.30 - Pág. 48.
+* DC-2792: Desfeita a alteração que impedia gerar ICMSST para o CE, voltando a ficar de acordo com a NT 2016.002 v.1.30 - Pág. 48.
  
 ## [12.1.70.6333]
 
