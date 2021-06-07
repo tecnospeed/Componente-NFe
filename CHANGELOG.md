@@ -8,9 +8,9 @@
   Documentação: https://blog.tecnospeed.com.br/nota-tecnica-2020-006-da-nfe-e-nfce/
 * DC-2435 - Implementado nos métodos do evento Comprovante de Entrega da NF-e.
   Documentações:
-    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402106952727
-    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402107135383
-    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402114989079
+    ** https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402106952727
+    ** https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402107135383
+    ** https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402114989079
 
 * DC-3060 - Corrigido o namespace ID="IDXXXXXX" do xml destinatário da NFe na tag InfProt.
 
