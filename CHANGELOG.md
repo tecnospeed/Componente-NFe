@@ -1,3 +1,19 @@
+## [12.1.72.6341]
+
+ **Novidades**
+* DC-2425: Correção de erro ao exportar PDF de CCe informando um arquivo XML de CCe com acentos no caminho.
+* DC-2567: Compatibilizado o validador com a NT 2020/006 v1.20.
+* DC-2483 - Ajuste na coluna do NCM dos itens para imprimir o NCM SH quando o campo EXTIPI estiver preenchido.
+* DC-2890 - Compatibilizado com a Nota Técnica 2020.006 v1.20.
+  Documentação: https://blog.tecnospeed.com.br/nota-tecnica-2020-006-da-nfe-e-nfce/
+* DC-2435 - Implementado nos métodos do evento Comprovante de Entrega da NF-e.
+  Documentações:
+    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402106952727
+    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402107135383
+    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402114989079
+
+* DC-3060 - Corrigido o namespace ID="IDXXXXXX" do xml destinatário da NFe na tag InfProt.
+
 ## [12.1.71.6338]
 
  **Novidades**
