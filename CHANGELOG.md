@@ -1,3 +1,26 @@
+## [12.1.73.6346]
+
+ **Novidades**
+* DC-2567: Compatibilizado o validador com a Nota Técnica 2020.006 v1.20.
+* DC-2890: Compatibilizado com a Nota Técnica 2020.006 v1.20.
+    Documentação: https://blog.tecnospeed.com.br/nota-tecnica-2020-006-da-nfe-e-nfce/
+* DC-2792: Desfazer alteração que impedia gerar ICMSST para o CE, voltando a ficar de acordo com a NT 2016.002 v.1.30 - Pág. 48.
+* DC-3144: Compatibilizado o componente com a Nota Técnica 2021.001 v1.00. Foram implementados os métodos do evento Comprovante de Entrega da NF-e.
+  ** Para maiores informações:
+    https://blog.tecnospeed.com.br/nota-tecnica-2021-001-da-nf-e/
+
+  ** Documentações do métodos:
+    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402106952727
+    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402107135383
+    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402114989079
+    https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402749596439
+
+ *Correções*
+ * DC-3060: Corrigido o namespace ID="IDXXXXXX" do xml destinatário da NFe na tag InfProt.
+ * DC-2955: Correção do encoding (UTF8) na geração do XML destinatário.
+ * DC-2631: Correção no encoding (UTF8) do retorno das notas destinadas pelo componente no método TratarXMLRetornoDFe.
+ * DC-2811: Validação das configurações do email no componente antes de enviar email
+
 ## [12.1.72.6341]
 
  **Novidades**
