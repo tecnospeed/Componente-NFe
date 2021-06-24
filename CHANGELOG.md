@@ -15,7 +15,7 @@
     https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402114989079
     https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4402749596439
 
- *Correções*
+ **Correções**
  * DC-3060: Corrigido o namespace ID="IDXXXXXX" do xml destinatário da NFe na tag InfProt.
  * DC-2955: Correção do encoding (UTF8) na geração do XML destinatário.
  * DC-2631: Correção no encoding (UTF8) do retorno das notas destinadas pelo componente no método TratarXMLRetornoDFe.
