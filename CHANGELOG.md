@@ -1,3 +1,18 @@
+## [12.1.74.6359]
+
+**Correções**
+
+- DC-3327: tratativa para suportar nome de certificado com caractere não reconhecido ??.
+- DC-2588: Adicionado na impressão da NFe - informações complementares - os campos peso liquido e quantidade.
+- DC-3350: Suporte para provedor HOSTGATOR no envio de e-mail - envio de e-mail configurado com TLS 1.0 1.1 e 1.2;
+- DC-3077:  Alteração da validação tag pincode quando certificado A1
+- DC-3431:  Correção para extrair header XML com todas tags presentes na rotina de exportar PDF
+- DC-2867:  Ajuste para não gerar diretórios padrões sem necessidade, quando personalizado diretórios
+
+**Novidades**
+
+- DC-3392 - Compatibilizado componente NFe com NT2020.005 v1.0, v1.10 e v1.20.
+
 ## [12.1.73.6346]
 
  **Novidades**
