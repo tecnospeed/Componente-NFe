@@ -1,3 +1,19 @@
+## [12.1.74.6385]
+## [12.1.74.6385]
+
+**Novidades**
+- DCIT-702: Atualização componente NFe Delphi Alexandria.
+- DCIT-458: novo método CalcularCodigoBarrasNFeOffline - centralização de código.
+- DCIT-103 : novo método CalcularCodigoBarrasNFeOffline.
+
+**Correções**
+- DICT-756 - Melhoria nos dados do emitente  Layout padrão - retrato.
+- DCIT-769 - Disponibilizado totalizadores de base calculo dos impostos para ser utilizado nas impressões.
+- DCIT-612 - Alterações na rotina ConsultarCadastro, para ter opção de utilizar o CadConsulta3 na vm50a.
+Correção de links das UFs que não funcionam.
+
+
+
 ## [12.1.74.6365]
 
 **Correções**
