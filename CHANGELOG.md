@@ -1,5 +1,4 @@
 ## [12.1.74.6385]
-## [12.1.74.6385]
 
 **Novidades**
 - DCIT-702: Atualização componente NFe Delphi Alexandria.
