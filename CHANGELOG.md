@@ -2,14 +2,27 @@
 
 **Novidades**
 - DCIT-702: Atualização componente NFe Delphi Alexandria.
-- DCIT-458: novo método CalcularCodigoBarrasNFeOffline - centralização de código.
-- DCIT-103 : novo método CalcularCodigoBarrasNFeOffline.
+- DCIT-458: novo método CalcularCodigoBarrasNFeOffline. 
+- DC-3210 - Ajustes no componente para que extraia mais informações do xml e possibilite personalização de danfe (.rtm)
+- DC-3293 - Disponibilizado propriedade que permite a impressão do xml resumido.
+- DC-3640 - Permitir que seja informado apenas o nome do arquivo rtm nas propriedade de impressão de DANFE.
+- DC-3662 - Compatibilizado o Validador NFe com as NTs 2020.005 v1.00, 2020.005 v1.10 e 2020.005 v1.20.
+- DCIT-458 - Novo método CalcularCodigoBarrasNFeOffline que permite a geração do código de barras da NFe offline.
+- DCIT-769 - Disponibilizado totalizadores de base calculo dos impostos para ser utilizado nas impressões.
+- DCIT-612 - Atualizar o ConsultaCadastro para a UF do ES.
+- DCIT-832 - Permitir envio de inutilização para Emissor com Cpf.
 
 **Correções**
 - DICT-756 - Melhoria nos dados do emitente  Layout padrão - retrato.
 - DCIT-769 - Disponibilizado totalizadores de base calculo dos impostos para ser utilizado nas impressões.
 - DCIT-612 - Alterações na rotina ConsultarCadastro, para ter opção de utilizar o CadConsulta3 na vm50a.
-Correção de links das UFs que não funcionam.
+    Correção de links das UFs que não funcionam.
+- DC-3612 - correção do erro indexHTML.html não foi localizado no método ShowHtml do validador.
+- DC-3730 - Correção na impressão em lote para carregar corretamente a informação da tarja cancelada para o NF-e correto.
+- DICT-756 - Melhoria na impressão dos dados do emitente, Layout retrato da DANFe.
+- DCIT-781 - Melhoria na impressão dos dados do emitente, Layout paisagem, RetratoSimplificado, RetratoVeicNovos, PaisagemMedicamento, RetratoMedicamento.
+- DCIT-136 - correção no escape caracteres das tag de descrição.
+
 
 
 
