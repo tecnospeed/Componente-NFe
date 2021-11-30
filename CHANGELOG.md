@@ -1,3 +1,15 @@
+## [12.1.74.6393]
+
+**Novidades**
+ - DCIT-565 - Nova propriedade de impressão EmailEmitente onde permite-se configurar o E-mail do Emitente no DANFE.
+ - DCIT-868 - Alteração url dos webservices de homologação do CE para as URL do webservice SVRS.
+
+**Correções**
+ - DCIT-883 - Correção na soma de totais de base de calculo quando gera separador de milhar (campos específicos de RTM)
+ - DCIT-877 - Correção para informar o DiretorioLogErro nas exceptions
+
+
+ 
 ## [12.1.74.6385]
 
 **Novidades**
