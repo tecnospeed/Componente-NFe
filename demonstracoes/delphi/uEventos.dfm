@@ -1,8 +1,8 @@
 object Eventos: TEventos
-  Left = 311
-  Top = 147
-  Width = 839
-  Height = 468
+  Left = 437
+  Top = 104
+  Width = 831
+  Height = 492
   Caption = 'Eventos'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,7 +19,7 @@ object Eventos: TEventos
     Top = 0
     Width = 809
     Height = 441
-    ActivePage = TabSheet3
+    ActivePage = TabSheet4
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Manifesta'#231#227'o'
@@ -110,8 +110,9 @@ object Eventos: TEventos
         Width = 145
         Height = 21
         ItemHeight = 13
+        ItemIndex = 1
         TabOrder = 2
-        Text = '-02:00'
+        Text = '-03:00'
         Items.Strings = (
           '-02:00'
           '-03:00'
@@ -153,9 +154,9 @@ object Eventos: TEventos
       end
       object btnEnviaManif: TButton
         Left = 672
-        Top = 80
+        Top = 72
         Width = 121
-        Height = 33
+        Height = 49
         Caption = 'Enviar Manifesta'#231#227'o'
         TabOrder = 6
         OnClick = btnEnviaManifClick
@@ -228,8 +229,9 @@ object Eventos: TEventos
         Width = 145
         Height = 21
         ItemHeight = 13
+        ItemIndex = 1
         TabOrder = 1
-        Text = '-02:00'
+        Text = '-03:00'
         Items.Strings = (
           '-02:00'
           '-03:00'
@@ -268,7 +270,7 @@ object Eventos: TEventos
       object edtIDLoteCCe: TLabeledEdit
         Left = 512
         Top = 88
-        Width = 81
+        Width = 97
         Height = 21
         EditLabel.Width = 35
         EditLabel.Height = 13
@@ -276,9 +278,9 @@ object Eventos: TEventos
         TabOrder = 5
       end
       object edtSeqCCe: TLabeledEdit
-        Left = 608
+        Left = 624
         Top = 88
-        Width = 89
+        Width = 129
         Height = 21
         EditLabel.Width = 88
         EditLabel.Height = 13
@@ -337,6 +339,21 @@ object Eventos: TEventos
         TabOrder = 10
         OnClick = btnExportPDFClick
       end
+      object btnEnviarEmailCCe: TButton
+        Left = 608
+        Top = 120
+        Width = 113
+        Height = 25
+        Caption = 'Enviar E-mail CCe'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 13
+        OnClick = btnEnviarEmailCCeClick
+      end
     end
     object TabSheet3: TTabSheet
       Caption = 'Cancelar NF-e'
@@ -344,9 +361,9 @@ object Eventos: TEventos
       object Label9: TLabel
         Left = 8
         Top = 8
-        Width = 175
+        Width = 96
         Height = 16
-        Caption = 'Cancelar NFe por Evento'
+        Caption = 'Cancelar NFe'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
@@ -363,7 +380,7 @@ object Eventos: TEventos
       end
       object btnDataHrCancel: TSpeedButton
         Left = 592
-        Top = 88
+        Top = 87
         Width = 22
         Height = 20
         Glyph.Data = {
@@ -401,6 +418,7 @@ object Eventos: TEventos
         EditLabel.Height = 13
         EditLabel.Caption = 'Justificativa de Cancelamento'
         TabOrder = 1
+        Text = 'Teste de cancelamento de nota'
       end
       object edtNumProtCancel: TLabeledEdit
         Left = 408
@@ -428,8 +446,9 @@ object Eventos: TEventos
         Width = 169
         Height = 21
         ItemHeight = 13
+        ItemIndex = 1
         TabOrder = 4
-        Text = '-02:00'
+        Text = '-03:00'
         Items.Strings = (
           '-02:00'
           '-03:00'
@@ -444,7 +463,7 @@ object Eventos: TEventos
       end
       object btnCancelpEvento: TButton
         Left = 624
-        Top = 80
+        Top = 83
         Width = 169
         Height = 25
         Caption = 'Cancelar por Evento'
@@ -452,5 +471,59 @@ object Eventos: TEventos
         OnClick = btnCancelpEventoClick
       end
     end
+  end
+  object dlgOpen: TOpenDialog
+    Left = 664
+    Top = 769
+  end
+  object spdNFe1: TspdNFe
+    VersaoManual = vm60
+    AnexarDanfePDF = True
+    DanfeSettings.FraseContingencia = 
+      'Danfe em conting'#234'ncia - Impresso em decorr'#234'ncia de problemas t'#233'c' +
+      'nicos'
+    DanfeSettings.FraseHomologacao = 'SEM VALOR FISCAL'
+    DanfeSettings.QtdeCopias = 1
+    DanfeSettings.LineDelimiter = '|'
+    DanfeSettings.InfCplMaxCol = 68
+    DanfeSettings.InfCplMaxRow = 7
+    DanfeSettings.ImprimirVolume = False
+    DanfeSettings.ImprimirDuplicata = True
+    DanfeSettings.MensagemPartilhaAutomatica = False
+    DanfeSettings.MensagemFCP = False
+    DanfeSettings.ImprimirUnidadeTributada = False
+    DanfeSettings.ImprimirObsCont = False
+    DanfeSettings.ImprimirFrenteVerso = fvDesabilitado
+    DanfeSettings.ImprimirLocalRetiradaEntrega = True
+    DanfeSettings.InfCplQuebrarLinhaAut = False
+    DanfeSettings.MensagemIcmsDesonerado = False
+    Versao = '12.1.74.6369'
+    CaracteresRemoverAcentos = #225#233#237#243#250#224#232#236#242#249#226#234#238#244#251#228#235#239#246#252#227#245#241#231#193#201#205#211#218#192#200#204#210#217#194#202#206#212#219#196#203#207#214#220#195#213#209#199#186#170
+    TipoCertificado = ckMemory
+    DiretorioTemplates = 
+      'C:\Program Files (x86)\Borland\Delphi7\Bin\Templatesvm60vm60vm60' +
+      '\'
+    IgnoreInvalidCertificates = False
+    DiretorioLog = 'C:\Program Files (x86)\Borland\Delphi7\Bin\Log\'
+    Ambiente = akHomologacao
+    EmailSettings.Autenticacao = False
+    EmailSettings.TimeOut = 0
+    EmailSettings.ConteudoHtml = False
+    EmailSettings.UseSecureBlackBox = False
+    DiretorioEsquemas = 'C:\Program Files (x86)\Borland\Delphi7\Bin\Esquemasvm60vm60vm60\'
+    ConexaoSegura = False
+    TimeOut = 0
+    DiretorioLogErro = 'C:\Program Files (x86)\Borland\Delphi7\Bin\LogErro\'
+    DiretorioTemporario = 'C:\ProgramData\'
+    ModoOperacao = moNormal
+    EntregaXML = exEmail
+    AtualizarArquivoServidores = True
+    DiagnosticMode = True
+    DiretorioXmlDestinatario = 'C:\Program Files (x86)\Borland\Delphi7\Bin\XmlDestinatario\'
+    DiretorioDownloads = 'C:\Program Files (x86)\Borland\Delphi7\Bin\Downloads\'
+    MaxSizeLoteEnvio = 500
+    DanfeSimplificado = False
+    Left = 364
+    Top = 32
   end
 end

@@ -6,15 +6,13 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, ShellAPI, IniFiles, spdNFe, spdNFeDataSets, spdNFeType,
   ComCtrls, XPMan, spdNFeUtils, jpeg,
-  spdNFeValidadorClientAdapter, OleCtrls, spdNotaSegura_TLB, Contnrs;
+  spdNFeValidadorClientAdapter, OleCtrls, Contnrs;
 
 type
-    TfrmEventosNFe = class(TForm);
     TDemo_NFe_Form = class(TForm)
     pgcNFe: TPageControl;
     tbsNfe: TTabSheet;
     GroupBox1: TGroupBox;
-    edtUF: TLabeledEdit;
     edtCNPJ: TLabeledEdit;
     edtID: TLabeledEdit;
     edtNumRec: TLabeledEdit;
@@ -29,7 +27,6 @@ type
     Label4: TLabel;
     btnConfig: TButton;
     btnLoadConfig: TButton;
-    btnGerarREC: TButton;
     btnGerarDS: TButton;
     btnGeraXMLTX2: TButton;
     btnStatus: TButton;
@@ -44,32 +41,44 @@ type
     btnImprimir: TButton;
     btnExportPdf: TButton;
     btnVisualizar: TButton;
-    btnEnviarEmail: TButton;
-    btEmailArquivo: TButton;
     GroupBox4: TGroupBox;
     btnInutilizarNfe: TButton;
     btnConvertXmlDataset: TButton;
     btnConsultaCadastro: TButton;
     btnEventos: TButton;
-    btnAuditar: TButton;
-    GroupBox2: TGroupBox;
-    mmAudicao: TMemo;
-    Button2: TButton;
     Button1: TButton;
     btCancelarNota: TButton;
     PageControl1: TPageControl;
-    TabSheet1: TTabSheet;
-    TabSheet2: TTabSheet;
+    tabXml: TTabSheet;
+    tabXmlEnvio: TTabSheet;
     mmXml: TMemo;
-    mmXmlCanceladoEnvio: TMemo;
-    TabSheet3: TTabSheet;
-    mmXmlCanceladoRetorno: TMemo;
+    tabXmlRetorno: TTabSheet;
     GroupBox5: TGroupBox;
     edCnpjSh: TEdit;
     edTokenSh: TEdit;
     Label1: TLabel;
     Label3: TLabel;
     Label2: TLabel;
+    TabSheet4: TTabSheet;
+    TabSheet5: TTabSheet;
+    TabSheet6: TTabSheet;
+    tabXmlImpressao: TTabSheet;
+    mmXmlCanceladoEnvio: TMemo;
+    mmXmlCanceladoRetorno: TMemo;
+    mmXmlEnvio: TMemo;
+    mmXmlRetorno: TMemo;
+    mmXmlCompleto: TMemo;
+    cbUF: TComboBox;
+    Label5: TLabel;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    btEmailArquivo: TButton;
+    btnEnviarEmail: TButton;
+    btnConsultarDestinadas: TButton;
+    rdProducao: TRadioButton;
+    rdHomologacao: TRadioButton;
     procedure cbCertificadoChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnConfigClick(Sender: TObject);
@@ -92,24 +101,48 @@ type
     procedure spdNFeLog(const aNome, aID, aFileName: String);
     procedure btnEventosClick(Sender: TObject);
     procedure btnConvertXmlDatasetClick(Sender: TObject);
-    procedure btnAuditarClick(Sender: TObject);
     procedure spdNFeXmlDestinatario(const aFileName: String);
     procedure btnGerarRECClick(Sender: TObject);
     procedure btnGeraXMLTX2Click(Sender: TObject);
     procedure btEmailArquivoClick(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure btCancelarNotaClick(Sender: TObject);
+    procedure cbUFChange(Sender: TObject);
+    procedure MontarXmlCompleto;
+    procedure MontarXmlCompletoCancelado;
+    procedure btnConsultarDestinadasClick(Sender: TObject);
+    procedure edtCNPJChange(Sender: TObject);
+    procedure edCnpjShChange(Sender: TObject);
+    procedure edTokenShChange(Sender: TObject);
+    procedure edCnpjShKeyPress(Sender: TObject; var Key: Char);
+    procedure edtCNPJKeyPress(Sender: TObject; var Key: Char);
+    procedure rdProducaoClick(Sender: TObject);
+    procedure rdHomologacaoClick(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+
+
+
 
     private
     { Private declarations }
-    _NumeroLote: String;
-    _NumeroSerie: String;
+    _NumeroLote, _NumeroSerie, _NumeroNF, _CodigoNota, _XmlEnvio, _XmlRetorno, _XmlEnvioC, _XmlRetornoC : String;
+
 
     function LoadXmlDestinatario(aChaveNFe: String): WideString;
     function obterNroResultado(const aXML: XMLString; aTag : string; aEndTag : string): string;
+    procedure CarregarConfiguracoes;
+    function ChaveInvalida: boolean;
+    procedure MostrarLabel;
+    procedure ChecarAmbiente;
+    procedure CarregarArquivo;
+    procedure CarregarXmlImpressao;
+
   public
     { Public declarations }
+
 
 
   end;
@@ -121,27 +154,139 @@ var
   vIni: TIniFile;
 
 
+
 implementation
-uses Math, uEventos, StrUtils;
+uses Math, uEventos, uDestinadas, StrUtils;
 {$R *.dfm}
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.cbCertificadoChange(Sender: TObject);
 begin
-  vIni.WriteString('NFE', 'NomeCertificado',cbCertificado.Text);
+  vIni.WriteString('NFE', 'NomeCertificado', cbCertificado.Text);
 end;
+//-----------------------------------------------------------------------------
+procedure TDemo_NFe_Form.ChecarAmbiente;
+begin
+  if spdnfe.Ambiente = akproducao then
+    rdProducao.Checked := true
+  else
+    rdHomologacao.checked := true;
+end;
+//-----------------------------------------------------------------------------
+procedure TDemo_NFe_Form.CarregarArquivo;
+var
+  _XML: String;
+begin
+      dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
+      dlgOpen.Execute;
+
+    if dlgOpen.FileName <> '' then
+    begin
+      _XML := dlgOpen.FileName;
+      mmXml.Lines.LoadFromFile(_XML);
+      mmXml.Text := spdNFe.ConverterLoteParaXml(_XML,lkTXTDataSet,pl_009);
+    end;
+end;
+
+
+procedure TDemo_NFe_Form.CarregarXmlImpressao;
+var
+  _XML: String;
+begin
+      dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
+      dlgOpen.Execute;
+
+    if dlgOpen.FileName <> '' then
+    begin
+      _XML := dlgOpen.FileName;
+      mmXmlCompleto.Lines.LoadFromFile(_XML);
+    end;
+end;
+
+
+
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.FormCreate(Sender: TObject);
 begin
   vIni := TIniFile.Create(ExtractFilePath(ParamStr(0))+ 'nfeconfig.ini');
-
+  spdNFe.ConfigurarSoftwareHouse('08187168000160', '00000000000000000');
+  Demo_NFe_Form.Caption := 'Tecnospeed NFe - Versão: ' + spdNfe.Versao;
   spdNFe.AtualizarArquivoServidores := False;
   spdNFe.ListarCertificados(cbCertificado.Items);
+  spdNFe.OnLog := spdNFeLog;
+  CarregarConfiguracoes;
+  ChecarAmbiente;
 end;
+
+procedure TDemo_NFe_Form.MostrarLabel;
+begin
+  if spdNFe.Ambiente = akProducao then
+  begin
+   label2.caption := 'Ambiente de Produção';
+   label2.Font.Color := clRed;
+  end
+  else
+  begin
+   label2.caption := 'Ambiente de Homologação';
+   label2.Font.Color := clBlue;
+  end;
+end;
+
+procedure TDemo_NFe_Form.CarregarConfiguracoes;
+begin
+  spdNFe.LoadConfig();
+
+  if cbUF.text = '' then
+  cbUF.Text  := spdNFe.UF
+  else
+  spdNfe.UF := cbUF.Text;
+
+  cbCertificado.Text  := spdNFe.NomeCertificado.Text;
+  edtCNPJ.Text        := spdNFe.CNPJ;
+
+  if edCnpjSh.text = '' then
+  edCnpjSh.Text       := vIni.ReadString('NFE', 'CNPJSH','');
+
+  if edTokenSh.text = '' then
+  edTokenSh.Text      := vIni.ReadString('NFE', 'TOKENSH','');
+end;
+
+procedure TDemo_NFe_Form.spdNFeLog(const aNome, aID, aFileName: string);
+begin
+
+   if aNome = 'env-lot' then
+   begin
+       _XmlEnvio := aFilename;
+       mmXmlEnvio.Lines.LoadFromFile(_XmlEnvio)
+   end
+   else if aNome = 'env-sinc-lot' then
+   begin
+       _XmlEnvio := aFilename;
+       mmXmlEnvio.Lines.LoadFromFile(_XmlEnvio)
+   end
+   else if aNome = 'rec' then
+   begin
+       _XmlRetorno := aFilename;
+       mmXmlRetorno.Lines.LoadFromFile(_XmlRetorno)
+   end    
+   else if aNome = 'caneve-env' then
+   begin
+       _XmlEnvioC := aFileName;
+       mmXmlCanceladoEnvio.Lines.LoadFromFile(_XmlEnvioC)
+   end
+   else if aNome = 'caneve-ret' then
+   begin
+       _XmlRetornoC := aFilename;
+       mmXmlCanceladoRetorno.Lines.LoadFromFile(_XmlRetornoC)
+   end    
+end;
+
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnConfigClick(Sender: TObject);
 begin//
   ShellExecute(Handle,'Open',pchar('nfeconfig.ini'),'','',SW_SHOWNORMAL);
 end;
+//-----------------------------------------------------------------------------
+
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnStatusClick(Sender: TObject);
 begin//
@@ -152,22 +297,23 @@ procedure TDemo_NFe_Form.btnGerarDSClick(Sender: TObject);
 begin
   edtNumRec.clear;
   edtNumProt.clear;
-  _NumeroLote   := '1';//InputBox('NF-e','Insira o número do Lote: ','1');
-  _NumeroSerie  := '1';//InputBox('NF-e','Insira o número da Série: ','1');
+  _NumeroLote   := '1'; 
+  _NumeroSerie  := InputBox('NF-e','Insira o Número da Série:','1');
+  _NumeroNF     := InputBox('NF-e','Insira o Número da Nota: ','1');
+  _CodigoNota   := InputBox('NF-e','Insira o Código da Nota: ','1');
   spdNFe.VersaoManual := vm60;
   spdNFeDataSets.VersaoEsquema := pl_009;
 
   spdNFeDataSets.XMLDicionario := spdNFe.DiretorioTemplates +'Conversor\NFeDataSets.xml';
 
-
   spdNFeDataSets.Incluir;
   spdNFeDataSets.Campo('versao_A02').Value := '4.00';
   spdNFeDataSets.Campo('cUF_B02').value := '41';
-  spdNFeDataSets.Campo('cNF_B03').value := '555449';
+  spdNFeDataSets.Campo('cNF_B03').value := _CodigoNota;
   spdNFeDataSets.Campo('natOp_B04').value := 'VENDA DE MERCADORIA ADQ. DE TERCEIRO - PF E PJ NAO CONTRIBUI';
   spdNFeDataSets.Campo('mod_B06').value := '55';
-  spdNFeDataSets.Campo('serie_B07').value := '500';
-  spdNFeDataSets.Campo('nNF_B08').value := '5548173';
+  spdNFeDataSets.Campo('serie_B07').value := _NumeroSerie;
+  spdNFeDataSets.Campo('nNF_B08').value := _NumeroNF;
   spdNFeDataSets.Campo('dhEMI_B09').value := FormatDateTime('YYYY-MM-DD"T"HH:MM:SS',Now)+'-03:00';
   spdNFeDataSets.Campo('dhSaiEnt_B10').value := FormatDateTime('YYYY-MM-DD"T"HH:MM:SS',Now)+'-03:00';
   spdNFeDataSets.Campo('tpNF_B11').value := '1';
@@ -186,11 +332,11 @@ begin
 
   spdNFeDataSets.Campo('CRT_C21').value := '3';
   spdNFeDataSets.Campo('CNPJ_C02').value := '08187168000160';
-  spdNFeDataSets.Campo('xNome_C03').value := 'TECNOSPEED & TECNOLOGIA';
-  spdNFeDataSets.Campo('xFant_C04').value := 'TECNOSPEED & TECNOLOGIA';
+  spdNFeDataSets.Campo('xNome_C03').value := 'TECNOSPEED E TECNOLOGIA';
+  spdNFeDataSets.Campo('xFant_C04').value := 'TECNOSPEED E TECNOLOGIA';
   spdNFeDataSets.Campo('xLgr_C06').value := 'RUA DO POVO';
   spdNFeDataSets.Campo('nro_C07').value := '711';
-  spdNFeDataSets.Campo('xBairro_C09').value := 'parque petrobrás';
+  spdNFeDataSets.Campo('xBairro_C09').value := 'Parque petrobras';
   spdNFeDataSets.Campo('cMun_C10').value := '4115200';
   spdNFeDataSets.Campo('xMun_C11').value := 'MARINGA';
   spdNFeDataSets.Campo('UF_C12').value := 'PR';
@@ -207,7 +353,7 @@ begin
   spdNFeDataSets.Campo('nro_E07').value := '897';
   spdNFeDataSets.Campo('xBairro_E09').value := 'CENTRAL';
   spdNFeDataSets.Campo('cMun_E10').value := '4115200 ';
-  spdNFeDataSets.Campo('xMun_E11').value := 'MARINGÁ';
+  spdNFeDataSets.Campo('xMun_E11').value := 'MARINGA';
   spdNFeDataSets.Campo('UF_E12').value := 'PR';
   spdNFeDataSets.Campo('CEP_E13').value := '87500000';
   spdNFeDataSets.Campo('cPais_E14').value := '1058';
@@ -227,7 +373,7 @@ begin
   spdNFeDataSets.Campo('fone_ZD06').value := '41999999999';
 
 
-  spdNFeDataSets.IncluirItem;
+  spdNFeDataSets.IncluirItem; //informacoes do produto
   spdNFeDataSets.Campo('nItem_H02').value := '1';
   spdNFeDataSets.Campo('cProd_I02').value := '0999';
   spdNFeDataSets.Campo('cEAN_I03').value := 'SEM GTIN';
@@ -268,8 +414,8 @@ begin
   spdNFeDataSets.Campo('dFab_I83').value := '2017-07-23';
   spdNFeDataSets.Campo('dVal_I84').value := '2018-07-23';
 
-spdNFeDataSets.Campo('cProdANVISA_k01a').value := '1234567890123';
-spdNFeDataSets.Campo('vPMC_k06').value := '1.00';
+  spdNFeDataSets.Campo('cProdANVISA_k01a').value := '1234567890123';
+  spdNFeDataSets.Campo('vPMC_k06').value := '1.00';
 
   spdNFeDataSets.SalvarItem;
 
@@ -307,6 +453,7 @@ spdNFeDataSets.Campo('vPMC_k06').value := '1.00';
   spdNFeDataSets.Salvar;
 
   mmXml.Text := spdNFeDataSets.LoteNFe.Text;
+  PageControl1.ActivePage := tabXml;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnAssinarClick(Sender: TObject);
@@ -317,15 +464,17 @@ end;
 
 procedure TDemo_NFe_Form.btnEnviarNfeClick(Sender: TObject);
 begin
-  mmXml.Text      := spdNFe.EnviarNF('1',mmXml.Text);
-  edtNumRec.Text  := obterNroResultado (mmXml.Text, '<nRec','</nRec');    
+  mmXmlRetorno.Text := spdNFe.EnviarNF('1',mmXml.Text);
+
+  edtNumRec.Text  := obterNroResultado (mmXmlretorno.Text, '<nRec','</nRec');
+  PageControl1.ActivePage := tabXmlRetorno;
 end;
 //-----------------------------------------------------------------------------
 function TDemo_NFe_Form.obterNroResultado(const aXML: XMLString; aTag,
   aEndTag: string): string;
 var
   _Posini, _Posfim  : integer;
-begin
+begin                           //Função para pegar o conteúdo das tags
    Result := '';
   _Posini:= Pos(aTag,aXML);
   _Posfim:= Pos(aEndTag,aXML);
@@ -338,21 +487,34 @@ end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnEnviarSincClick(Sender: TObject);
 begin
-  mmXml.Text := spdNFe.EnviarNFSincrono('1', mmXml.Text);
-  edtNumProt.Text := obterNroResultado(mmXml.Text,'<nProt','</nProt');
+  mmXmlRetorno.Text := spdNFe.EnviarNFSincrono('1', mmXml.Text);
+  edtNumProt.Text := obterNroResultado(mmXmlRetorno.Text,'<nProt','</nProt');
+  edtId.Text := obterNroResultado(mmXmlRetorno.Text,'<chNFe','</chNFe');
+  PageControl1.ActivePage := tabXmlRetorno;
+  MontarXmlCompleto;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnConsultRecClick(Sender: TObject);
 begin
-  mmXml.Text      := spdNFe.ConsultarRecibo(edtNumRec.Text);
-  edtNumProt.Text := obterNroResultado(mmXml.Text,'<nProt','</nProt');
-  edtId.Text := obterNroResultado(mmXml.Text,'<chNFe','</chNFe');
+  mmXmlRetorno.Text      := spdNFe.ConsultarRecibo(edtNumRec.Text);
+  edtNumProt.Text := obterNroResultado(mmXmlretorno.Text,'<nProt','</nProt');
+  edtId.Text := obterNroResultado(mmXmlRetorno.Text,'<chNFe','</chNFe');
+  PageControl1.ActivePage := tabXmlRetorno;
+  MontarXmlCompleto;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnConsultNfeClick(Sender: TObject);
 begin
+  if ChaveInvalida then
+  begin
+    Showmessage('Chave inválida, favor validar a chave selecionada.');
+    edtid.SetFocus;
+    Exit;
+  end;
   mmXml.Text      := spdNFe.ConsultarNF(edtID.Text);
   edtNumProt.Text := obterNroResultado(mmXml.Text,'<nProt','</nProt>');
+  PageControl1.ActivePage := tabXml;
+  MontarXmlCompleto;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnInutilizarNfeClick(Sender: TObject);
@@ -371,7 +533,7 @@ end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnPreverClick(Sender: TObject);
 begin
-    spdNFe.PreverDanfe(mmXml.Text);
+    spdNFe.PreverDanfe(mmXmlCompleto.Text);
 end;
 //-----------------------------------------------------------------------------
 function TDemo_NFe_Form.LoadXmlDestinatario(aChaveNFe: String): WideString;
@@ -397,86 +559,109 @@ procedure TDemo_NFe_Form.btnEditarDanfeClick(Sender: TObject);
 begin
   if(edtID.Text <> '') then
   begin
-    mmXml.Text := LoadXmlDestinatario(edtID.Text);
-    spdNFe.EditarModeloDanfe('1',mmXml.Text)
+    mmXmlCompleto.Text := LoadXmlDestinatario(edtID.Text);
+    spdNFe.EditarModeloDanfe('1',mmXmlCompleto.Text);
+    PageControl1.ActivePage := tabXmlImpressao;
+  end;
+
+  if mmXmlCompleto.text = '' then
+  begin
+    CarregarXmlImpressao;
+    spdNFe.EditarModeloDanfe('1',mmXmlCompleto.Text);
+    PageControl1.ActivePage := tabXmlImpressao;
   end
   else
-    spdNFe.EditarModeloDanfe('1',mmXml.Text);
+    spdNFe.EditarModeloDanfe('1',mmXmlCompleto.Text);
+    PageControl1.ActivePage := tabXmlImpressao;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnImprimirClick(Sender: TObject);
 begin
-  spdNFe.DanfeSettings.ImprimirLocalRetiradaEntrega := True;
-
   if(edtID.Text <> '') then
   begin
-    mmXml.Text := LoadXmlDestinatario(edtID.Text);
-    spdNFe.ImprimirDanfe('1',mmXml.Text,'','')
+    mmXmlCompleto.Text := LoadXmlDestinatario(edtID.Text);
+    spdNFe.ImprimirDanfe('1',mmXmlCompleto.Text,'','');
+    PageControl1.ActivePage := tabXmlImpressao;
+  end;
+
+  if mmXmlCompleto.text = '' then
+  begin
+    CarregarXmlImpressao;
+    spdNFe.ImprimirDanfe('1',mmXmlCompleto.Text);
+    PageControl1.ActivePage := tabXmlImpressao;
   end
   else
-    spdNFe.ImprimirDanfe('1',mmXml.Text,'','');
+    spdNFe.ImprimirDanfe('1',mmXmlCompleto.Text,'','');
+    PageControl1.ActivePage := tabXmlImpressao;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnExportPdfClick(Sender: TObject);
 begin
   if(edtID.Text <> '') then
   begin
-    mmXml.Text := LoadXmlDestinatario(edtID.Text);
-    spdNFe.ExportarDanfe('1',mmXml.Text,'',1,'')
+    mmXmlCompleto.Text := LoadXmlDestinatario(edtID.Text);
+    spdNFe.ExportarDanfe('1',mmXmlCompleto.Text,'',1,'');
+    PageControl1.ActivePage := tabXmlImpressao;
+  end;
+
+  if mmXmlCompleto.text = '' then
+  begin
+    CarregarXmlImpressao;
+    spdNFe.ExportarDanfe('1',mmXmlCompleto.Text);
+    PageControl1.ActivePage := tabXmlImpressao;
   end
   else
-    spdNFe.ExportarDanfe('1',mmXml.Text,'',1,'');
+    spdNFe.ExportarDanfe('1',mmXmlCompleto.Text,'',1,'');
+    PageControl1.ActivePage := tabXmlImpressao;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnVisualizarClick(Sender: TObject);
 begin
   if(edtID.Text <> '') then
   begin
-    mmXml.Text := LoadXmlDestinatario(edtID.Text);
-    spdNFe.VisualizarDanfe('1',mmXml.Text)
+    mmXmlCompleto.Text := LoadXmlDestinatario(edtID.Text);
+    spdNFe.VisualizarDanfe('1',mmXmlCompleto.Text);
+    PageControl1.ActivePage := tabXmlImpressao;
+  end;
+
+  if mmXmlCompleto.text = '' then
+  begin
+    CarregarXmlImpressao;
+    spdNFe.VisualizarDanfe('1',mmXmlCompleto.Text);
+    PageControl1.ActivePage := tabXmlImpressao;
   end
   else
-    spdNFe.VisualizarDanfe('1',mmXml.Text);
+    spdNFe.VisualizarDanfe('1',mmXmlCompleto.Text);
+    PageControl1.ActivePage := tabXmlImpressao;
 end;
 //-----------------------------------------------------------------------------
+
 procedure TDemo_NFe_Form.btnEnviarEmailClick(Sender: TObject);
 begin
   spdNFe.EnviarNotaDestinatario(edtID.Text,'','');
 end;
 //-----------------------------------------------------------------------------
+
 procedure TDemo_NFe_Form.btnConsultaCadastroClick(Sender: TObject);
 begin
   mmXml.Text  := spdNFe.ConsultarCadastro(spdNFe.CNPJ,'CNPJ',spdNFe.UF);
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnLoadConfigClick(Sender: TObject);
-begin//
-  spdNFe.LoadConfig();
-
-  edtUF.Text          := spdNFe.UF;
-  cbCertificado.Text  := spdNFe.NomeCertificado.Text;
-  edtCNPJ.Text        := spdNFe.CNPJ;
-  edCnpjSh.Text       := vIni.ReadString('NFE', 'cnpjSh','');
-  edTokenSh.Text       := vIni.ReadString('NFE', 'tokenSh','');
-  spdNFe.ConfigurarSoftwareHouse(edCnpjSh.Text,edTokenSh.Text);//xxx
-
-  if spdNFe.Ambiente = akProducao then
-   label2.Visible := True
-  else
-   label2.Visible := False;
-
-
-  spdNFe.MaxSizeLoteEnvio := 500;
-
-end;
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-procedure TDemo_NFe_Form.spdNFeLog(const aNome, aID, aFileName: String);
 begin
-  if((aNome = 'env-sinc-lot') or (aNome = 'env-lot') or (aNome = 'caneve-env')) Then
-    logEnvio := aFileName;
-  if((aNome = 'rec-sinc') or (aNome = 'pro-rec') or (aNome = 'sit') or (aNome = 'caneve-ret')) Then
-    logRetorno := aFileName;
+  CarregarConfiguracoes;
+  ChecarAmbiente;
+  spdnfe.DanfeSettings.ModeloRetrato := spdnfe.DiretorioTemplates + 'vm60\Danfe\retrato.rtm';
+
+  if  (edTokenSh.text = '') or (edCnpjSh.text = '') then
+  begin
+  Showmessage ('Os campos CNPJ e Token precisam estar preenchidos');
+  edCnpjSh.SetFocus;
+  end
+  else
+  spdNFe.ConfigurarSoftwareHouse(edCnpjSh.Text,edTokenSh.Text);
+
+  MostrarLabel;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnEventosClick(Sender: TObject);
@@ -493,8 +678,6 @@ end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnConvertXmlDatasetClick(Sender: TObject);
 begin
-
-
    spdNFeDataSets.VersaoEsquema := pl_009;
    spdNFeDataSets.XMLDicionario := spdNFe.DiretorioTemplates + 'Conversor\NFeDataSets.xml';
    spdNFeDataSets := spdNFe.ConverteXmlParaDataSet(mmXml.Text,pl_009);
@@ -503,10 +686,10 @@ begin
    //Dados do Cabeçalho da nota
    mmXml.Text := mmXml.Text + 'Série da nota: ' + spdNFeDataSets.Campo('serie_B07').Value + #13+#10;
    mmXml.Text := mmXml.Text + 'Numero da nota: ' + spdNFeDataSets.Campo('nNF_B08').Value + #13+#10;
-   mmXml.Text := mmXml.Text + '-------------------------------------' + #13;
+   mmXml.Text := mmXml.Text + '-------------------------------------' + #13+#10;
 
    //Dados do emitente
-   mmXml.Text := mmXml.Text + 'CNPJ Emitente: ' + spdNFeDataSets.Campo('CNPJ_C02').Value + #13;
+   mmXml.Text := mmXml.Text + 'CNPJ Emitente: ' + spdNFeDataSets.Campo('CNPJ_C02').Value + #13+#10;
    mmXml.Text := mmXml.Text + 'Razão social do emitente: ' + spdNFeDataSets.Campo('xNome_C03').Value + #13+#10;
    mmXml.Text := mmXml.Text + 'Cidade do emitente: ' + spdNFeDataSets.Campo('xMun_C11').Value + #13+#10;
    mmXml.Text := mmXml.Text + '-------------------------------------' + #13+#10;
@@ -537,34 +720,8 @@ begin
    mmXml.Text := mmXml.Text + 'Total do ICMS: ' + spdNFeDataSets.Campo('vICMS_W04').Value + #13+#10;
    mmXml.Text := mmXml.Text + 'Total da nota: ' + spdNFeDataSets.Campo('vNF_W16').Value + #13+#10;
    mmXml.Text := mmXml.Text + '-------------------------------------' + #13+#10;
-
 end;
 //-----------------------------------------------------------------------------
-procedure TDemo_NFe_Form.btnAuditarClick(Sender: TObject);
-var
-  Validador : TspdValidadorClientX;
-begin
-  Validador := TspdValidadorClientX.Create(nil);
-
-  Validador.Servidor := 'http://validadornfe.tecnospeed.com.br:8181/validadorgui/validar';
-  Validador.ModoOperacao := moLocal;
-  Validador.ExibirRegrasValidacao := True;
-  Validador.CodigoProduto := 1;
-  Validador.Estagio := esProducao;
-  Validador.TipoResposta := trTexto;
-  Validador.LinguagemResposta := tlHtml;
-  ShowMessage(spdnfe.DiretorioTemplates);
-  ShowMessage(spdnfe.DiretorioEsquemas);
-  Validador.DiretorioTemplates := 'C:\Program Files\TecnoSpeed\NFe\arquivos\Templates\';
-  Validador.DiretorioEsquemas := 'C:\Program Files\TecnoSpeed\NFe\arquivos\Esquemas\';
-  Validador.DiretorioRegras := 'C:\Program Files\TecnoSpeed\NFe\arquivos\Templates\Regras\';
-  Validador.DiretorioLogErro := '\LogErro\';
-  Validador.WidthHtml := 700;
-  Validador.HeigthHtml := 500;
-  mmAudicao.Text := Validador.ValidarXml(mmXml.Text,'|');
-//  Validador.ShowHtml(Validador.ValidarXml(mmXml.Text,'|'));
-end;
-
 procedure TDemo_NFe_Form.spdNFeXmlDestinatario(const aFileName: String);
 begin
    ShowMessage(aFileName);
@@ -592,25 +749,14 @@ begin
 end;
 
 procedure TDemo_NFe_Form.btnGeraXMLTX2Click(Sender: TObject);
-var
-  _XML: String;
 begin
   if mmXml.Text <> '' then
   begin
     mmXml.Text := spdNFe.ConverterLoteParaXml(mmXml.Text,lkTXTDataSet,pl_009);
   end
   else
-  begin
-    dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
-    dlgOpen.Execute;
+  CarregarArquivo;
 
-    if dlgOpen.FileName <> '' then
-    begin
-      _XML := dlgOpen.FileName;
-      mmXml.Lines.LoadFromFile(_XML);
-      mmXml.Text := spdNFe.ConverterLoteParaXml(_XML,lkTXTDataSet,pl_009);
-    end
-  end;
   edtID.Text := obterNroResultado(mmXml.Text,'"NF','" versao');
 end;
 
@@ -621,6 +767,7 @@ begin
   PDFaux := '';
   XMLaux := '';
 
+  Showmessage ('Selecione o PDF para envio');
   dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
   dlgOpen.Title      := 'Selecione o PDF para envio.';
   dlgOpen.Execute;
@@ -630,6 +777,7 @@ begin
   else
     Exit;
 
+  Showmessage ('Selecione o Xml autorizado para envio');
   dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
   dlgOpen.Title      := 'Selecione o XML para envio.';
   dlgOpen.Execute;
@@ -643,68 +791,153 @@ begin
     spdNFe.EnviarNotaDestinatarioAnexos(PDFaux, XMLaux, '');
 end;
 
-procedure TDemo_NFe_Form.Button2Click(Sender: TObject);
-var
-  XMLAux: string;
-begin
-  dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
-  dlgOpen.Execute;
-
-  if dlgOpen.FileName <> '' then
-  begin
-    XMLAux := dlgOpen.FileName;
-    spdNFe.EnviarCCeDestinatario(XMLAux);
-  end
-
-
-end;
-
 procedure TDemo_NFe_Form.Button1Click(Sender: TObject);
 var
-aXmlCanceladoEnvio, aXmlCanceladoRetorno: string;
-
+  aXmlCanceladoEnvio, aXmlCanceladoRetorno: string;
 begin
-  dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
 
+  If mmXmlCanceladoEnvio.text <> '' then
+  begin
+  aXmlCanceladoEnvio := mmXmlCanceladoEnvio.text
+  end
+  else
+  dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
   ShowMessage('Selecione o Xml de Cancelamento de Envio');
   dlgOpen.Execute;
   aXmlCanceladoEnvio := dlgOpen.FileName;
   mmXmlCanceladoEnvio.Lines.LoadFromFile(aXmlCanceladoEnvio);
 
+
+  If mmXmlCanceladoEnvio.text <> '' then
+  begin
+  aXmlCanceladoRetorno := mmXmlCanceladoRetorno.text
+  end
+  Else
+  dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
   ShowMessage('Selecione o Xml de Cancelamento de Retorno');
   dlgOpen.Execute;
   aXmlCanceladoRetorno := dlgOpen.FileName;
   mmXmlCanceladoRetorno.Lines.LoadFromFile(aXmlCanceladoRetorno);
 
-  mmXml.text := spdNFe.GerarXMLCancelamentoDestinatario(edtid.Text,aXmlCanceladoEnvio, aXmlCanceladoRetorno, '');
+
+  mmXmlCompleto.text := spdNFe.GerarXMLCancelamentoDestinatario(edtid.Text,aXmlCanceladoEnvio, aXmlCanceladoRetorno, '');
 end;
 
 procedure TDemo_NFe_Form.btCancelarNotaClick(Sender: TObject);
 var
-  _Retorno, _Justificativa: string;
+  formEventos: TEventos;
 begin
-  InputQuery('Cancelamento de NF-e', 'Informe a justificativa', _Justificativa);
-  if Length(_Justificativa) >= 15 then
-  begin
-    try
-      _Retorno := spdnfe.CancelarNFeEvento(
-        edtId.Text,
-        edtNumProt.Text,
-        _Justificativa,
-        FormatDateTime('yyyy-mm-dd"T"hh:nn:ss', Now),
-        1,
-        '-03:00');
-      mmXML.Text := _Retorno;
-    except
-      on E: Exception do
-      begin
-        ShowMessage(E.Message);
-      end;
-    end;
-  end
-  else
-    Application.MessageBox('Necessário informar justificativa com ao menos 15 caracteres', 'Atenção', 0 + 24);
+  formEventos := TEventos.Create(Self);
+  try
+    formEventos.ShowModal;
+  finally
+  formEventos.Free;
+  end;
 end;
+
+
+procedure TDemo_NFe_Form.cbUFChange(Sender: TObject);
+begin
+  vIni.WriteString('NFE', 'UF ',cbUF.Text);
+end;
+
+procedure TDemo_NFe_Form.MontarXmlCompleto;
+begin
+  if (mmXmlEnvio.text <> '') and (mmXmlRetorno.Text <> '') then
+  mmXmlcompleto.text := spdNfe.GerarXMLEnvioDestinatario(edtId.text, mmXmlEnvio.text, mmXmlRetorno.Text);
+end;
+
+procedure TDemo_NFe_Form.MontarXmlCompletoCancelado;
+begin
+  if (mmXmlCanceladoEnvio.text <> '') and (mmXmlCanceladoRetorno.Text <> '') then
+  mmXmlcompleto.text := spdNfe.GerarXMLEnvioDestinatario(edtId.text, mmXmlCanceladoEnvio.text, mmXmlCanceladoRetorno.Text);
+end;
+
+
+procedure TDemo_NFe_Form.btnConsultarDestinadasClick(Sender: TObject);
+begin
+  form1.ShowModal;
+end;
+
+procedure TDemo_NFe_Form.edtCNPJChange(Sender: TObject);
+begin
+  vIni.WriteString('NFE', 'CNPJ', edtCNPJ.Text);
+end;
+
+procedure TDemo_NFe_Form.edCnpjShChange(Sender: TObject);
+begin
+  vIni.WriteString('NFE', 'CNPJSH', edCnpjSh.Text)
+end;
+
+procedure TDemo_NFe_Form.edTokenShChange(Sender: TObject);
+begin
+  vIni.WriteString('NFE', 'TOKENSH', edTokenSh.text)
+end;
+
+
+procedure TDemo_NFe_Form.edCnpjShKeyPress(Sender: TObject; var Key: Char);
+begin
+if not (key in ['0'..'9', #8, #27, #32]) then
+begin
+beep;
+key := #0;
+end;
+end;
+
+procedure TDemo_NFe_Form.edtCNPJKeyPress(Sender: TObject; var Key: Char);
+begin
+if not (key in ['0'..'9', #8, #27, #32]) then
+begin
+beep;
+key := #0;
+end;
+end;
+
+function TDemo_NFe_Form.ChaveInvalida: boolean;
+begin
+  if (Pos('-', edtID.text) <> 0)
+  or (edtID.text = '') then
+    Result := True
+  else
+    Result := False;
+end;
+
+procedure TDemo_NFe_Form.rdProducaoClick(Sender: TObject);
+begin
+  vIni.WriteString('NFE', 'Ambiente', '1');
+  spdnfe.Ambiente := akproducao;
+  MostrarLabel;
+end;
+
+procedure TDemo_NFe_Form.rdHomologacaoClick(Sender: TObject);
+begin
+  vIni.WriteString('NFE', 'Ambiente', '2');
+  spdnfe.Ambiente := akHomologacao;
+  MostrarLabel;
+end;
+
+procedure TDemo_NFe_Form.Button3Click(Sender: TObject);
+begin
+  ShellExecute(Handle,'open','https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360010343074-Guia-Geral-Componente-NFe',nil,nil,SW_SHOWMAXIMIZED);
+end;
+
+procedure TDemo_NFe_Form.Button4Click(Sender: TObject);
+begin
+  ShellExecute(Handle,'open','https://atendimento.tecnospeed.com.br/hc/pt-br/sections/360001177553-Propriedades-do-componente',nil,nil,SW_SHOWMAXIMIZED);
+end;
+
+
+procedure TDemo_NFe_Form.Button5Click(Sender: TObject);
+begin
+  ShellExecute(Handle,'open','https://atendimento.tecnospeed.com.br/hc/pt-br/sections/360001159034-M%C3%A9todos-do-componente',nil,nil,SW_SHOWMAXIMIZED);
+end;
+
+
+procedure TDemo_NFe_Form.Button6Click(Sender: TObject);
+begin
+  ShellExecute(Handle,'open','https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360009515054-Dicion%C3%A1rio-de-dados-',nil,nil,SW_SHOWMAXIMIZED);
+end;
+
 
 end.
 

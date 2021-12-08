@@ -110,7 +110,7 @@ ActiveLang=
 ProjectLang=
 RootDir=C:\Program Files (x86)\Borland\Delphi7\Bin\
 [Version Info]
-IncludeVerInfo=1
+IncludeVerInfo=0
 AutoIncBuild=0
 MajorVer=1
 MinorVer=0
@@ -133,3 +133,9 @@ LegalTrademarks=
 OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+[HistoryLists\hlSearchPath]
+Count=1
+Item0=C:\Program Files\TecnoSpeed\CFeSat\Fontes;C:\Program Files\TecnoSpeed\CFeSat\Fontes_x64;C:\Program Files\TecnoSpeed\CTe\Fontes;C:\Program Files\TecnoSpeed\CTe\Fontes_x64;C:\Program Files\TecnoSpeed\eSocial\Fontes;C:\Program Files\TecnoSpeed\eSocial\Fontes_x64;C:\Program Files\TecnoSpeed\GNRe\Fontes;C:\Program Files\TecnoSpeed\GNRe\Fontes_x64;C:\Program Files\TecnoSpeed\MDFe\Fontes;C:\Program Files\TecnoSpeed\NFCe\Fontes;C:\Program Files\TecnoSpeed\NFCe\Fontes_x64;C:\Program Files\TecnoSpeed\NFe\Fontes;C:\Program Files\TecnoSpeed\NFe\Fontes_x64;C:\Program Files\TecnoSpeed\NFSe\Fontes;C:\Program Files\TecnoSpeed\NFSe\Fontes_x64;C:\Program Files\TecnoSpeed\Reinf\Fontes;C:\Program Files\TecnoSpeed\Reinf\Fontes_x64

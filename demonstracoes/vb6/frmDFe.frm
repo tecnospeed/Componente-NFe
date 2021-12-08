@@ -10,89 +10,37 @@ Begin VB.Form frmDFe
    ScaleWidth      =   14400
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
-      Caption         =   "Manifestação"
-      Height          =   315
-      Left            =   12120
-      TabIndex        =   31
-      Top             =   2520
-      Width           =   2055
+      Caption         =   "2 - Manifestação"
+      Height          =   675
+      Left            =   9000
+      TabIndex        =   25
+      Top             =   1800
+      Width           =   2175
    End
    Begin VB.CommandButton btnConsultarDfe 
-      Caption         =   "Consultar Dfe"
-      Height          =   375
-      Left            =   12120
-      TabIndex        =   30
-      Top             =   1080
-      Width           =   2055
+      Caption         =   "1 - Consultar Dfe"
+      Height          =   675
+      Left            =   9000
+      TabIndex        =   24
+      Top             =   960
+      Width           =   2175
    End
    Begin VB.TextBox strngrdNotas 
       Height          =   3255
       Left            =   120
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
-      TabIndex        =   21
+      TabIndex        =   19
       Top             =   3120
       Width           =   14175
    End
-   Begin VB.Frame Frame4 
-      Caption         =   "Evento"
-      Height          =   2175
-      Left            =   8760
-      TabIndex        =   20
-      Top             =   840
-      Width           =   3255
-      Begin VB.CheckBox chkOperacaoNaoRealizada 
-         Caption         =   "210240 - Operação não realizada"
-         Enabled         =   0   'False
-         Height          =   375
-         Left            =   120
-         TabIndex        =   25
-         Top             =   1680
-         Width           =   2895
-      End
-      Begin VB.CheckBox chkDesconhecimentoDaOperacao 
-         Caption         =   "210220 - Desconhecimento da                           Operação"
-         Enabled         =   0   'False
-         Height          =   375
-         Left            =   120
-         TabIndex        =   24
-         Top             =   1200
-         Width           =   2655
-      End
-      Begin VB.CheckBox chkCienciaDaOperacao 
-         Caption         =   "210210 - Ciência da Operação"
-         Enabled         =   0   'False
-         Height          =   255
-         Left            =   120
-         TabIndex        =   23
-         Top             =   720
-         Width           =   2895
-      End
-      Begin VB.CheckBox chkConfirmacaoOperacao 
-         Caption         =   "210200 -  Confirmação da Operação"
-         Enabled         =   0   'False
-         Height          =   255
-         Left            =   120
-         TabIndex        =   22
-         Top             =   240
-         Width           =   2895
-      End
-   End
    Begin VB.CommandButton btnDownloadNFe 
-      Caption         =   "Download NFe"
-      Height          =   375
-      Left            =   12120
-      TabIndex        =   14
-      Top             =   2040
-      Width           =   2055
-   End
-   Begin VB.CommandButton btnDescompactar 
-      Caption         =   "Descompactar"
-      Height          =   375
+      Caption         =   "3 - Download NFe"
+      Height          =   675
       Left            =   12120
       TabIndex        =   13
-      Top             =   1560
-      Width           =   2055
+      Top             =   960
+      Width           =   2175
    End
    Begin VB.Frame Frame3 
       Caption         =   "Dados Consulta "
@@ -103,11 +51,10 @@ Begin VB.Form frmDFe
       Width           =   4095
       Begin VB.TextBox txtQtdNotas 
          Appearance      =   0  'Flat
-         BackColor       =   &H80000004&
          Height          =   375
          Left            =   720
          Locked          =   -1  'True
-         TabIndex        =   28
+         TabIndex        =   22
          Top             =   1560
          Width           =   495
       End
@@ -115,27 +62,23 @@ Begin VB.Form frmDFe
          Caption         =   "Consultar Todas as notas destinadas?"
          Height          =   495
          Left            =   2280
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   1440
          Width           =   1695
       End
       Begin VB.TextBox txtNroUltiNSU 
          Appearance      =   0  'Flat
-         BackColor       =   &H80000004&
          Height          =   285
          Left            =   2160
-         Locked          =   -1  'True
-         TabIndex        =   16
+         TabIndex        =   15
          Top             =   720
          Width           =   1695
       End
       Begin VB.TextBox txtNSUInicial 
          Appearance      =   0  'Flat
-         BackColor       =   &H80000004&
          Height          =   285
          Left            =   240
-         Locked          =   -1  'True
-         TabIndex        =   15
+         TabIndex        =   14
          Top             =   720
          Width           =   1575
       End
@@ -143,7 +86,7 @@ Begin VB.Form frmDFe
          Caption         =   "Quantidade de notas"
          Height          =   255
          Left            =   240
-         TabIndex        =   29
+         TabIndex        =   23
          Top             =   1200
          Width           =   1695
       End
@@ -151,7 +94,7 @@ Begin VB.Form frmDFe
          Caption         =   "Último NSU"
          Height          =   255
          Left            =   2160
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   360
          Width           =   855
       End
@@ -159,7 +102,7 @@ Begin VB.Form frmDFe
          Caption         =   "NSU Inicial"
          Height          =   255
          Left            =   240
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   360
          Width           =   855
       End
@@ -176,7 +119,7 @@ Begin VB.Form frmDFe
          ItemData        =   "frmDFe.frx":0000
          Left            =   600
          List            =   "frmDFe.frx":0055
-         TabIndex        =   26
+         TabIndex        =   20
          Top             =   360
          Width           =   735
       End
@@ -207,7 +150,7 @@ Begin VB.Form frmDFe
             Caption         =   "Homologação"
             Height          =   255
             Left            =   120
-            TabIndex        =   27
+            TabIndex        =   21
             Top             =   360
             Value           =   -1  'True
             Width           =   1455
@@ -223,7 +166,7 @@ Begin VB.Form frmDFe
       End
       Begin VB.TextBox txtCNPJConfig 
          Height          =   285
-         Left            =   1920
+         Left            =   2040
          TabIndex        =   5
          Top             =   360
          Width           =   2175
@@ -344,20 +287,27 @@ Private Sub btnConsultarDfe_Click()
 End Sub
 
 Private Sub consultaDFe(ultNSU As String)
-    Dim RetDFe, auxXML As String
-    Dim j, jx, i As Integer
+   Dim RetDFe, auxXML, vDirResumo As String
+    Dim j, jx, i  As Integer
     Dim listaXML, nsu As Collection
     Set nsu = New Collection
     Set listaXML = New Collection
     Dim lNodeList, iRSEmitente, iVNF, iSitManifestacao As IXMLDOMNodeList ' tipagem da MSXML6_TLB
 
+    vDirResumo = App.Path + "\XmlResumo"
+
     ' Função de "Consulta da Relação de Documentos a serem distribuidos para determinado CPF ou CNPJ de acordo com a NF-e"
     ' ConsultarDistribuicaoDFe(aCodigoUF, aCNPJCPF : string; aNSU: string; aTipoNSU: TNSUKind): string;
 
     RetDFe = spdNFe.ConsultarDistribuicaoDFe(trataUF(cbbUFConfig.Text), spdNFe.CNPJ, ultNSU, nkUltimo)
+
+    ' Grava o retorno em um diretório
+    spdNFe.TratarXMLRetornoDFe strngrdNotas.Text, vDirResumo
     
     ' A função abaixo recebe o XML da consulta
     configObjeto (RetDFe)
+
+    
     
     ' Obtém o NSU mais alto e salva em maxNSU
     Set lNodeList = lXMLDoc.selectNodes("//retDistDFeInt/maxNSU")
@@ -488,21 +438,17 @@ Private Function RemoverNameSpaces(XMLString As String) As String
     End If
 End Function
 
-Private Sub btnDescompactar_Click()
-    If strngrdNotas.Text <> "" Then
-        strngrdNotas.Text = spdNFe.DescompactarXMLZip(strngrdNotas.Text)
-    Else
-        MsgBox "Campo está vazio!"
-    End If
-End Sub
 
 Private Sub btnDownloadNFe_Click()
-    Dim chaveDownload, xmlCompactado As String
+    Dim chaveDownload, xmlCompactado, vDirChave As String
     Dim localiza As Integer
     chaveDownload = InputBox("Entre o valor da chave")
     If chaveDownload <> "" Then
         strngrdNotas.Text = ""
+        vDirChave = App.Path + "\XmlDownload"
         strngrdNotas.Text = spdNFe.ConsultarDistribuicaoDFeChave(trataUF(spdNFe.UF), spdNFe.CNPJ, chaveDownload)
+        ' Salva o Xml em um diretório
+        spdNFe.TratarXMLRetornoDFe strngrdNotas.Text, vDirChave
         ' Limpa o retorno, deixando apenas o valor dentro da tag <docZip></docZip>
         localiza = InStrRev(strngrdNotas.Text, ".xsd")
         If localiza <> 0 Then
@@ -510,6 +456,7 @@ Private Sub btnDownloadNFe_Click()
             strngrdNotas.Text = Replace(xmlCompactado, "</docZip></loteDistDFeInt></retDistDFeInt>", "")
             ' Aplica o método DescompactarXMLZip
             strngrdNotas.Text = spdNFe.DescompactarXMLZip(strngrdNotas.Text)
+           
         End If
     Else
         MsgBox "Chave da nota não preenchida!"
@@ -517,12 +464,14 @@ Private Sub btnDownloadNFe_Click()
 End Sub
 
 Private Sub btnLoadConfig_Click()
-  'Arquivo INI a ser manipulado com parametrizações
-  spdNFe.ConfigINI = App.Path + "\nfeConfig.ini"
-  ArqIni = App.Path + "\nfeConfig.ini"
-  spdNFe.LoadConfig (ArqIni) 'Esse metodo faz com que o Componente carregue as configuracoes do INI para as devidas propriedades
+
+  spdNFe.NomeCertificado = cbbCertificado.Text
+  write_ini "NFE", "NomeCertificado", cbbCertificado.Text
+
+  'Esse metodo faz com que o Componente carregue as configuracoes do INI para as devidas propriedades
+  spdNFe.LoadConfig (ArqIni)
   
-  ' carregar valores
+  'carregar valores do emitente
   txtCNPJConfig.Text = spdNFe.CNPJ
   cbbUFConfig.Text = spdNFe.UF
   
@@ -533,6 +482,7 @@ Private Sub btnLoadConfig_Click()
   
   If rbHomologacao.Value = True Then
     spdNFe.Ambiente = akHomologacao
+    
   Else
     spdNFe.Ambiente = akProducao
   End If
@@ -554,6 +504,10 @@ Private Sub Form_Initialize()
   ' aCnpjSH  : deve ser informado o CNPJ da Software House cliente Tecnospeed
   ' aTokenSH : deve ser informado o Token que a Software House possui junto a Tecnospeed
   spdNFe.ConfigurarSoftwareHouse "00000000000000", "000000000000000000000"
+
+  'Arquivo INI a ser manipulado com parametrizações
+  spdNFe.ConfigINI = App.Path + "\nfeConfig.ini"
+  ArqIni = App.Path + "\nfeConfig.ini"
   
   'Utiliza Método do Componente para Listar Certificados instalado no SO
   Dim i As Integer
@@ -653,3 +607,12 @@ Private Function trataUF(strUF As String) As String
 End Function
 
 
+Private Sub rbHomologacao_Click()
+    spdNFe.Ambiente = akHomologacao
+    write_ini "NFE", "Ambiente", "2"
+End Sub
+
+Private Sub rbProducao_Click()
+    spdNFe.Ambiente = akProducao
+    write_ini "NFE", "Ambiente", "1"
+End Sub

@@ -4,10 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls, ComCtrls;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, ShellAPI, ComCtrls, spdNFe;
 
 type
-  TEventos = class(TForm)
+    TEventos = class(TForm)
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     TabSheet4: TTabSheet;
@@ -51,6 +51,9 @@ type
     Label10: TLabel;
     btnCancelpEvento: TButton;
     btnDataHrCancel: TSpeedButton;
+    btnEnviarEmailCCe: TButton;
+    dlgOpen: TOpenDialog;
+    spdNFe1: TspdNFe;
     procedure FormCreate(Sender: TObject);
     procedure btnEnviaManifClick(Sender: TObject);
     procedure btnDataHoraManifClick(Sender: TObject);
@@ -62,10 +65,12 @@ type
     procedure btnImprimirCCeClick(Sender: TObject);
     procedure btnDataHrCancelClick(Sender: TObject);
     procedure btnCancelpEventoClick(Sender: TObject);
+    procedure btnEnviarEmailCCeClick(Sender: TObject);
 
   private
     { Private declarations }
     function LoadXmlCCe(aChaveCCe: String):WideString;
+
   public
     { Public declarations }
   end;
@@ -153,6 +158,25 @@ procedure TEventos.btnCancelpEventoClick(Sender: TObject);
 begin
   mmXmlCancel.Lines.Text := Demo_NFe_Form.spdNFe.CancelarNFeEvento(edtIDCancel.Text,edtNumProtCancel.Text,
   edtJustifCancel.Text,edtDataHrCancel.Text,1,cbFusoHrCancel.Text);
+end;
+
+
+
+procedure TEventos.btnEnviarEmailCCeClick(Sender: TObject);
+var
+  XMLAux: string;
+begin
+  showmessage('Selecione o Xml da CCE');
+  dlgOpen.InitialDir := ExtractFilePath(ParamStr(0));
+  dlgOpen.Title      := 'Selecione o Xml da CCe para envio.';
+  dlgOpen.Execute;
+
+
+  if dlgOpen.FileName <> '' then
+  begin
+    XMLAux := dlgOpen.FileName;
+    Demo_NFe_Form.spdNFe.EnviarCCeDestinatario(XMLAux);
+  end
 end;
 
 end.
