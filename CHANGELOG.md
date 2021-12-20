@@ -1,3 +1,7 @@
+## [12.1.74.6398]
+**Novidades**
+ - DCIT-494 - Compatibilizado componente com NT 2020/006 v1.00. Documentação: https://blog.tecnospeed.com.br/nota-tecnica-2020-006-da-nfe-e-nfce/
+
 ## [12.1.74.6393]
 
 **Novidades**
