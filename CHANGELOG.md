@@ -1,6 +1,9 @@
 ## [12.1.74.6398]
 **Novidades**
- - DCIT-494 - Compatibilizado componente com NT 2020/006 v1.00. Documentação: https://blog.tecnospeed.com.br/nota-tecnica-2020-006-da-nfe-e-nfce/
+ - DCIT-893 - Disponibilizado no grupo DadosVeiculosNovos os campos cCorDENATRAN e lota (RTM de impressão).
+**Correções**
+ - DCIT-909 - ajuste na impressão de xml com quebra de acentuação de caracteres ASCII.
+ - DCIT-843 - atualização do endereço WebService CadConsultaCadastro4 para Minas Gerais.
 
 ## [12.1.74.6393]
 
