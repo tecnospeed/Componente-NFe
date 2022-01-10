@@ -1,3 +1,14 @@
+## [12.1.74.6402]
+**Correções**
+- DCIT-909 - ajuste na impressão de xml com quebra de acentuação de caracteres ASCII.
+- DCIT-843 - atualização do endereço WebService CadConsultaCadastro4 para Minas Gerais.
+- DCIT-957 - ajuste na rotina para escapar o caractere & contemplando entidades HTML.
+- DCIT-529 - Criar automaticamente pasta de saída da telemetria.
+
+**Novidades**
+- DCIT-893 - Disponibilizado no grupo DadosVeiculosNovos os campos cCorDENATRAN e lota (RTM de impressão).
+- DCIT-923 - Alterado URL dos webservices de homologação e produção do CE para as URL do webservice SVRS.
+
 ## [12.1.74.6398]
 **Novidades**
  - DCIT-893 - Disponibilizado no grupo DadosVeiculosNovos os campos cCorDENATRAN e lota (RTM de impressão).
