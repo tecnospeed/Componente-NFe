@@ -20,7 +20,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
     Top = 0
     Width = 729
     Height = 385
-    ActivePage = tbsNfe
+    ActivePage = TabImpressao
     TabOrder = 0
     object tbsNfe: TTabSheet
       Caption = 'NFe'
@@ -855,13 +855,13 @@ object Demo_NFe_Form: TDemo_NFe_Form
     DanfeSettings.ImprimirLocalRetiradaEntrega = True
     DanfeSettings.InfCplQuebrarLinhaAut = False
     DanfeSettings.MensagemIcmsDesonerado = False
-    Versao = '12.1.74.6402'
+    Versao = '12.1.74.6369'
     CaracteresRemoverAcentos = #225#233#237#243#250#224#232#236#242#249#226#234#238#244#251#228#235#239#246#252#227#245#241#231#193#201#205#211#218#192#200#204#210#217#194#202#206#212#219#196#203#207#214#220#195#213#209#199#186#170
     TipoCertificado = ckMemory
     DiretorioTemplates = 
       'C:\Program Files (x86)\Borland\Delphi7\Bin\Templatesvm50vm50vm50' +
       'vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50' +
-      'vm50vm50vm50vm50vm50vm50vm50vm50vm50\vm50\'
+      'vm50vm50vm50vm50vm50vm50vm50vm50vm50\'
     IgnoreInvalidCertificates = False
     DiretorioLog = 'C:\Program Files (x86)\Borland\Delphi7\Bin\Log\'
     Ambiente = akHomologacao
@@ -872,7 +872,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
     DiretorioEsquemas = 
       'C:\Program Files (x86)\Borland\Delphi7\Bin\Esquemasvm50vm50vm50v' +
       'm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50v' +
-      'm50vm50vm50vm50vm50vm50vm50vm50vm50\vm50\'
+      'm50vm50vm50vm50vm50vm50vm50vm50vm50\'
     ConexaoSegura = False
     TimeOut = 0
     DiretorioLogErro = 'C:\Program Files (x86)\Borland\Delphi7\Bin\LogErro\'
