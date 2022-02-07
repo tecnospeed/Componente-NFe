@@ -1,3 +1,13 @@
+## [12.1.74.6409]
+**Correções**
+- DCIT-551 - Componente NFe - Ajustes no instalador (Retirada versão trial do componente).
+- DCIT-996 - correção na extração de placa e uf da tag infcpl
+
+**Novidades**
+- DCIT-947 - Opção de configurar o Soap da Consulta Cadastro por UF no ini.
+- DCIT-889 - Adicionadas as propriedades CnpjSoftwareHouse, TokenSoftwareHouse. Adicionada a
+  propriedade DiagnosticMode no arquivo ini.
+
 ## [12.1.74.6402]
 **Correções**
 - DCIT-909 - ajuste na impressão de xml com quebra de acentuação de caracteres ASCII.
