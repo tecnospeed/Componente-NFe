@@ -1,3 +1,18 @@
+## [12.1.74.6418]
+**Correções**
+- DCIT-1013 - troca do caráter En Dash não suportado pela Sefaz por Hífen no envio de CCe.
+- DCIT-1054 - Ajustes no envio de e-mail com SBB (SecureBlackBox).
+
+**Novidades**
+- DCIT-1032 - Alteração na forma do preenchimento do campo idEstrangeiro no destinatário.
+OBS: Será preenchido idEstrangeiro vazio somente quando não vier preenchido os campos CNPJ ou CPF ou o próprio idEstrangeiro do destinatário e quando for operação com o exterior (idDest=3) ou o destinatário for do exterior (UF=EX).
+- DCIT-1040 - Disponibilizar a propriedade EmailUseSecureBlackBox na OCX do componente, para permitir a opção de enviar email com o SBB (SecureBlackBox) nas linguagens que utilizam Activex ou a TLB.
+- DCIT-1042 - Melhorias no método TestarEmailConfig.
+Para maiores informações acesse: https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360019133553
+- DCIT-1067 - Atualizar o Validador NFe com a nova forma de preenchimento do idEstrangeiro.
+- DCIT-1033 - Ajustes no componente para que possa ser utilizado em Windows com formato de moeda diferente de PT-BR.
+
+
 ## [12.1.74.6409]
 **Correções**
 - DCIT-551 - Componente NFe - Ajustes no instalador (Retirada versão trial do componente).
