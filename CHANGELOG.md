@@ -1,3 +1,14 @@
+## [12.1.74.6428]
+**Correções**
+* DCIT-1107 - Componentes - Links quebrados no arquivo "leiame.txt"
+* DCIT-1100 - Componente / eDoc - NFe - Substituição Web Services de Homologação do Ambiente Nacional
+* DCIT-1083 - Componente - NFe - Padronizar exibição da frase de contingência dos RTMs
+* DCIT-1103 - Alterado o retorno do método DescompactarXMLZip para UTF-8.
+
+**Novidades:**
+* DCIT-1060 - Foram adicionadas as propriedades QtdeTentativasEmail e UseTLS nas configurações de E-mail, podendo ser configurado via propriedade ou por ini.
+* DCIT-1108 - propriedade ImprimirFrenteVerso ajustada para que os DANFE retrato/paisagem exiba conforme manual do contribuinte Item 3.4 50% pagina verso
+
 ## [12.1.74.6418]
 **Correções**
 - DCIT-1013 - troca do caráter En Dash não suportado pela Sefaz por Hífen no envio de CCe.
