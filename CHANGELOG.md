@@ -1,3 +1,7 @@
+## [12.1.74.6434]
+**Novidades:**
+* DCIT-917 - Compatibilizado o componente NFe com as NTs 2021.004 v1.00, 2021.004 v1.10 e 2021.004 v1.20 [https://blog.tecnospeed.com.br/nota-tecnica-2021-004-da-nfe-e-nfce/]()
+
 ## [12.1.74.6428]
 **Correções**
 * DCIT-1107 - Componentes - Links quebrados no arquivo "leiame.txt"
