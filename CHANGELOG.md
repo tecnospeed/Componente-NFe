@@ -1,6 +1,7 @@
 ## [12.1.74.6434]
 **Novidades:**
-* DCIT-917 - Compatibilizado o componente NFe com as NTs 2021.004 v1.00, 2021.004 v1.10 e 2021.004 v1.20 [https://blog.tecnospeed.com.br/nota-tecnica-2021-004-da-nfe-e-nfce/]()
+* DCIT-917 - Compatibilizado o componente NFe com as NTs 2021.004 v1.00, 2021.004 v1.10 e 2021.004 v1.20 [https://blog.tecnospeed.com.br/nota-tecnica-2021-004-da-nfe-e-nfce/]
+* DSP4G-2 - Validação de evento quando tpEmis da chave nfe for diferente de 1,2,4,5,6,7. Conforme NT 2020.001 versão 1.10 e 1.120
 
 ## [12.1.74.6428]
 **Correções**
