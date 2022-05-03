@@ -1,4 +1,4 @@
-## [12.1.74.6434]
+## [12.1.74.6436]
 **Novidades:**
 * DSP4G-141 - Padronizar os AppId dos arquivos *.iss do componentes
 
