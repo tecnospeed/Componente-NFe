@@ -1,3 +1,8 @@
+## [12.1.74.6438]
+**Correções**
+* DSML-97 - Retorno de Validação de Licenças
+* DSML-119 - propriedade USETLS em VB6
+
 ## [12.1.74.6436]
 **Novidades:**
 * DSP4G-141 - Padronizar os AppId dos arquivos *.iss do componentes
