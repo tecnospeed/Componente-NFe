@@ -861,7 +861,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
     DiretorioTemplates = 
       'C:\Program Files (x86)\Borland\Delphi7\Bin\Templatesvm50vm50vm50' +
       'vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50' +
-      'vm50vm50vm50vm50vm50vm50vm50vm50vm50\vm50\'
+      'vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50\'
     IgnoreInvalidCertificates = False
     DiretorioLog = 'C:\Program Files (x86)\Borland\Delphi7\Bin\Log\'
     Ambiente = akHomologacao
@@ -872,7 +872,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
     DiretorioEsquemas = 
       'C:\Program Files (x86)\Borland\Delphi7\Bin\Esquemasvm50vm50vm50v' +
       'm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50v' +
-      'm50vm50vm50vm50vm50vm50vm50vm50vm50\vm50\'
+      'm50vm50vm50vm50vm50vm50vm50vm50vm50vm50\'
     ConexaoSegura = False
     TimeOut = 0
     DiretorioLogErro = 'C:\Program Files (x86)\Borland\Delphi7\Bin\LogErro\'

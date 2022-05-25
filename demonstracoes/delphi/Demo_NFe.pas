@@ -491,8 +491,7 @@ begin
   edtNumProt.Text := obterNroResultado(mmXmlRetorno.Text,'<nProt','</nProt');
   edtId.Text := obterNroResultado(mmXmlRetorno.Text,'<chNFe','</chNFe');
   PageControl1.ActivePage := tabXmlRetorno;
-  if edtId.Text <> '' then
-    MontarXmlCompleto;
+  MontarXmlCompleto;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnConsultRecClick(Sender: TObject);
@@ -501,8 +500,7 @@ begin
   edtNumProt.Text := obterNroResultado(mmXmlretorno.Text,'<nProt','</nProt');
   edtId.Text := obterNroResultado(mmXmlRetorno.Text,'<chNFe','</chNFe');
   PageControl1.ActivePage := tabXmlRetorno;
-  if edtId.Text <> '' then
-    MontarXmlCompleto;
+  MontarXmlCompleto;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnConsultNfeClick(Sender: TObject);
@@ -516,8 +514,7 @@ begin
   mmXml.Text      := spdNFe.ConsultarNF(edtID.Text);
   edtNumProt.Text := obterNroResultado(mmXml.Text,'<nProt','</nProt>');
   PageControl1.ActivePage := tabXml;
-  if edtId.Text <> '' then
-    MontarXmlCompleto;
+  MontarXmlCompleto;
 end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnInutilizarNfeClick(Sender: TObject);

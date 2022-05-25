@@ -20,87 +20,53 @@ Begin VB.Form Form2
       _ExtentX        =   22463
       _ExtentY        =   11456
       _Version        =   393216
-      Tab             =   1
+      Tab             =   2
       TabHeight       =   520
       TabCaption(0)   =   "Manifestação"
       TabPicture(0)   =   "frmEventos.frx":0000
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "lblManifestacao"
-      Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "lblOrgao"
-      Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "lblDataEvento"
-      Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "lblJustificativaManifestacao"
-      Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "lblTipoEvento"
-      Tab(0).Control(4).Enabled=   0   'False
-      Tab(0).Control(5)=   "lblFusoManifestacao"
-      Tab(0).Control(5).Enabled=   0   'False
-      Tab(0).Control(6)=   "lblCNPJDestinatario"
-      Tab(0).Control(6).Enabled=   0   'False
-      Tab(0).Control(7)=   "lblChaveManifestacao"
-      Tab(0).Control(7).Enabled=   0   'False
-      Tab(0).Control(8)=   "Label1"
-      Tab(0).Control(8).Enabled=   0   'False
+      Tab(0).Control(0)=   "mmManifestacao"
+      Tab(0).Control(1)=   "edtChaveManifestacao"
+      Tab(0).Control(2)=   "edtCNPJManifestacao"
+      Tab(0).Control(3)=   "cbFusoManifestacao"
+      Tab(0).Control(4)=   "cbTipoEvento"
+      Tab(0).Control(5)=   "edtJustificativaManifestacao"
+      Tab(0).Control(6)=   "edtDataEvento"
+      Tab(0).Control(7)=   "btnDataEvento"
+      Tab(0).Control(8)=   "btnEnviarManifestacao"
       Tab(0).Control(9)=   "txtOrgao"
-      Tab(0).Control(9).Enabled=   0   'False
-      Tab(0).Control(10)=   "btnEnviarManifestacao"
-      Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "btnDataEvento"
-      Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).Control(12)=   "edtDataEvento"
-      Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).Control(13)=   "edtJustificativaManifestacao"
-      Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "cbTipoEvento"
-      Tab(0).Control(14).Enabled=   0   'False
-      Tab(0).Control(15)=   "cbFusoManifestacao"
-      Tab(0).Control(15).Enabled=   0   'False
-      Tab(0).Control(16)=   "edtCNPJManifestacao"
-      Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).Control(17)=   "edtChaveManifestacao"
-      Tab(0).Control(17).Enabled=   0   'False
-      Tab(0).Control(18)=   "mmManifestacao"
-      Tab(0).Control(18).Enabled=   0   'False
+      Tab(0).Control(10)=   "Label1"
+      Tab(0).Control(11)=   "lblChaveManifestacao"
+      Tab(0).Control(12)=   "lblCNPJDestinatario"
+      Tab(0).Control(13)=   "lblFusoManifestacao"
+      Tab(0).Control(14)=   "lblTipoEvento"
+      Tab(0).Control(15)=   "lblJustificativaManifestacao"
+      Tab(0).Control(16)=   "lblDataEvento"
+      Tab(0).Control(17)=   "lblOrgao"
+      Tab(0).Control(18)=   "lblManifestacao"
       Tab(0).ControlCount=   19
       TabCaption(1)   =   "Cancelamento Evento"
       TabPicture(1)   =   "frmEventos.frx":001C
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "lblXmlCancEvento"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "lblDataCancEvento(0)"
-      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "lblJustificativaCancEvento"
-      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "lblFusoCancEvento(0)"
-      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "lblProtocoloAutCancEvento"
-      Tab(1).Control(4).Enabled=   0   'False
       Tab(1).Control(5)=   "lblChaveCancelarEvento"
-      Tab(1).Control(5).Enabled=   0   'False
       Tab(1).Control(6)=   "lblCancelarEvento"
-      Tab(1).Control(6).Enabled=   0   'False
       Tab(1).Control(7)=   "cbFusoCancelamento"
-      Tab(1).Control(7).Enabled=   0   'False
       Tab(1).Control(8)=   "edtDataCancEvento"
-      Tab(1).Control(8).Enabled=   0   'False
       Tab(1).Control(9)=   "btnCancelarNFeEvento"
-      Tab(1).Control(9).Enabled=   0   'False
       Tab(1).Control(10)=   "btnDataCancEvento(0)"
-      Tab(1).Control(10).Enabled=   0   'False
       Tab(1).Control(11)=   "edtJustificativaCancEvento"
-      Tab(1).Control(11).Enabled=   0   'False
       Tab(1).Control(12)=   "edtProtocoloCancNFe"
-      Tab(1).Control(12).Enabled=   0   'False
       Tab(1).Control(13)=   "edtChaveCancelamentoNFe"
-      Tab(1).Control(13).Enabled=   0   'False
       Tab(1).Control(14)=   "mmCancelamentoNfe"
-      Tab(1).Control(14).Enabled=   0   'False
       Tab(1).ControlCount=   15
       TabCaption(2)   =   "Carta de Correção"
       TabPicture(2)   =   "frmEventos.frx":0038
-      Tab(2).ControlEnabled=   0   'False
+      Tab(2).ControlEnabled=   -1  'True
       Tab(2).Control(0)=   "Label2"
       Tab(2).Control(0).Enabled=   0   'False
       Tab(2).Control(1)=   "Label3"
@@ -149,14 +115,14 @@ Begin VB.Form Form2
       Begin VB.CommandButton Command1 
          Caption         =   "Imprimir CCe"
          Height          =   495
-         Left            =   -70080
+         Left            =   4920
          TabIndex        =   56
          Top             =   2400
          Width           =   1815
       End
       Begin VB.TextBox mmXmlCce 
          Height          =   3135
-         Left            =   -74760
+         Left            =   240
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
          TabIndex        =   55
@@ -165,7 +131,7 @@ Begin VB.Form Form2
       End
       Begin VB.TextBox mmCancelamentoNfe 
          Height          =   3135
-         Left            =   240
+         Left            =   -74760
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
          TabIndex        =   54
@@ -184,7 +150,7 @@ Begin VB.Form Form2
       Begin VB.CommandButton btnExportarCce 
          Caption         =   "Exportar PDF CCe"
          Height          =   495
-         Left            =   -68160
+         Left            =   6840
          TabIndex        =   52
          Top             =   2400
          Width           =   1815
@@ -192,7 +158,7 @@ Begin VB.Form Form2
       Begin VB.CommandButton btnVisualizarCce 
          Caption         =   "Visualizar CCe"
          Height          =   495
-         Left            =   -66240
+         Left            =   8760
          TabIndex        =   51
          Top             =   2400
          Width           =   1815
@@ -209,14 +175,14 @@ Begin VB.Form Form2
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   -64320
+         Left            =   10680
          TabIndex        =   50
          Top             =   2400
          Width           =   1815
       End
       Begin VB.TextBox edtDescCce 
          Height          =   285
-         Left            =   -74760
+         Left            =   240
          MaxLength       =   44
          TabIndex        =   47
          Top             =   1920
@@ -224,21 +190,21 @@ Begin VB.Form Form2
       End
       Begin VB.TextBox edtSeqCce 
          Height          =   285
-         Left            =   -64680
+         Left            =   10320
          TabIndex        =   45
          Top             =   1920
          Width           =   2175
       End
       Begin VB.TextBox edtIdLoteCce 
          Height          =   285
-         Left            =   -66720
+         Left            =   8280
          TabIndex        =   43
          Top             =   1920
          Width           =   1935
       End
       Begin VB.TextBox edtUfCce 
          Height          =   285
-         Left            =   -68520
+         Left            =   6480
          TabIndex        =   41
          Top             =   1920
          Width           =   1695
@@ -256,14 +222,14 @@ Begin VB.Form Form2
          EndProperty
          Height          =   315
          Index           =   1
-         Left            =   -62880
+         Left            =   12120
          TabIndex        =   39
          Top             =   1320
          Width           =   375
       End
       Begin VB.TextBox edtDateCCe 
          Height          =   315
-         Left            =   -65520
+         Left            =   9480
          TabIndex        =   38
          Top             =   1320
          Width           =   2535
@@ -271,7 +237,7 @@ Begin VB.Form Form2
       Begin VB.ComboBox cbFusoHrCce 
          Height          =   315
          ItemData        =   "frmEventos.frx":0054
-         Left            =   -68040
+         Left            =   6960
          List            =   "frmEventos.frx":0061
          TabIndex        =   36
          Text            =   "Selecionar"
@@ -280,7 +246,7 @@ Begin VB.Form Form2
       End
       Begin VB.TextBox edtIdCce 
          Height          =   315
-         Left            =   -74760
+         Left            =   240
          MaxLength       =   44
          TabIndex        =   33
          Top             =   1320
@@ -288,7 +254,7 @@ Begin VB.Form Form2
       End
       Begin VB.TextBox edtChaveCancelamentoNFe 
          Height          =   315
-         Left            =   240
+         Left            =   -74760
          MaxLength       =   44
          TabIndex        =   24
          Top             =   1320
@@ -296,14 +262,14 @@ Begin VB.Form Form2
       End
       Begin VB.TextBox edtProtocoloCancNFe 
          Height          =   315
-         Left            =   6360
+         Left            =   -68640
          TabIndex        =   23
          Top             =   1320
          Width           =   3735
       End
       Begin VB.TextBox edtJustificativaCancEvento 
          Height          =   315
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   22
          Top             =   1920
          Width           =   6015
@@ -321,7 +287,7 @@ Begin VB.Form Form2
          EndProperty
          Height          =   315
          Index           =   0
-         Left            =   8640
+         Left            =   -66360
          TabIndex        =   21
          Top             =   1920
          Width           =   375
@@ -338,14 +304,14 @@ Begin VB.Form Form2
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   9240
+         Left            =   -65760
          TabIndex        =   20
          Top             =   1800
          Width           =   3255
       End
       Begin VB.TextBox edtDataCancEvento 
          Height          =   315
-         Left            =   6360
+         Left            =   -68640
          TabIndex        =   19
          Top             =   1920
          Width           =   2175
@@ -353,7 +319,7 @@ Begin VB.Form Form2
       Begin VB.ComboBox cbFusoCancelamento 
          Height          =   315
          ItemData        =   "frmEventos.frx":007D
-         Left            =   10200
+         Left            =   -64800
          List            =   "frmEventos.frx":008A
          TabIndex        =   18
          Text            =   "Selecionar"
@@ -462,7 +428,7 @@ Begin VB.Form Form2
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   49
          Top             =   2640
          Width           =   1575
@@ -470,7 +436,7 @@ Begin VB.Form Form2
       Begin VB.Label Label7 
          Caption         =   "Descrição Correção"
          Height          =   375
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   48
          Top             =   1680
          Width           =   2295
@@ -478,7 +444,7 @@ Begin VB.Form Form2
       Begin VB.Label Label6 
          Caption         =   "Sequência Evento"
          Height          =   255
-         Left            =   -64680
+         Left            =   10320
          TabIndex        =   46
          Top             =   1680
          Width           =   1575
@@ -486,7 +452,7 @@ Begin VB.Form Form2
       Begin VB.Label Label5 
          Caption         =   "ID lote"
          Height          =   255
-         Left            =   -66720
+         Left            =   8280
          TabIndex        =   44
          Top             =   1680
          Width           =   975
@@ -494,7 +460,7 @@ Begin VB.Form Form2
       Begin VB.Label Label4 
          Caption         =   "Código UF"
          Height          =   255
-         Left            =   -68520
+         Left            =   6480
          TabIndex        =   42
          Top             =   1680
          Width           =   1215
@@ -503,7 +469,7 @@ Begin VB.Form Form2
          Caption         =   "Data e Hora Evento"
          Height          =   255
          Index           =   1
-         Left            =   -65520
+         Left            =   9480
          TabIndex        =   40
          Top             =   1080
          Width           =   1695
@@ -512,7 +478,7 @@ Begin VB.Form Form2
          Caption         =   "Fuso Horário"
          Height          =   255
          Index           =   1
-         Left            =   -68040
+         Left            =   6960
          TabIndex        =   37
          Top             =   1080
          Width           =   1215
@@ -529,7 +495,7 @@ Begin VB.Form Form2
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   35
          Top             =   480
          Width           =   2895
@@ -537,7 +503,7 @@ Begin VB.Form Form2
       Begin VB.Label Label2 
          Caption         =   "Chave da Nota"
          Height          =   255
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   34
          Top             =   1080
          Width           =   1815
@@ -571,7 +537,7 @@ Begin VB.Form Form2
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   31
          Top             =   480
          Width           =   2895
@@ -579,7 +545,7 @@ Begin VB.Form Form2
       Begin VB.Label lblChaveCancelarEvento 
          Caption         =   "Chave da Nota"
          Height          =   255
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   30
          Top             =   1080
          Width           =   1215
@@ -587,7 +553,7 @@ Begin VB.Form Form2
       Begin VB.Label lblProtocoloAutCancEvento 
          Caption         =   "Protocolo de Autorização"
          Height          =   255
-         Left            =   6360
+         Left            =   -68640
          TabIndex        =   29
          Top             =   1080
          Width           =   2295
@@ -596,7 +562,7 @@ Begin VB.Form Form2
          Caption         =   "Fuso Horário"
          Height          =   255
          Index           =   0
-         Left            =   10200
+         Left            =   -64800
          TabIndex        =   28
          Top             =   1080
          Width           =   1215
@@ -604,7 +570,7 @@ Begin VB.Form Form2
       Begin VB.Label lblJustificativaCancEvento 
          Caption         =   "Justificativa Cancelamento"
          Height          =   255
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   27
          Top             =   1680
          Width           =   2415
@@ -613,7 +579,7 @@ Begin VB.Form Form2
          Caption         =   "Data e Hora Evento"
          Height          =   255
          Index           =   0
-         Left            =   6360
+         Left            =   -68640
          TabIndex        =   26
          Top             =   1680
          Width           =   1695
@@ -630,7 +596,7 @@ Begin VB.Form Form2
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   25
          Top             =   2640
          Width           =   1575
@@ -836,7 +802,11 @@ Private Sub btnXMLDataset_Click()
     End If
 End Sub
 
-Private Sub btnExportarCce_Click()
+Private Sub btnExportarCce_Click()  '
+     If mmXmlCce.Text <> "" Then
+       Form1.spdNFe.ExportarCCe mmXmlCce.Text, ""
+    End If
+
     'Verificar se um ID de nota foi informado
     If edtIdCce.Text = "" Then
     MsgBox "Informe a chave da CCe que deseja visualizar"
@@ -848,17 +818,25 @@ Private Sub btnExportarCce_Click()
 End Sub
 
 Private Sub btnVisualizarCce_Click()
+    If mmXmlCce.Text <> "" Then
+      Form1.spdNFe.VisualizarCCe mmXmlCce
+    End If
+
     'Verificar se um ID de nota foi informado
     If edtIdCce.Text = "" Then
     MsgBox "Informe a chave da CCe que deseja visualizar"
     edtIdCce.SetFocus
     Else
     CarregarXml
-    Form1.spdNFe.VisualizarCCe xmlCCe
+    
     End If
 End Sub
 
 Private Sub Command1_Click()
+     If mmXmlCce.Text <> "" Then
+      Form1.spdNFe.ImprimirCCe mmXmlCce.Text, ""
+    End If
+    
     'Verificar se um ID de nota foi informado
     If edtIdCce.Text = "" Then
     MsgBox "Informe a chave da CCe que deseja visualizar"
