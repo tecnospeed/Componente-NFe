@@ -1,3 +1,6 @@
+## [12.1.74.6441]
+**Correções**
+* DSML-186 - Retorno de Validação de Licenças
 ## [12.1.74.6438]
 **Correções**
 * DSML-97 - Retorno de Validação de Licenças
