@@ -1,3 +1,6 @@
+## [12.1.74.6442]
+**Novidades**
+* DSP4G-266 - NT 2022.001 v 1.0
 ## [12.1.74.6441]
 **Correções**
 * DSML-186 - Retorno de Validação de Licenças
