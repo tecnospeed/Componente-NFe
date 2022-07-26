@@ -1,3 +1,9 @@
+
+## [12.1.74.6445]
+**Novidades**
+* DSP4G-327: Disponibilizado método GetNomeCertificadoViaCaminho para obter o nome do certificado informando o caminho e a senha dele. Para mais detalhes de como utilizar GetNomeCertificadoViaCaminho
+* DSP4G-324: passando propriedade DiretorioLog do componente para a propriedade DiretorioLog do license, para que o arquivo LicenseX.log seja gravado na mesma pasta de log do componente e não na pasta raiz da aplicação que está fazendo uso do componente
+
 ## [12.1.74.6442]
 **Novidades**
 * DSP4G-266 - NT 2022.001 v 1.0
