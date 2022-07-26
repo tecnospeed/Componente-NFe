@@ -1,3 +1,6 @@
+## [12.1.74.6446]
+**Novidades**
+* DSP4G-327: Disponibilizado método GetNomeCertificadoViaCaminho para obter o nome do certificado informando o caminho e a senha dele. Para mais detalhes de como utilizar GetNomeCertificadoViaCaminho
 
 ## [12.1.74.6442]
 **Novidades**
