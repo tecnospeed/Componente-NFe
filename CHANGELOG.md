@@ -1,3 +1,10 @@
+## [12.1.74.6451]
+**Novidades**
+* DSP4G-266 disponibilizado método ConsultarGTIN referente a NT2022.001 v1.0. Para mais detalhes de como utilizar [ConsultarGTIN](https://tecnospeed.zendesk.com/knowledge/articles/6932687741847/pt-br?brand_id=360000386474)
+* DSP4G-327: Disponibilizado método GetNomeCertificadoViaCaminho para obter o nome do certificado informando o caminho e a senha dele. Para mais detalhes de como utilizar [GetNomeCertificadoViaCaminho](https://tecnospeed.zendesk.com/knowledge/articles/7652357569431/pt-br?brand_id=360000386474)
+* DSP4G-324 - ajustado para que o arquivo de log Licensex.Log seja salvo no mesmo diretorio de log do componente "diretorioLog"
+* DSP4G-143 - Adicionado no menu do Windows a opção de desinstalação do pacote de dependências.
+
 ## [12.1.74.6446]
 **Novidades**
 * DSP4G-327: Disponibilizado método GetNomeCertificadoViaCaminho para obter o nome do certificado informando o caminho e a senha dele. Para mais detalhes de como utilizar GetNomeCertificadoViaCaminho
