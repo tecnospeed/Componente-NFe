@@ -1,3 +1,7 @@
+## [12.1.74.6456]
+**Correções**
+* DSML-270 - Correção do escape de caracteres na tag infAdProd
+
 ## [12.1.74.6451]
 **Novidades**
 * DSP4G-266 disponibilizado método ConsultarGTIN referente a NT2022.001 v1.0. Para mais detalhes de como utilizar [ConsultarGTIN](https://tecnospeed.zendesk.com/knowledge/articles/6932687741847/pt-br?brand_id=360000386474)
