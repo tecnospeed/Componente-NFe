@@ -1,3 +1,8 @@
+
+## [12.1.74.6457]
+**Novidades*
+* DSP4G-399 - Adicionado ao pacote de instalação do componente o arquivo "IDs_LIBs_NFe.ini" contendo os ID´s das OCXs.
+
 ## [12.1.74.6456]
 **Correções**
 * DSML-270 - Correção do escape de caracteres na tag infAdProd
