@@ -1,6 +1,7 @@
 ﻿## [12.1.74.6463]
 
-#LeiamePadrão
+*Novidades*
+- DSP4G-498 Disponibilizado campos para personalização de rtm: ItemCBarra -> tag cBarra e ItemCBarraTributada -> tag cBarraTrib. Para mais detalhes [consulte documentação](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360019420793)
 
 
 ## [12.1.74.6457]
