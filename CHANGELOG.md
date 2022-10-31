@@ -1,6 +1,6 @@
 ﻿## [12.1.74.6468]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+* DSP4G-480 - Melhoria na implementação ao SetupLicense para que execute apenas quando necessário (quando for comunicar com sefaz) evitando assim inumeras requisições de verificação de licença sem necessidade como estava ocorrendo
 
 ## [12.1.74.6463]
 
