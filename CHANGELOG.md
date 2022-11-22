@@ -1,4 +1,11 @@
-﻿## [12.1.74.6468]
+﻿## [12.1.74.6469]
+
+**Novidades**
+
+* DSP4G-595: Implementação dos métodos públicos do componente na DLL da lib "spdNFeLib.dll" que havia sido descontinuada. Agora a mesma está disponível para uso.
+* DSP4G-666 - Correção para o nome do campo "ImprimirVlrTotalDanfeSimplificado" no Dataset de configuração da impressão (renomeado para "ImprimirVlrTotalDanfeSimplific").
+
+## [12.1.74.6468]
 
 * DSP4G-480 - Melhoria na implementação ao SetupLicense para que execute apenas quando necessário (quando for comunicar com sefaz) evitando assim inumeras requisições de verificação de licença sem necessidade como estava ocorrendo
 
@@ -2778,6 +2785,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
