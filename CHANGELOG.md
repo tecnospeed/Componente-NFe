@@ -1,4 +1,11 @@
-﻿## [12.1.74.6469]
+﻿## [12.1.74.6471]
+
+#leiame
+
+**Novidades**
+* DSP4G-758 - Compatibilizado com atualizações do componente indy
+
+## [12.1.74.6469]
 
 **Novidades**
 
@@ -2785,6 +2792,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
