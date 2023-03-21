@@ -1,4 +1,13 @@
-﻿## [12.1.74.6471]
+﻿## [12.1.74.6478]
+
+
+**Novidades**
+
+* DSP4G-914 - compatibilizado com NT2022.003 - para mais detalhes consulte o [dicionário de dados](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/4423079221143-Dicion%C3%A1rio-de-dados-NF-e)
+
+* DSP4G-943 - compatibilizando com NT2023.001 - para mais detalhes [consulte](https://blog.tecnospeed.com.br/nf-e-e-nfc-e-nota-tecnica-2023-001-tributacao-monofasica-sobre-combustiveis/)
+
+## [12.1.74.6471]
 
 #leiame
 
@@ -2792,6 +2801,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
