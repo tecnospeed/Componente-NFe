@@ -1,8 +1,5 @@
-﻿## [12.1.74.6480]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
-
-## [12.1.74.6478]
+## [[12.1.74.6480]
 
 
 **Novidades**
