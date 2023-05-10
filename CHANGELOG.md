@@ -1,6 +1,7 @@
 ﻿## [12.1.75.6493]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+**Correções**
+* DSML-648 Erro ao gerar NF-e com marca d'agua de cancelamento
 
 ## [12.1.75.6488]
 
