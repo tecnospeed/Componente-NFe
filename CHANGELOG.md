@@ -1,4 +1,8 @@
-﻿## [12.1.75.6488]
+﻿## [12.1.75.6493]
+
+* Corre&ccedil;&otilde;es e melhorias diversos.
+
+## [12.1.75.6488]
 
 * **Novidades**
 * DSML-613 NF-e Componente - NT 2023.001 Versão 1.20 
@@ -2809,6 +2813,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
