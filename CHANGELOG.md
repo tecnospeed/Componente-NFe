@@ -1,4 +1,14 @@
-﻿## [12.1.75.6493]
+﻿## [12.1.76.6495]
+
+**Correções**
+
+-DSML-363 - Impressão da DANFE cortando algumas informações
+
+**Novidades**
+
+-DSP4G-1027 - Disponibilizada nova propriedade de Impressão "[MensagemIcmsMonofasico](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360006172613)" para exibir a mensagem do ICMS Monofásico nas informações complementares do DANFE. 
+
+## [12.1.75.6493]
 
 **Correções**
 * DSML-648 Erro ao gerar NF-e com marca d'agua de cancelamento
@@ -2814,6 +2824,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
