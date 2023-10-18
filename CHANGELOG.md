@@ -1,4 +1,13 @@
-﻿## [13.1.77.6499]
+﻿## [13.1.78.6501]
+
+**Novidades**
+
+* DSML-914 - Adicionado os campos `pCredSN` e `vCredICMSSN` para impressão no DataSet `DadosItens` dos RTMs;
+
+**Melhorias**
+* DSML-912 - Adicionado o campo `Complemento` de endereço do destinatário na impressão através do RTM RetratoSimplificadoEtiqueta;
+
+## [13.1.77.6499]
 
 **Novidades**
 
@@ -2836,6 +2845,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
