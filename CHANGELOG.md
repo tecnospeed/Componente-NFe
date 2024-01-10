@@ -1,4 +1,15 @@
-﻿## [13.1.78.6501]
+﻿## [13.1.78.6504]
+
+**Novidades**
+
+* DSML-1004 - Alterado endereços dos servidores de homologação para a Sefaz Virtual Ambiente Nacional ([SVAN](https://hom.nfe.fazenda.gov.br/Portal/webServices.aspx?tipoConteudo=OUC/YVNWZfo=#SVAN)) na UF MA;
+
+* DSML-944 - disponibilizado novos campos tpEvento e xMotivo na impressão da CCe;
+
+**Correções**
+* DSML-952 - Correção no arquivo "nfeServidoresHom", preenchido link de consulta cadastro corretamente nas UF'S RN e AC;
+
+## [13.1.78.6501]
 
 **Novidades**
 
@@ -2845,6 +2856,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
