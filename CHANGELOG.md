@@ -6,7 +6,6 @@
 
 * DSML-944 - disponibilizado novos campos tpEvento e xMotivo na impressão da CCe;
 * DSP4G-770 - integração por arquivo no formato JSON para o metodo [ConverterLoteParaXml ](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360011422094);
-* DSML-1081 - Nova versão de esquema pl009m, compatível com a Nota Técnica 2019.001 v.1.60, foi criado um novo grupo para as informações do crédito presumido e novo campo para as informações do [cbenef](https://blog.tecnospeed.com.br/cbenef/);
 
 **Correções**
 * DSML-952 - Correção no arquivo "nfeServidoresHom", preenchido link de consulta cadastro corretamente nas UF'S RN e AC;
