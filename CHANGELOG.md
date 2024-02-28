@@ -1,4 +1,19 @@
-﻿## [13.1.78.6504]
+﻿## [13.1.79.6511]
+
+**Novidades**
+
+* DSML-1004 - Alterado endereços dos servidores de homologação para a Sefaz Virtual Ambiente Nacional ([SVAN](https://hom.nfe.fazenda.gov.br/Portal/webServices.aspx?tipoConteudo=OUC/YVNWZfo=#SVAN)) na UF MA;
+
+* DSML-944 - disponibilizado novos campos tpEvento e xMotivo na impressão da CCe;
+* DSP4G-770 - integração por arquivo no formato JSON para o metodo [ConverterLoteParaXml ](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360011422094);
+* DSML-1081 - Nova versão de esquema pl009m, compatível com a Nota Técnica 2019.001 v.1.60, foi criado um novo grupo para as informações do crédito presumido e novo campo para as informações do [cbenef](https://blog.tecnospeed.com.br/cbenef/);
+
+**Correções**
+* DSML-952 - Correção no arquivo "nfeServidoresHom", preenchido link de consulta cadastro corretamente nas UF'S RN e AC;
+* DSML-988 - Correção da fonte reduzida no campo `Endereço do Destinatário` do RTM;
+* DSML-942 - Correção da impressão do DANFE para imprimir o número do logradouro do campo Endereço de Entrega.
+
+## [13.1.78.6504]
 
 **Novidades**
 
@@ -2856,6 +2871,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
