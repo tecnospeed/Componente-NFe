@@ -1,4 +1,18 @@
-﻿## [13.1.79.6511]
+﻿## [13.1.80.6518]
+
+**Novidades**
+
+* DSML-1081 - Nova versão de esquema pl009m, compatível com a Nota Técnica 2019.001 v.1.60, foi criado um novo grupo para as informações do crédito presumido e novo campo para as informações do [cbenef](https://blog.tecnospeed.com.br/cbenef/);
+
+* DSML-1045 - compatibilizado componente com a [Nota Técnica 2023.004 v.1.10](https://blog.tecnospeed.com.br/nf-e-e-nfc-e-nota-tecnica-2023-004-evento-de-conciliacao-financeira-econf-outros-campos-e-regras);
+
+* DSML-899 - Adequado as informações complementares ao valor de alíquota do ICMS Monofásico.
+
+* DSML-1012 - Compatibilizado intalador com o Delphi 12 Athenas
+
+* DSML-1173 - compatibilizado componente com a [Nota Técnica 2019.001 v.1.62](https://blog.tecnospeed.com.br/nt-2019-001-nfe) e nova versão de esquema pl009n;
+
+## [13.1.79.6511]
 
 **Novidades**
 
@@ -2870,6 +2884,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
