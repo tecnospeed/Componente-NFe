@@ -1,4 +1,12 @@
-﻿## [13.1.80.6520]
+﻿## [13.1.81.6522]
+
+**Novidades**
+
+* DSML-899 - Adequado informações complementares na DANFE referente ao valor de aliquota do ICMS monofásico
+* DSML-1163 - Nova regra para gerar a tag idEstrangeiro quando o indicador da IE do destinatário "indIEDest" for igual a 9 e a IE do destinatário não for informada.
+* DSML-1213 -  Ajustado logotipo padrão da NFe na DANFE
+
+## [13.1.80.6520]
 
 **Correção**
 
@@ -2890,6 +2898,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
