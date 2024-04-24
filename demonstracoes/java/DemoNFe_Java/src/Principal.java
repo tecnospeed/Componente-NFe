@@ -55,7 +55,7 @@ public class Principal extends JFrame{
 
 //====================== Configurar a SH ===================================================================================
         //Dispatch.put(spdNFe, "DiagnosticMode", "0");
-        Dispatch.call(spdNFe, "ConfigurarSoftwareHouse", "08187168000160", "");
+        Dispatch.call(spdNFe, "ConfigurarSoftwareHouse", "", "");
 
 //====================== Listar Certificados ===============================================================================
 
