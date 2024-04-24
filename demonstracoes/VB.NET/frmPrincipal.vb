@@ -181,7 +181,7 @@ Public Class frmPrincipal
             AbrirArquivo.ShowReadOnly = True
 
             _spdNFeX.AtualizarArquivoServidores = False
-            _spdNFeX.ConfigurarSoftwareHouse("08187168000160", "")
+            _spdNFeX.ConfigurarSoftwareHouse("", "")
 
             PreencherComboCertificado()
         Catch ex As Exception
