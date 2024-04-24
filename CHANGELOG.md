@@ -1,4 +1,10 @@
-﻿## [13.1.81.6523]
+﻿## [13.1.81.6525]
+
+**Correções**
+
+* DSML-1224 - correção da geração da tag comb na pl_009n e pl_009m;
+
+## [13.1.81.6523]
 
 **Correção**
 DEP-389 - HotFix - Correção no RTM paisagem da DANFE que pode ocorrer em não apresentar o codigo do produto.
@@ -2903,6 +2909,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
