@@ -1,4 +1,11 @@
-﻿## [13.1.81.6525]
+﻿## [13.1.82.6528]
+
+**Correções**
+
+- DSML-1252 alterado no campos do xsd e do dataset o valor de cAut para 128 caracteres
+- DSML-1251 Alterado método EscapeCaracteres para desconsiderar a formatação dos catacteres '< >' quando tiver o CDATA
+
+## [13.1.81.6525]
 
 **Correções**
 
@@ -2909,6 +2916,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
