@@ -1,4 +1,12 @@
-﻿## [13.1.82.6528]
+﻿## [13.1.83.6530]
+
+**Novidades**
+
+* DSML-1045 - Disponibilizado os metódos EnviarInsucessoEntrega e CancelarInsucessoEntrega para compatibilizar o componente com a [Nota Técnica 2023.005 v.1.02](https://blog.tecnospeed.com.br/nf-e-nota-tecnica-2023-005-evento-insucesso-na-entrega-da-nf-e/)
+
+* DSML-971 - Alterado o espaço do arquivo.rtm quando a propriedade "MensagemFCP" estiver ativada.
+
+## [13.1.82.6528]
 
 **Correções**
 
@@ -2916,6 +2924,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
