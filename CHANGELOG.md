@@ -1,8 +1,5 @@
-﻿## [13.1.84.6536]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
-
-## [13.1.84.6535]
+## [13.1.84.6536]
 
 **Correções**
 DEP-522 - Correção na validação de inclusão de valor no campo CRT_C21
