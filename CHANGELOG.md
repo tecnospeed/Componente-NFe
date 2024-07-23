@@ -1,3 +1,11 @@
+﻿## [13.1.85.6537]
+
+**Novidades**
+
+* DSML-1302 - Disponibilizado os metódos: EnviarInsucessoEntrega, CancelarInsucessoEntrega, GerarXMLInsucessoEntregaDestinatario e GerarXMLCancelamentoInsucessoEntregaDestinatario na spdNFELib, compatibilização da LIB com a [Nota Técnica 2023.005 v.1.02](https://blog.tecnospeed.com.br/nf-e-nota-tecnica-2023-005-evento-insucesso-na-entrega-da-nf-e/)
+
+* DSML-1335 - Possibilidade de informar a sequência de eventos na manifestação do destinatário conforme a NT 2020.001 v 1.50
+
 
 ## [13.1.84.6536]
 
@@ -2936,6 +2944,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
