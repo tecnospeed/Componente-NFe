@@ -1,4 +1,10 @@
-﻿## [13.1.85.6537]
+﻿## [13.1.86.6538]
+
+**Correções**
+
+DSML-1355 alterado idNFe para pegar a sequencia para validar com o do XML
+
+## [13.1.85.6537]
 
 **Novidades**
 
@@ -2944,6 +2950,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
