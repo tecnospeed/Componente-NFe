@@ -16,7 +16,7 @@ DSML-1355 alterado idNFe para pegar a sequencia para validar com o do XML
 ## [13.1.84.6536]
 
 **Correções**
-DEP-522 - Correção na validação de inclusão de valor no campo CRT_C21
+DEP-522 - (Nota Técnica 2024.001 V1.10) - Correção na validação de inclusão de valor no campo CRT_C21
 
 ## [13.1.84.6532]
 
