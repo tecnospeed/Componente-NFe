@@ -1,11 +1,1 @@
 # Componente-NFe
-
-Para utilizar as demos tecnospeed você deverá realizar os seguintes passos:
-
-1 - Criar uma conta em https://conta.tecnospeed.com.br/
-2 - Baixar o repositório da linguagem desejada
-3 - Baixar e instalar a versão trial no link ao final da página https://github.com/tecnospeed/Componente-NFe/tree/master
-4 - Abrir o projeto na IDE de preferência e parametrizar o cnpj da software house e o token no método de nome "ConfigurarSoftwareHouse".
-5 - Compilar o projeto.
-
-Reazliados os passos acima você poderá usar todos os métodos disponíveis.
