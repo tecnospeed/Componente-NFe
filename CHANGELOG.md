@@ -1,4 +1,15 @@
-﻿## [13.1.86.6538]
+﻿## [13.1.87.6552]
+
+**Novidades**
+
+- DSML-1041 - Disponibilizado metodo para envio do evento de Conciliação Financeira - [ECONF](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/25919395222295)
+- DSML-1042 - Disponibilizado metodo para envio de Cancelamento do evento de Conciliação Financeira - [ECONF](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/26018545520535)
+
+**Correções**
+
+* [DSML-1386](https://tecnospeed.atlassian.net/browse/DSML-1386) - Ajustes no log para notas denegadas;
+
+## [13.1.86.6538]
 
 **Correções**
 
@@ -2950,6 +2961,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
