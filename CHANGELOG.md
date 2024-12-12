@@ -1,6 +1,10 @@
 ﻿## [13.1.90.6560]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+**Correções**
+
+* DSP4G-1685 - Ajustes na impressão quando tenta capturar a placa dentro da tag InfCpl.
+
+* DSML-1439 - Correção para manifestar notas emitidas com o tipo 3.
 
 ## [13.1.88.6556]
 
