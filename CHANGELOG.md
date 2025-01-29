@@ -8,6 +8,10 @@
 
 * DSML-1429 - Nota Técnica [2024.003 v1.00](https://blog.tecnospeed.com.br/nf-e-nota-tecnica-2024-003/?asl_highlight=2024.003&p_asid=2): Informações de Produtos da Agricultura, Pecuária e Produção Florestal.
 
+* DSP4G-1689 - Compatibilização com o novo método de validação de email oAuth2 dos provedores Microsfot e Google.
+
+* DSP4G-1644 - Solicitação de Análise: Novo Método de Autenticação OAuth para SMTP, IMAP e POP
+
 ## [13.1.90.6560]
 
 **Correções**
