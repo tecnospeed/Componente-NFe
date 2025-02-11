@@ -1,4 +1,15 @@
-﻿## [13.1.91.6568]
+﻿## [13.1.92.6571]
+
+**Novidade**
+
+* DSML-1407 - Atualizado as URLs do serviço SVC-AN de produção
+
+**Correções**
+
+* [DSP4G-1590] Correções para implementação do OAuth2 do componente NFe.
+
+
+## [13.1.91.6568]
 
 **Correções**
 
@@ -2993,6 +3004,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
