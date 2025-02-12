@@ -1,14 +1,3 @@
-﻿## [13.1.92.6571]
-
-**Novidade**
-
-* DSML-1407 - Atualizado as URLs do serviço SVC-AN de produção
-
-**Correções**
-
-* [DSP4G-1590] Correções para implementação do OAuth2 do componente NFe.
-
-
 ## [13.1.91.6568]
 
 **Correções**
