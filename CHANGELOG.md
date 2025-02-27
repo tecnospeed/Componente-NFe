@@ -1,4 +1,14 @@
-﻿## [13.1.93.6573]
+﻿## [13.1.94.75]
+
+**Correções**
+
+* 25.02.27 | Comp - NFe | DSML-1607 - Ajustando a geração do grupo agropecuario da pl_009p.
+
+* 25.02.27 | Comp - NFe | DSML-1429 - Nota Técnica  2024.003 v1.00 : Informações de Produtos da Agricultura, Pecuária e Produção Florestal.
+
+
+
+## [13.1.93.6573]
 
 *Novidade**
 
@@ -3003,6 +3013,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
