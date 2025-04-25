@@ -1,4 +1,16 @@
-﻿## [13.1.94.75]
+﻿## [13.1.95.77]
+
+**Correçõe**
+
+* 25.04.25 | DSML-1710 - Alterado a URL da SEFAZ para o estado de RS CadConsulta4 Alterado a URL da SEFAZ para o estado de RS CadConsulta4
+
+* 25.04.25 | DSML-1701 - Implementando a impressão do protocolo de autorização na NFCe autorizada em contingênciaImplementando a impressão do protocolo de autorização na NFCe autorizada em contingência
+
+* 25.04.25 | DSML-1696 - correção na captura dos token oauthcorreção na captura dos token oauth
+
+* 25.04.25 | DSML-1520 - BUG - [Componente] - [NFE] - [Impressão com informações fora do enquadro]
+
+## [13.1.94.75]
 
 **Correções**
 
@@ -3013,6 +3025,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
