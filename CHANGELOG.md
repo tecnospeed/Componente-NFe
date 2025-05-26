@@ -1,4 +1,12 @@
-﻿## [13.1.95.77]
+﻿## [13.1.96.82]
+
+**Novidades**
+
+* 25.05.21 | DSML-1668 - Adicionando o preenchimento do grupo I05G (gCred) no método ConverteXmlParaDataSet.Adicionando o preenchimento do grupo I05G (gCred) no método ConverteXmlParaDataSet.
+* 25.05.21 | DSML-1665 - hashCSRT sendo gerado errado quando a geração do XML é em lotehashCSRT sendo gerado errado quando a geração do XML é em lote
+* 25.05.21 | DSML-1614 - Criado uma nova propriedade para parametrizar o diretório license.Criado uma nova propriedade para parametrizar o diretório license.
+
+## [13.1.95.77]
 
 **Correçõe**
 
@@ -3025,6 +3033,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
