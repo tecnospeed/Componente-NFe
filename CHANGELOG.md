@@ -1,4 +1,10 @@
-﻿## [13.1.96.82]
+﻿## [13.1.97.86]
+
+**Novidade**
+
+* 13.06.25 | Atualizações do Validador NFe
+
+## [13.1.96.82]
 
 **Novidades**
 
@@ -3033,6 +3039,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
