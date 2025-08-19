@@ -1,6 +1,6 @@
 object Demo_NFe_Form: TDemo_NFe_Form
-  Left = 560
-  Top = 179
+  Left = 487
+  Top = 157
   Width = 746
   Height = 673
   AutoSize = True
@@ -16,7 +16,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
   PixelsPerInch = 96
   TextHeight = 13
   object pgcNFe: TPageControl
-    Left = 1
+    Left = 0
     Top = 0
     Width = 729
     Height = 385
@@ -182,7 +182,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
         end
         object Label2: TLabel
           Left = 145
-          Top = 328
+          Top = 323
           Width = 6
           Height = 20
           Font.Charset = DEFAULT_CHARSET
@@ -203,7 +203,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
         end
         object btnConfig: TButton
           Left = 7
-          Top = 55
+          Top = 56
           Width = 160
           Height = 35
           Caption = '1- Configurar INI'
@@ -233,7 +233,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
         end
         object btnGerarDS: TButton
           Left = 7
-          Top = 92
+          Top = 93
           Width = 160
           Height = 35
           Caption = '3 - Gerar XML DataSet'
@@ -263,7 +263,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
         end
         object btnStatus: TButton
           Left = 211
-          Top = 240
+          Top = 241
           Width = 160
           Height = 35
           Caption = 'Verificar Status'
@@ -278,7 +278,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
         end
         object btnAssinar: TButton
           Left = 7
-          Top = 129
+          Top = 167
           Width = 160
           Height = 35
           Caption = '4 - Assinar XML'
@@ -308,7 +308,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
         end
         object btnEnviarSinc: TButton
           Left = 7
-          Top = 166
+          Top = 204
           Width = 160
           Height = 35
           Caption = '5.1 - Enviar S'#237'ncrono'
@@ -338,7 +338,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
         end
         object btnConsultNfe: TButton
           Left = 7
-          Top = 203
+          Top = 241
           Width = 160
           Height = 35
           Caption = '7 - Consultar NF-e'
@@ -353,7 +353,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
         end
         object Button1: TButton
           Left = 7
-          Top = 240
+          Top = 279
           Width = 160
           Height = 35
           Caption = '9 - Gerar Xml Canc.'
@@ -380,6 +380,21 @@ object Demo_NFe_Form: TDemo_NFe_Form
           ParentFont = False
           TabOrder = 9
           OnClick = btCancelarNotaClick
+        end
+        object btnGerarDsReforma: TButton
+          Left = 7
+          Top = 131
+          Width = 160
+          Height = 35
+          Caption = '3.2 - Gerar XML Reforma'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 13
+          OnClick = btnGerarDsReformaClick
         end
       end
       object GroupBox5: TGroupBox
@@ -710,7 +725,7 @@ object Demo_NFe_Form: TDemo_NFe_Form
     end
   end
   object PageControl1: TPageControl
-    Left = 0
+    Left = 1
     Top = 384
     Width = 729
     Height = 250
@@ -855,13 +870,16 @@ object Demo_NFe_Form: TDemo_NFe_Form
     DanfeSettings.ImprimirLocalRetiradaEntrega = True
     DanfeSettings.InfCplQuebrarLinhaAut = False
     DanfeSettings.MensagemIcmsDesonerado = False
-    Versao = '12.1.74.6402'
+    DanfeSettings.ImprimirVlrTotalDanfeSimplificado = False
+    DanfeSettings.MensagemIcmsMonofasico = False
+    DanfeSettings.ExibirAcrescimoEDesconto = False
+    Versao = '14.1.0.2'
     CaracteresRemoverAcentos = #225#233#237#243#250#224#232#236#242#249#226#234#238#244#251#228#235#239#246#252#227#245#241#231#193#201#205#211#218#192#200#204#210#217#194#202#206#212#219#196#203#207#214#220#195#213#209#199#186#170
     TipoCertificado = ckMemory
     DiretorioTemplates = 
       'C:\Program Files (x86)\Borland\Delphi7\Bin\Templatesvm50vm50vm50' +
       'vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50' +
-      'vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50\'
+      'vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50\vm50\'
     IgnoreInvalidCertificates = False
     DiretorioLog = 'C:\Program Files (x86)\Borland\Delphi7\Bin\Log\'
     Ambiente = akHomologacao
@@ -869,10 +887,13 @@ object Demo_NFe_Form: TDemo_NFe_Form
     EmailSettings.TimeOut = 0
     EmailSettings.ConteudoHtml = False
     EmailSettings.UseSecureBlackBox = False
+    EmailSettings.QtdeTentativas = 0
+    EmailSettings.UseTLS = utNoTLSSupport
+    EmailSettings.UseOAuth2 = False
     DiretorioEsquemas = 
       'C:\Program Files (x86)\Borland\Delphi7\Bin\Esquemasvm50vm50vm50v' +
       'm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50v' +
-      'm50vm50vm50vm50vm50vm50vm50vm50vm50vm50\'
+      'm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50vm50\vm50\'
     ConexaoSegura = False
     TimeOut = 0
     DiretorioLogErro = 'C:\Program Files (x86)\Borland\Delphi7\Bin\LogErro\'

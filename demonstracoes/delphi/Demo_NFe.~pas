@@ -5,8 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, ShellAPI, IniFiles, spdNFe, spdNFeDataSets, spdNFeType,
-  ComCtrls, XPMan, spdNFeUtils, jpeg,
-  spdNFeValidadorClientAdapter, OleCtrls, Contnrs;
+  ComCtrls, XPMan, spdNFeUtils, jpeg, spdNFeValidadorClientAdapter, OleCtrls, Contnrs;
 
 type
     TDemo_NFe_Form = class(TForm)
@@ -79,6 +78,7 @@ type
     btnConsultarDestinadas: TButton;
     rdProducao: TRadioButton;
     rdHomologacao: TRadioButton;
+    btnGerarDsReforma: TButton;
     procedure cbCertificadoChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnConfigClick(Sender: TObject);
@@ -122,6 +122,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure btnGerarDsReformaClick(Sender: TObject);
 
 
 
@@ -133,7 +134,6 @@ type
 
     function LoadXmlDestinatario(aChaveNFe: String): WideString;
     function obterNroResultado(const aXML: XMLString; aTag : string; aEndTag : string): string;
-    procedure CarregarConfiguracoes;
     function ChaveInvalida: boolean;
     procedure MostrarLabel;
     procedure ChecarAmbiente;
@@ -208,12 +208,12 @@ end;
 procedure TDemo_NFe_Form.FormCreate(Sender: TObject);
 begin
   vIni := TIniFile.Create(ExtractFilePath(ParamStr(0))+ 'nfeconfig.ini');
-  spdNFe.ConfigurarSoftwareHouse('08187168000160', '00000000000000000');
+  //
+  spdNFe.ConfigurarSoftwareHouse('','');
   Demo_NFe_Form.Caption := 'Tecnospeed NFe - Versão: ' + spdNfe.Versao;
   spdNFe.AtualizarArquivoServidores := False;
   spdNFe.ListarCertificados(cbCertificado.Items);
   spdNFe.OnLog := spdNFeLog;
-  CarregarConfiguracoes;
   ChecarAmbiente;
 end;
 
@@ -231,24 +231,6 @@ begin
   end;
 end;
 
-procedure TDemo_NFe_Form.CarregarConfiguracoes;
-begin
-  spdNFe.LoadConfig();
-
-  if cbUF.text = '' then
-  cbUF.Text  := spdNFe.UF
-  else
-  spdNfe.UF := cbUF.Text;
-
-  cbCertificado.Text  := spdNFe.NomeCertificado.Text;
-  edtCNPJ.Text        := spdNFe.CNPJ;
-
-  if edCnpjSh.text = '' then
-  edCnpjSh.Text       := vIni.ReadString('NFE', 'CNPJSH','');
-
-  if edTokenSh.text = '' then
-  edTokenSh.Text      := vIni.ReadString('NFE', 'TOKENSH','');
-end;
 
 procedure TDemo_NFe_Form.spdNFeLog(const aNome, aID, aFileName: string);
 begin
@@ -302,7 +284,7 @@ begin
   _NumeroNF     := InputBox('NF-e','Insira o Número da Nota: ','1');
   _CodigoNota   := InputBox('NF-e','Insira o Código da Nota: ','1');
   spdNFe.VersaoManual := vm60;
-  spdNFeDataSets.VersaoEsquema := pl_009;
+  spdNFeDataSets.VersaoEsquema := pl_010b;
 
   spdNFeDataSets.XMLDicionario := spdNFe.DiretorioTemplates +'Conversor\NFeDataSets.xml';
 
@@ -649,18 +631,12 @@ end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnLoadConfigClick(Sender: TObject);
 begin
-  CarregarConfiguracoes;
-  ChecarAmbiente;
+  
+  spdNFe.LoadConfig();
+  edtCNPJ.Text := spdNFe.CNPJ;
+  cbCertificado.Text := spdNFe.NomeCertificado.Text;
+  cbUF.Text:= spdNFe.UF;
   spdnfe.DanfeSettings.ModeloRetrato := spdnfe.DiretorioTemplates + 'vm60\Danfe\retrato.rtm';
-
-  if  (edTokenSh.text = '') or (edCnpjSh.text = '') then
-  begin
-  Showmessage ('Os campos CNPJ e Token precisam estar preenchidos');
-  edCnpjSh.SetFocus;
-  end
-  else
-  spdNFe.ConfigurarSoftwareHouse(edCnpjSh.Text,edTokenSh.Text);
-
   MostrarLabel;
 end;
 //-----------------------------------------------------------------------------
@@ -678,9 +654,9 @@ end;
 //-----------------------------------------------------------------------------
 procedure TDemo_NFe_Form.btnConvertXmlDatasetClick(Sender: TObject);
 begin
-   spdNFeDataSets.VersaoEsquema := pl_009;
+   spdNFeDataSets.VersaoEsquema := pl_010b;
    spdNFeDataSets.XMLDicionario := spdNFe.DiretorioTemplates + 'Conversor\NFeDataSets.xml';
-   spdNFeDataSets := spdNFe.ConverteXmlParaDataSet(mmXml.Text,pl_009);
+   spdNFeDataSets := spdNFe.ConverteXmlParaDataSet(mmXml.Text,pl_010b);
 
    mmXml.Clear;
    //Dados do Cabeçalho da nota
@@ -752,7 +728,7 @@ procedure TDemo_NFe_Form.btnGeraXMLTX2Click(Sender: TObject);
 begin
   if mmXml.Text <> '' then
   begin
-    mmXml.Text := spdNFe.ConverterLoteParaXml(mmXml.Text,lkTXTDataSet,pl_009);
+    mmXml.Text := spdNFe.ConverterLoteParaXml(mmXml.Text,lkTXTDataSet,pl_010b);
   end
   else
   CarregarArquivo;
@@ -938,6 +914,249 @@ begin
   ShellExecute(Handle,'open','https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360009515054-Dicion%C3%A1rio-de-dados-',nil,nil,SW_SHOWMAXIMIZED);
 end;
 
+
+procedure TDemo_NFe_Form.btnGerarDsReformaClick(Sender: TObject);
+begin
+  edtNumRec.clear;
+  edtNumProt.clear;
+  _NumeroLote := '1';
+  _NumeroSerie := InputBox('NF-e', 'Insira o Número da Série:', '570');
+  _NumeroNF := InputBox('NF-e', 'Insira o Número da Nota: ', '105');
+  _CodigoNota := InputBox('NF-e', 'Insira o Código da Nota: ', '00000001');
+  spdNFe.VersaoManual := vm60;
+  spdNFeDataSets.VersaoEsquema := pl_010b;
+
+  spdNFeDataSets.XMLDicionario := spdNFe.DiretorioTemplates + 'Conversor\NFeDataSets.xml';
+
+  spdNFeDataSets.Incluir;
+  spdNFeDataSets.Campo('versao_A02').Value := '4.00';
+  spdNFeDataSets.Campo('cUF_B02').value := '41';
+  spdNFeDataSets.Campo('cNF_B03').value := _CodigoNota;
+  spdNFeDataSets.Campo('natOp_B04').value := 'VENDA DE MERCADORIA ADQ. DE TERCEIRO - PF E PJ NAO CONTRIBUI';
+  spdNFeDataSets.Campo('mod_B06').value := '55';
+  spdNFeDataSets.Campo('serie_B07').value := _NumeroSerie;
+  spdNFeDataSets.Campo('nNF_B08').value := _NumeroNF;
+  spdNFeDataSets.Campo('dhEMI_B09').value := '2025-08-11T08:46:00-03:00';
+  spdNFeDataSets.Campo('tpNF_B11').value := '1';
+  spdNFeDataSets.Campo('IDDEST_B11A').value := '2';
+  spdNFeDataSets.Campo('cMunFG_B12').value := '4115200';
+  spdNFeDataSets.Campo('cMunFGIBS_B12a').value := '4115200';
+  spdNFeDataSets.Campo('tpImp_B21').value := '1';
+  spdNFeDataSets.Campo('tpEmis_B22').value := '1';
+  spdNFeDataSets.Campo('cDV_B23').value := '8';
+  spdNFeDataSets.Campo('tpAmb_B24').value := '2';
+  spdNFeDataSets.Campo('finNFe_B25').value := '1';
+  spdNFeDataSets.Campo('tpNFDebito_B25_1').value := '01';
+  spdNFeDataSets.Campo('tpNFCredito_B25_2').value := '01';
+  spdNFeDataSets.Campo('INDFINAL_B25A').value := '1';
+  spdNFeDataSets.Campo('INDPRES_B25B').value := '1';
+  spdNFeDataSets.Campo('indIntermed_b25c').value := '0';
+  spdNFeDataSets.Campo('procEmi_B26').value := '0';
+  spdNFeDataSets.Campo('verProc_B27').value := '5';
+
+  spdNFeDataSets.Campo('tpEnteGov_B32').value := '1';
+  spdNFeDataSets.Campo('pRedutor_B33').value := '10.00';
+  spdNFeDataSets.Campo('tpOperGov_B34').value := '1';
+
+  spdNFeDataSets.IncluirPart('GPAGANTECIPADO');
+  spdNFeDataSets.Campo('refNFe_BB02').value := '11111111111111111111111111111111111111111111';
+  spdNFeDataSets.SalvarPart('GPAGANTECIPADO');
+
+  spdNFeDataSets.Campo('CNPJ_C02').value := '29062609000177';
+  spdNFeDataSets.Campo('xNome_C03').value := 'TECNOSPEED NEGOCIOS LTDA';
+  spdNFeDataSets.Campo('xFant_C04').value := 'TECNOSPEED NEGOCIOS LTDA';
+  spdNFeDataSets.Campo('xLgr_C06').value := 'RUA DO POVO';
+  spdNFeDataSets.Campo('nro_C07').value := '711';
+  spdNFeDataSets.Campo('xBairro_C09').value := 'Parque petrobrás';
+  spdNFeDataSets.Campo('cMun_C10').value := '4115200';
+  spdNFeDataSets.Campo('xMun_C11').value := 'Maringa';
+  spdNFeDataSets.Campo('UF_C12').value := 'PR';
+  spdNFeDataSets.Campo('CEP_C13').value := '87053025';
+  spdNFeDataSets.Campo('cPais_C14').value := '1058';
+  spdNFeDataSets.Campo('xPais_C15').value := 'BRASIL';
+  spdNFeDataSets.Campo('fone_C16').value := '4432222222';
+  spdNFeDataSets.Campo('IE_C17').value := '9098793965';
+  spdNFeDataSets.Campo('CRT_C21').value := '3';
+
+  spdNFeDataSets.Campo('CPF_E03').value := '17407044104';
+  spdNFeDataSets.Campo('xNome_E04').value := 'NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL';
+  spdNFeDataSets.Campo('xLgr_E06').value := 'RODOVIA MT 020, S/N';
+  spdNFeDataSets.Campo('nro_E07').value := '897';
+  spdNFeDataSets.Campo('xBairro_E09').value := 'ZONA RURAL';
+  spdNFeDataSets.Campo('cMun_E10').value := '5102686';
+  spdNFeDataSets.Campo('xMun_E11').value := 'Campos de Julio';
+  spdNFeDataSets.Campo('UF_E12').value := 'MT';
+  spdNFeDataSets.Campo('CEP_E13').value := '78860000';
+  spdNFeDataSets.Campo('cPais_E14').value := '1058';
+  spdNFeDataSets.Campo('xPais_E15').value := 'BRASIL';
+  spdNFeDataSets.Campo('fone_E16').value := '65999664440';
+  spdNFeDataSets.Campo('INDIEDEST_E16A').value := '1';
+  spdNFeDataSets.Campo('IE_E17').value := '134949404';
+  spdNFeDataSets.Campo('email_e19').value := 'gabrie.cunha@tecnospeed.com.br';
+
+  spdNFeDataSets.IncluirItem;
+  spdNFeDataSets.Campo('nItem_H02').value := '1';
+  spdNFeDataSets.Campo('cProd_I02').value := '0999';
+  spdNFeDataSets.Campo('cEAN_I03').value := 'SEM GTIN';
+  spdNFeDataSets.Campo('cBarra_I03a').value := '11111111111111111111';
+  spdNFeDataSets.Campo('xProd_I04').value := 'CHAVE Teste';
+  spdNFeDataSets.Campo('NCM_I05').value := '00000000';
+  spdNFeDataSets.Campo('CEST_I05c').value := '0123456';
+  spdNFeDataSets.Campo('indEscala_I05d').value := 'S';
+  spdNFeDataSets.Campo('CFOP_I08').value := '6102';
+  spdNFeDataSets.Campo('uCom_I09').value := 'CX';
+  spdNFeDataSets.Campo('qCom_I10').value := '1';
+  spdNFeDataSets.Campo('vUnCom_I10a').value := '10.00';
+  spdNFeDataSets.Campo('vProd_I11').value := '10.00';
+  spdNFeDataSets.Campo('cEANTrib_I12').value := 'SEM GTIN';
+  spdNFeDataSets.Campo('uTrib_I13').value := 'CX';
+  spdNFeDataSets.Campo('qTrib_I14').value := '1';
+  spdNFeDataSets.Campo('vUnTrib_I14a').value := '10.00';
+  spdNFeDataSets.Campo('indTot_I17b').value := '1';
+  spdNFeDataSets.Campo('xPed_I60').value := '123456789123456';
+  
+
+  spdNFeDataSets.Campo('orig_N11').value := '0';
+  spdNFeDataSets.Campo('CST_N12').value := '90';
+  spdNFeDataSets.Campo('modBC_N13').value := '0';
+  spdNFeDataSets.Campo('vBC_N15').value := '10.00';
+  spdNFeDataSets.Campo('pICMS_N16').value := '7.00';
+  spdNFeDataSets.Campo('vICMS_N17').value := '0.70';
+  spdNFeDataSets.Campo('modBCST_N18').value := '0';
+  spdNFeDataSets.Campo('vBCST_N21').value := '10.00';
+  spdNFeDataSets.Campo('pICMSST_N22').value := '7.00';
+  spdNFeDataSets.Campo('vICMSST_N23').value := '0.70';
+
+  spdNFeDataSets.Campo('CST_Q06').value := '01';
+  spdNFeDataSets.Campo('vBC_Q07').value := '0.01';
+  spdNFeDataSets.Campo('pPIS_Q08').value := '1.65';
+  spdNFeDataSets.Campo('vPIS_Q09').value := '0.00';
+
+  spdNFeDataSets.Campo('CST_S06').value := '01';
+  spdNFeDataSets.Campo('vBC_S07').value := '0.01';
+  spdNFeDataSets.Campo('pCOFINS_S08').value := '7.60';
+  spdNFeDataSets.Campo('vCOFINS_S11').value := '0.01';
+
+
+  spdNFeDataSets.Campo('CST_UB13').value := '001';
+  spdNFeDataSets.Campo('cClassTrib_UB14').value := '000001';
+
+  spdNFeDataSets.Campo('vBC_UB16').value := '0.00';
+
+  spdNFeDataSets.Campo('pIBSUF_UB18').value := '0.00';
+
+  spdNFeDataSets.Campo('pDif_UB22').value := '0.00';
+  spdNFeDataSets.Campo('vDif_UB23').value := '0.00';
+
+  spdNFeDataSets.Campo('vDevTrib_UB25').value := '0.00';
+
+  spdNFeDataSets.Campo('pRedAliq_UB27').value := '0.00';
+  spdNFeDataSets.Campo('pAliqEfet_UB28').value := '0.00';
+
+  spdNFeDataSets.Campo('vIBSUF_UB35').value := '0.00';
+
+  spdNFeDataSets.Campo('pIBSMun_UB37').value := '0.00';
+
+  spdNFeDataSets.Campo('pDif_UB41').value := '0.00';
+  spdNFeDataSets.Campo('vDif_UB42').value := '0.00';
+
+  spdNFeDataSets.Campo('vDevTrib_UB44').value := '0.00';
+
+  spdNFeDataSets.Campo('pRedAliq_UB46').value := '0.00';
+  spdNFeDataSets.Campo('pAliqEfet_UB47').value := '0.00';
+
+  spdNFeDataSets.Campo('vIBSMun_UB54').value := '0.00';
+
+  spdNFeDataSets.Campo('pCBS_UB56').value := '0.00';
+
+  spdNFeDataSets.Campo('pDif_UB60').value := '0.00';
+  spdNFeDataSets.Campo('vDif_UB61').value := '0.00';
+
+  spdNFeDataSets.Campo('vDevTrib_UB63').value := '0.00';
+
+  spdNFeDataSets.Campo('pRedAliq_UB65').value := '0.00';
+  spdNFeDataSets.Campo('pAliqEfet_UB66').value := '0.00';
+
+  spdNFeDataSets.Campo('vCBS_UB67').value := '0.00';
+
+  spdNFeDataSets.SalvarItem;
+
+  spdNFeDataSets.Campo('vBC_W03').value := '10.00';
+  spdNFeDataSets.Campo('vICMS_W04').value := '0.70';
+  spdNFeDataSets.Campo('vICMSDeson_W04a').value := '0.00';
+  spdNFeDataSets.Campo('vFCPUFDest_W04c').value := '0.00';
+  spdNFeDataSets.Campo('vICMSUFDest_W04e').value := '0.00';
+  spdNFeDataSets.Campo('vICMSUFRemet_W04g').value := '0.00';
+  spdNFeDataSets.Campo('vFCP_W04h').value := '0.00';
+  spdNFeDataSets.Campo('vBCST_W05').value := '10.00';
+  spdNFeDataSets.Campo('vST_W06').value := '0.70';
+  spdNFeDataSets.Campo('vFCPST_W06a').value := '0.00';
+  spdNFeDataSets.Campo('vFCPSTRet_W06b').value := '0.00';
+  spdNFeDataSets.Campo('vProd_W07').value := '10.00';
+  spdNFeDataSets.Campo('vFrete_W08').value := '0.00';
+  spdNFeDataSets.Campo('vSeg_W09').value := '0.00';
+  spdNFeDataSets.Campo('vDesc_W10').value := '0.00';
+  spdNFeDataSets.Campo('vII_W11').value := '0.00';
+  spdNFeDataSets.Campo('vIPI_W12').value := '0.00';
+  spdNFeDataSets.Campo('vIPIDevol_W12a').value := '0.00';
+  spdNFeDataSets.Campo('vPIS_W13').value := '0.00';
+  spdNFeDataSets.Campo('vCOFINS_W14').value := '0.01';
+  spdNFeDataSets.Campo('vOutro_W15').value := '0.00';
+  spdNFeDataSets.Campo('vNF_W16').value := '10.70';
+
+  spdNFeDataSets.Campo('vIS_W33').value := '1.00';
+
+  spdNFeDataSets.Campo('vBCIBSCBS_W35').value := '2.00';
+
+  spdNFeDataSets.Campo('vDif_W38').value := '3.00';
+  spdNFeDataSets.Campo('vDevTrib_W39').value := '4.00';
+  spdNFeDataSets.Campo('vIBSUF_W41').value := '5.00';
+
+  spdNFeDataSets.Campo('vDif_W43').value := '6.00';
+  spdNFeDataSets.Campo('vDevTrib_W44').value := '7.00';
+  spdNFeDataSets.Campo('vIBSMun_W46').value := '8.00';
+
+  spdNFeDataSets.Campo('vIBS_W47').value := '9.00';
+  spdNFeDataSets.Campo('vCredPres_W48').value := '10.00';
+  spdNFeDataSets.Campo('vCredPresCondSus_W49').value := '11.00';
+
+  spdNFeDataSets.Campo('vDif_W53').value := '14.00';
+  spdNFeDataSets.Campo('vDevTrib_W54').value := '15.00';
+  spdNFeDataSets.Campo('vCBS_W56').value := '16.00';
+  spdNFeDataSets.Campo('vCredPres_W56a').value := '12.00';
+  spdNFeDataSets.Campo('vCredPresCondSus_W56b').value := '13.00';
+
+  spdNFeDataSets.Campo('vIBSMono_W58').value := '17.00';
+  spdNFeDataSets.Campo('vCBSMono_W59').value := '18.00';
+  spdNFeDataSets.Campo('vIBSMonoReten_W59a').value := '19.00';
+  spdNFeDataSets.Campo('vCBSMonoReten_W59b').value := '20.00';
+  spdNFeDataSets.Campo('vIBSMonoRet_W59c').value := '21.00';
+  spdNFeDataSets.Campo('vCBSMonoRet_W59d').value := '22.00';
+
+  spdNFeDataSets.Campo('vNFTot_W60').value := '23.00';
+
+  spdNFeDataSets.Campo('modFrete_X02').value := '9';
+
+  spdNFeDataSets.Campo('nFat_Y03').value := '2000';
+  spdNFeDataSets.Campo('vOrig_Y04').value := '1000.00';
+  spdNFeDataSets.Campo('vDesc_Y05').value := '100.00';
+  spdNFeDataSets.Campo('vLiq_Y06').value := '900.00';
+
+  spdNFeDataSets.Campo('tPag_YA02').value := '01';
+  spdNFeDataSets.Campo('vPag_YA03').value := '10.70';
+
+  spdNFeDataSets.Campo('infCpl_Z03').value := 'Teste com quebra';
+
+  spdNFeDataSets.Campo('CNPJ_ZD02').value := '08187168000160';
+  spdNFeDataSets.Campo('xContato_ZD04').value := 'Nome teste';
+  spdNFeDataSets.Campo('email_ZD05').value := 'teste@teste.com.br';
+  spdNFeDataSets.Campo('fone_ZD06').value := '4466666666';
+
+  spdNFeDataSets.Salvar;
+
+  mmXml.Text := spdNFeDataSets.LoteNFe.Text;
+  PageControl1.ActivePage := tabXml;
+end;
 
 end.
 
