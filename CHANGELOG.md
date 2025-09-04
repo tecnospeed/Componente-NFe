@@ -1,8 +1,4 @@
-﻿## [14.1.1.5]
 
-**Correções**
-
-* [DSML-1889](https://tecnospeed.atlassian.net/browse/DSML-1889) - Ajuste para corrigir erro ao tentar imprimir nota com Cstat 150 = "Autorizado o uso da NF-e, autorização fora de prazo"
 
 ## [14.1.0.1]
 
