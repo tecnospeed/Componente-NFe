@@ -1,6 +1,10 @@
 ﻿## [14.1.1.6]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+**Novidades**
+* Atualizado auditor fiscal com os novos campos da RTC 1.10
+
+**Correções**
+* [DSML-1889](https://tecnospeed.atlassian.net/browse/DSML-1889) - Ajuste para corrigir erro ao tentar imprimir nota com Cstat 150 = "Autorizado o uso da NF-e, autorização fora de prazo"
 
 
 
