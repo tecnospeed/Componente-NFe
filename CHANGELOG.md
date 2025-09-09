@@ -1,9 +1,3 @@
-﻿## [14.1.2.11]
-
-**Novidades**
-
-* [DSML-1821](https://tecnospeed.atlassian.net/browse/DSML-1821) - [NT 2025.002](https://blog.tecnospeed.com.br/eventos-reforma-tributaria-nfe-nfce/) - Adequação das alterações da versão 1.20
-
 ## [14.1.1.6]
 
 **Novidades**
