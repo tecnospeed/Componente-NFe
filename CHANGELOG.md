@@ -1,4 +1,11 @@
-﻿## [14.1.2.21]
+﻿## [14.1.3.27]
+
+**Correções**
+
+* [DSML-1899](https://tecnospeed.atlassian.net/browse/DSML-1899) - Ajustando o mapeamento do campo vIS_UB11 para arquivos REC
+* [CLML-3302](https://tecnospeed.atlassian.net/browse/CLML-3302) - Corrigindo erro ao converter XML para DataSet
+
+## [14.1.2.21]
 
 **Novidade**
 
@@ -3070,6 +3077,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
