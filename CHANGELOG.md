@@ -1,9 +1,4 @@
-﻿## [14.1.4.28]
 
-**Correçãoes**
-
-* Comp - NFCe | DSML-1913 - Corrigindo erro ao converter XML para DataSetCorrigindo erro ao converter XML para DataSet 
-* DSML-1904 - Foi alterado a checagem de paramentros no componente NFC-e para permitir numero de protocolo com 17 digitos, e foi alterado também os arquivos XSD que realizam a validação dos campos antes da montagem do xml.Foi alterado a checagem de paramentros no componente NFC-e para permitir numero de protocolo com 17 digitos, e foi alterado também os arquivos XSD que realizam a validação dos campos antes da montagem do xml. 
 
 ## [14.1.3.27]
 
