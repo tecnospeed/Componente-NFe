@@ -1,3 +1,9 @@
+﻿## [14.1.4.30]
+
+**Correções**
+
+* [DSML-1917](https://tecnospeed.atlassian.net/browse/DSML-1917) - Ajustando conversão de XML para DataSet do grupo UB
+
 
 
 ## [14.1.3.27]
@@ -3079,6 +3085,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
