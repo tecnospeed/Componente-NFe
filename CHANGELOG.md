@@ -1,4 +1,11 @@
-﻿## [14.1.4.30]
+﻿## [14.1.5.37]
+
+**Novidade**
+
+* DSML-1936 atualizado o NFeDatasets.xml para o Tpag=91
+* [DSML-1934](https://tecnospeed.atlassian.net/browse/DSML-1934) - Ajustes nos campos vIBSUF_UB35, vIBS_UB54a, vIBSMun_UB54 e vCBS_UB67 arquivo REC
+
+## [14.1.4.30]
 
 **Correções**
 
@@ -3085,6 +3092,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
