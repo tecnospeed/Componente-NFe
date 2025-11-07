@@ -1,6 +1,15 @@
 ﻿## [14.1.5.44]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+**Correções**
+
+* DSML-1947 - Ajustando servidor padrão para os eventos da reforma tributáriaAjustando servidor padrão para os eventos da reforma tributária
+* DSML-1931 - Ajustando o limite do campo nReceituario_ZF03 para 30 caracteresAjustando o limite do campo nReceituario_ZF03 para 30 caracteres
+
+**Novidade**
+
+* DSML-1938 - Compatibilizando o componente com a NT 2025.002 v1.30Compatibilizando o componente com a NT 2025.002 v1.30
+* DSML-1828 - Disponibilizando o Cancelamento de EventoDisponibilizando o Cancelamento de Evento
+* DSML-1743 - NT 2025.002 campos Grupo U Grupo UB e Grupo WNT 2025.002 campos Grupo U Grupo UB e Grupo W
 
 ## [14.1.5.37]
 
