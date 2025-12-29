@@ -4,7 +4,8 @@
 
 ## [14.1.6.51]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+* [DSML-1987](https://tecnospeed.atlassian.net/browse/DEP-1281) - correção configuração do webservice de envio de eventos RT
+
 
 ## [14.1.6.47]
 
