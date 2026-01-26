@@ -1,14 +1,20 @@
 ﻿## [14.1.6.59]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+**Correção**
+* DSML-2019 - correção na troca do modo de operação para SVCRS nos eventos da RTC
+  
+**Novidade**
+* DSML-2009 - Criação do evento de Importação em ALC/ZFM não convertida em isenção
 
 ## [14.1.6.57]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+**Correção**
+* DSML-2019 - correção na troca do modo de operação para SVCRS nos eventos da RT
 
 ## [14.1.6.55]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+**Novidade**
+* DSML-2001 - Adicionando o novo tipo de pagamento (tPag_YA02=91 - Pagamento Posterior)
 
 ## [14.1.6.53]
 
@@ -16,7 +22,8 @@
 
 ## [14.1.6.51]
 
-* Corre&ccedil;&otilde;es e melhorias diversos.
+**Correção**
+* DSML-1987 - correção configuração do webservice de envio de eventos RT
 
 ## [14.1.6.47]
 
