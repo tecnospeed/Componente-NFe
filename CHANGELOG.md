@@ -6,8 +6,8 @@
 
 **Correções**
 
-* [DSML-2023](https://tecnospeed.atlassian.net/browse/DSML-2023) - Ajustando para ser gerado os XML's destinatário dos Eventos da Reforma Tributária
-* [DSML-2057](https://tecnospeed.atlassian.net/browse/DSML-2057) - Ajustando a impressão para ser impresso corretamente as informações do endereço de entrega
+* [DSML-2023] - Ajustando para ser gerado os XML's destinatário dos Eventos da Reforma Tributária
+* [DSML-2057] - Ajustando a impressão para ser impresso corretamente as informações do endereço de entrega
 
 ## [14.1.6.59]
 
