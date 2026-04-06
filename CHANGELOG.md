@@ -1,4 +1,13 @@
-﻿## [14.1.6.67]
+﻿## [14.1.6.68]
+
+**Novidades**
+* [ODSML-26703](http://odoo.tecnospeed.local/odoo/project/40/tasks/26703) - atualizando componente com a NT 2022.002 v1.30a
+
+**Correções**
+* [ODSML-18231](http://odoo.tecnospeed.local/odoo/project/40/tasks/18231) - Ajustando impressão do valor total dos produtos
+* [ODSML-26793](http://odoo.tecnospeed.local/odoo/action-527/76/project.task/26793) -  Ajuste no campo tPag_YA02 aceitar novos valores 23 e 24
+
+## [14.1.6.67]
 
 **Novidades**
 * [ODSML-26703](http://odoo.tecnospeed.local/odoo/project/40/tasks/26703) - atualizando componente com a NT 2022.002 v1.30a
@@ -3163,6 +3172,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
