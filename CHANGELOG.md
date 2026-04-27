@@ -1,4 +1,10 @@
-﻿## [14.1.6.68]
+﻿## [14.1.6.69]
+
+**Correções**
+
+* [ODSML-28081](http://odoo.tecnospeed.local/odoo/project/41/tasks/28081) - Ajustes nos RTM's para ser impresso corretamente o valor unitário
+
+## [14.1.6.68]
 
 **Novidades**
 * [ODSML-26703](http://odoo.tecnospeed.local/odoo/project/40/tasks/26703) - atualizando componente com a NT 2022.002 v1.30a
@@ -3172,6 +3178,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
