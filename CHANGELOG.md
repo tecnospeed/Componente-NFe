@@ -1,4 +1,17 @@
-﻿## [14.1.6.71]
+﻿## [14.1.6.96]
+
+**Novidades**
+
+* [ODSML-30177](http://odoo.tecnospeed.local/odoo/project/40/tasks/30177) -Adequações NT 2026.004 CNPJ Alfanumérico.
+
+**Correções**
+
+* [ODSML-29756](http://odoo.tecnospeed.local/odoo/project/40/tasks/29756) - Ajustadando para quando usar as propriedades CaminhoCertificado e SenhaCertificado o mesmo não seja instalado após comunicações.
+* [ODSML-29431](http://odoo.tecnospeed.local/odoo/project/40/tasks/29431) - Ajustando RTM para ser impresso corretamente o valor unitario e base de calculo ICMS.
+* [ODSML-17789](http://odoo.tecnospeed.local/odoo/project/40/tasks/17789) - Ajustando o campo tpAutor do evento E211110 - Solicitação de Apropriação de Crédito Presumido
+* [ODSML-17149](http://odoo.tecnospeed.local/odoo/project/40/tasks/17149) - Ajustes na impressão do Danfe Simplificado
+
+## [14.1.6.71]
 
 **Correções**
 
@@ -3184,6 +3197,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
