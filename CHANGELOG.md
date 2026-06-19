@@ -1,9 +1,5 @@
 ﻿## [14.1.6.96]
 
-**Novidades**
-
-* [ODSML-30177](http://odoo.tecnospeed.local/odoo/project/40/tasks/30177) -Adequações NT 2026.004 CNPJ Alfanumérico.
-
 **Correções**
 
 * [ODSML-29756](http://odoo.tecnospeed.local/odoo/project/40/tasks/29756) - Ajustadando para quando usar as propriedades CaminhoCertificado e SenhaCertificado o mesmo não seja instalado após comunicações.
