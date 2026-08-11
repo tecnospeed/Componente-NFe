@@ -1,4 +1,12 @@
-﻿## [14.1.6.114]
+﻿## [14.1.6.120]
+
+**Correções**
+
+* [ODSML-32905](http://odoo.tecnospeed.local/odoo/project/40/tasks/32905) - Retrocompatibilidade de mapeamento pl_010b/c/d/e para gCompraGov e gPagAntecipado
+* [ODSML-31121](http://odoo.tecnospeed.local/odoo/project/40/tasks/31121) - Compatibilizando os modelos de impressão com o CNPJ alfanumerico
+* [ODSML-31418](http://odoo.tecnospeed.local/odoo/project/40/tasks/31418) - Compatibilizando o Componente NFe com a NT NT 2014.002 v.1.40
+
+## [14.1.6.114]
 
 **Novidades**
 
@@ -3215,6 +3223,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
