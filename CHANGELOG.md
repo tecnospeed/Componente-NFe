@@ -1,4 +1,12 @@
-﻿## [14.1.6.120]
+﻿## [14.1.6.126]
+
+**Novidades**
+
+[ODSML-29788](http://odoo.tecnospeed.local/odoo/project/40/tasks/29788) - Novo modelo de impressão Simplificado Tipo 2
+
+[ODSML-33310](http://odoo.tecnospeed.local/odoo/project/40/tasks/33310) - Novo parâmetro QRCodeLateral para impressão da DANFE Simplificado Tipo 2
+
+## [14.1.6.120]
 
 **Correções**
 
@@ -3223,6 +3231,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
