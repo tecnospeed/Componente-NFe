@@ -1,4 +1,15 @@
-﻿## [15.1.0.7]
+﻿## [15.1.0.16]
+
+**Correções**
+
+* [ODSML-33277](http://odoo.tecnospeed.local/odoo/project/40/tasks/33277) - Corrigida a impressão em lote de DANFEs de medicamentos para que cada nota apresente somente suas próprias informações de lote e rastreabilidade.
+
+**Novidades**
+
+* [ODSML-30213](http://odoo.tecnospeed.local/odoo/project/40/tasks/30213) - Compatibilizando o componente NFe com a NT [2025.002 v1.50](https://blog.tecnospeed.com.br/contribuinte-exclusivo-do-ibs-e-cbs/).
+* [ODSML-33312](http://odoo.tecnospeed.local/odoo/project/40/tasks/33312) - Compatibilizando o componente NFe com a NT [2026.007 v1.00](https://blog.tecnospeed.com.br/nota-tecnica-reforma-tributaria-nfe-nfce/).
+
+## [15.1.0.7]
 
 **Correções**
 
@@ -3243,6 +3254,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
