@@ -1,4 +1,17 @@
-﻿## [15.1.0.16]
+﻿## [15.1.0.26]
+
+**Correções**
+
+* [ODSML-33982](http://odoo.tecnospeed.local/odoo/project/40/tasks/33982) - Ajustandos os eventos da RTC no NFe para ser permitido enviar o número da sequência entre 1 a 99.
+* [ODSML-31111](http://odoo.tecnospeed.local/odoo/project/40/tasks/31111) - Corrigido erro "Classe não registrada" na inicialização de aplicações que não utilizam o módulo de NF-e.
+* [ODSML-14390](http://odoo.tecnospeed.local/odoo/project/40/tasks/14390) - Ajustando impressão de múltiplos volumes.
+* [ODSML-29497](http://odoo.tecnospeed.local/odoo/project/40/tasks/29497) - Ajustado o  método ConverterXMLparaDataSet para converter corretamente os campos que compartilham o mesmo nome de tag no grupo ICMS do XML, realizando o preenchimento do campo correspondente para os CSTs 51, 53 e 90.
+
+**Novidades**
+
+* [ODSML-32135](http://odoo.tecnospeed.local/odoo/project/40/tasks/32135) - Criando validações de CNPJ antes do envio.
+
+## [15.1.0.16]
 
 **Correções**
 
@@ -3254,6 +3267,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
