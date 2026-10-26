@@ -1,4 +1,13 @@
-﻿## [15.1.0.26]
+﻿## [15.1.0.38]
+
+
+**Novidades**
+
+* [ODSML-36018](http://odoo.tecnospeed.local/odoo/project/40/tasks/36018) - Criando o novo modelo de impressão RetratoRTC.rtm seguindo o leiaute da NT [2026.010](https://blog.tecnospeed.com.br/nt-2026-010-danfe-reforma-tributaria/).
+* [ODSML-36019](http://odoo.tecnospeed.local/odoo/project/40/tasks/36019) - Criando o novo modelo de impressão PaisagemRTC.rtm seguindo o leiaute da NT [2026.010](https://blog.tecnospeed.com.br/nt-2026-010-danfe-reforma-tributaria/).
+* [ODSML-35808](http://odoo.tecnospeed.local/odoo/project/40/tasks/35808) - Adequando XML de envio para o evento 211110 (Solicitação de apropriação de crédito presumido).
+
+## [15.1.0.26]
 
 **Correções**
 
@@ -3267,6 +3276,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
