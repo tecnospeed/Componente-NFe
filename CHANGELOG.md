@@ -1,4 +1,14 @@
-﻿## [15.1.0.38]
+﻿## [15.1.0.43]
+
+**Novidades**
+
+* [ODSML-36516](http://odoo.tecnospeed.local/odoo/project/40/tasks/36516) - Compatibilizando com à Nota Técnica [2026.008 RTC – Valor Líquido do Produto](https://blog.tecnospeed.com.br/nt-rtc-2026-008-nfe/)
+
+* [ODSML-36045](http://odoo.tecnospeed.local/odoo/project/40/tasks/36045) - Compatibilizando com à Nota Técnica [2026.008 RTC – Valor Líquido do Produto](https://blog.tecnospeed.com.br/nt-rtc-2026-008-nfe/)
+
+* [ODSML-27982](http://odoo.tecnospeed.local/odoo/project/40/tasks/27982) - Adicionada a propriedade DadosPFX para utilizar o certificado A1 em base64, somente em memória (requer HttpLibs com sbb)
+
+## [15.1.0.38]
 
 
 **Novidades**
@@ -3276,6 +3286,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
