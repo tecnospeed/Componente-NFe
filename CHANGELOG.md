@@ -1,4 +1,12 @@
-﻿## [15.1.0.43]
+﻿## [15.1.0.49]
+
+**Novidades**
+
+* [ODSML-34201](http://odoo.tecnospeed.local/odoo/project/40/tasks/34201) - Compatibilizando com à Nota Técnica [2026.006 RTC – Vinculação com a transação de pagamento](https://blog.tecnospeed.com.br/nt-2026-006-vinculacao-de-pagamento-nf-e/)
+
+* [ODSML-34200](http://odoo.tecnospeed.local/odoo/project/40/tasks/34200) - Evento de Vinculação da Transação de Pagamento no DF-e, Nota Técnica [2026.006 RTC – Vinculação com a transação de pagamento](https://blog.tecnospeed.com.br/nt-2026-006-vinculacao-de-pagamento-nf-e/)
+
+## [15.1.0.43]
 
 **Novidades**
 
@@ -3286,6 +3294,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
