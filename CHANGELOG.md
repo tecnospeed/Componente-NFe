@@ -1,4 +1,18 @@
-﻿## [15.1.0.49]
+﻿## [15.1.0.57]
+
+## Novidades
+
+* [ODSML-37500](http://odoo.tecnospeed.local/odoo/project/40/tasks/37500) - Compatibilizando o componente NFe com a NT [2026.005 v1.00 - Simples Nacional](https://blog.tecnospeed.com.br/nt-2026-005-nfe-simples-nacional/)
+* [ODSML-37595](http://odoo.tecnospeed.local/odoo/project/40/tasks/37595) - Criando a propriedade ContribuinteExclusivoIBSCBS para direcionar à SVRS a NF-e de contribuinte exclusivo do IBS/CBS sem IE (NT [2026.007](https://blog.tecnospeed.com.br/contribuinte-exclusivo-do-ibs-e-cbs/))
+
+## Correções
+
+* [ODSML-37621](http://odoo.tecnospeed.local/odoo/project/40/tasks/37621) - Ajustando impressões no VB6 para os modelos de RTM RetratoRTC e PaisagemRTC.
+* [ODSML-30308](http://odoo.tecnospeed.local/odoo/project/40/tasks/30308) - Corrigindo problemas de timeout no envio de emails utilizando o oAuth2 no Outlook.
+* [ODSML-37730](http://odoo.tecnospeed.local/odoo/project/40/tasks/37730) - Corrigida a quebra de página da tabela de itens nos modelos de DANFE RetratoRTC e PaisagemRTC, que deixava a primeira folha sem itens mesmo havendo espaço disponível. Agora a tabela começa na primeira folha sempre que houver espaço para pelo menos um item.
+* [ODSML-37755](http://odoo.tecnospeed.local/odoo/project/40/tasks/37755) - Corrigida a posição dos textos de rodapé (ConfigTextoRodapeEsq e ConfigTextoRodapeDir) nos modelos de DANFE RetratoRTC e PaisagemRTC, que eram impressos sobre a linha do quadro Dados Adicionais. Agora saem logo abaixo do quadro, como nos modelos Retrato e Paisagem.
+
+## [15.1.0.49]
 
 **Novidades**
 
@@ -3294,6 +3308,7 @@ Obs: A versão 4.6.1.X, 4.6.2.X, 4.6.3.X do componente foi liberado para uso int
     - O spNFeDPEC, assim como o spdNFeX e spdNFeSCANX, possui propriedade de Servidores
        de Homologação e Produção.
       Para Ambiente de homologação enviamos o arquivo "nfeServidoresHomDPEC.ini".
+
 
 
 
